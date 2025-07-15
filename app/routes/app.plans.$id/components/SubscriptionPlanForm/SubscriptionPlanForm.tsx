@@ -49,11 +49,6 @@ export function SubscriptionPlanForm({
             <Card>
               <FormLayout>
                 <TextField
-                  label={t('planTitle')}
-                  name="merchantCode"
-                  helpText={t('planTitleHelpText')}
-                />
-                <TextField
                   label={t('purchaseOptionTitle')}
                   name="planName"
                   helpText={
@@ -67,6 +62,11 @@ export function SubscriptionPlanForm({
                       })}
                     </Text>
                   }
+                />
+                <TextField
+                  label={t('planTitle')}
+                  name="merchantCode"
+                  helpText={t('planTitleHelpText')}
                 />
               </FormLayout>
             </Card>

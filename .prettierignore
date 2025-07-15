@@ -10,4 +10,5 @@ shopify-app-remix
 tmp
 *.yml
 .shopify
+.pnpm-store/
 pnpm-lock.yaml

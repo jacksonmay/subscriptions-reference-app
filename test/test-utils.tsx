@@ -38,7 +38,6 @@ function mountWithAppContext(
           {element}
         </PolarisTestProvider>
       </I18nextProvider>
-      ,
     </ShopContext.Provider>,
   );
 }

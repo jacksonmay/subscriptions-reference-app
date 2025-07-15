@@ -60,6 +60,7 @@ query SubscriptionContractDetails($id: ID!) {
       createdAt
     }
         lastPaymentStatus
+    lastBillingAttemptErrorType
     billingAttempts(first: 5) {
       edges {
         node {
@@ -73,7 +74,8 @@ query SubscriptionContractDetails($id: ID!) {
         shippingOption {
           title
         }
-        address{
+        address {
+          id
           address1
           address2
           city
@@ -81,7 +83,7 @@ query SubscriptionContractDetails($id: ID!) {
           firstName
           lastName
           provinceCode
-          countryCode
+          countryCode: countryCodeV2
           zip
           phone
         }
@@ -97,6 +99,7 @@ query SubscriptionContractDetails($id: ID!) {
           phone
         }
         address {
+          id
           address1
           address2
           city
@@ -104,7 +107,7 @@ query SubscriptionContractDetails($id: ID!) {
           firstName
           lastName
           provinceCode
-          countryCode
+          countryCode: countryCodeV2
           zip
           phone
         }

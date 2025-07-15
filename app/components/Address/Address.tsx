@@ -22,7 +22,7 @@ export function Address({address}: AddressProps) {
   ) : null;
 }
 
-export function useFormattedAddress(address: AddressType) {
+function useFormattedAddress(address: AddressType) {
   const {i18n} = useTranslation();
   const locale = i18n.language;
 
@@ -37,11 +37,18 @@ export function useFormattedAddress(address: AddressType) {
     const addressFormatter = new AddressFormatter(locale);
 
     async function formatAddress() {
-      const formattedAddress = await addressFormatter.format(address);
+      try {
+        const formattedAddress = await addressFormatter.format(address);
 
-      // prevent state updates to formattedAddress if the component is unmounted
-      if (isMounted) {
-        setFormattedAddress(formattedAddress.filter(Boolean));
+        // prevent state updates to formattedAddress if the component is unmounted
+        if (isMounted) {
+          setFormattedAddress(formattedAddress.filter(Boolean));
+        }
+      } catch (error) {
+        // Rescue error when formatting address and return default format
+        if (isMounted) {
+          setFormattedAddress(defaultFormatAddress(address));
+        }
       }
     }
 
@@ -53,4 +60,20 @@ export function useFormattedAddress(address: AddressType) {
   }, [address, locale]);
 
   return formattedAddress;
+}
+
+/**
+ * Converts an address to a fallback format when the formatting service fails.
+ * @param address - The address to format.
+ * @returns The formatted address.
+ */
+function defaultFormatAddress(address: AddressType): string[] {
+  return [
+    `${address.firstName || ''} ${address.lastName || ''}`.trim(),
+    address.address1,
+    address.address2,
+    `${address.city || ''}, ${address.province || ''} ${address.zip || ''}`.trim(),
+    address.country,
+    address.phone,
+  ].filter(Boolean) as string[];
 }

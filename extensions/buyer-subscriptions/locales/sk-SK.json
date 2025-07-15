@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Nahradiť spôsob platby",
-    "save": "Uložiť",
     "paymentMethod": "Spôsob platby",
     "edit": "Upraviť",
-    "close": "Zavrieť",
     "errorBannerTitle": "Nepodarilo sa aktualizovať spôsob platby"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Preskočenie nasledujúcej objednávky",
     "generic": "Naozaj chcete preskočiť nasledujúcu objednávku?",
     "date": "Naozaj chcete preskočiť nasledujúcu objednávku? Vaše predplatné sa obnoví {{date}}.",
-    "errorBannerTitle": "Nepodarilo sa preskočiť nasledujúcu objednávku",
-    "close": "Zavrieť"
+    "errorBannerTitle": "Nepodarilo sa preskočiť nasledujúcu objednávku"
   },
   "pauseSubscriptionModal": {
     "title": "Pozastaviť predplatné",
     "action": "Pozastaviť predplatné",
-    "close": "Zavrieť",
     "description": "Vaše predplatné bude s okamžitou platnosťou pozastavené a nebudú sa vám účtovať žiadne ďalšie poplatky ani poplatky za nadchádzajúce objednávky. Toto predplatné môžete kedykoľvek obnoviť.",
     "errorBannerTitle": "Nepodarilo sa pozastaviť predplatné"
   },
@@ -76,14 +72,12 @@
     "pause": "Pozastaviť",
     "skip": "Preskočenie nasledujúcej objednávky",
     "resume": "Obnoviť",
-    "cancel": "Zrušiť",
     "manage": "Spravovať",
     "viewSubscriptionDetails": "Zobraziť podrobnosti"
   },
   "resumeSubscriptionModal": {
     "description": "Ak obnovíte toto predplatné, fakturácia sa obnoví okamžite.",
     "descriptionWithDate": "Ak obnovíte toto predplatné, fakturácia sa obnoví {{date}}.",
-    "close": "Zavrieť",
     "descriptionPriceChanged": "Cena tohto predplatného sa zmenila a za každú nadchádzajúcu objednávku sa vám bude účtovať suma {{price}}.",
     "continue": "Pokračovať",
     "title": "Obnoviť predplatné",
@@ -100,19 +94,19 @@
     "title": "Zrušiť predplatné",
     "description": "Ak zrušíte svoje predplatné, fakturácia a doručovanie sa okamžite ukončí. Zrušenie predplatného sa nedá vrátiť späť. Ak chcete dočasne zastaviť prijímanie objednávok, predplatné pozastavte.",
     "action": "Zrušiť predplatné",
-    "close": "Zavrieť",
     "errorBannerTitle": "Nepodarilo sa zrušiť predplatné"
   },
   "errorBoundary": {
     "content": "Vyskytla sa chyba, obnovte stránku"
   },
   "addressModal": {
-    "save": "Uložiť",
     "continue": "Pokračovať",
-    "cancel": "Zrušiť",
     "title": "Upraviť dodaciu adresu",
     "errorBannerTitle": "Nepodarilo sa aktualizovať spôsob doručenia",
-    "noDeliveryOptions": "Toto predplatné nie je možné odoslať na uvedenú adresu. Skontrolujte, či sú všetky polia adresy vyplnené správne, a skúste to znova."
+    "noDeliveryOptions": "Toto predplatné nie je možné odoslať na uvedenú adresu. Skontrolujte, či sú všetky polia adresy vyplnené správne, a skúste to znova.",
+    "firstName": "Meno",
+    "lastName": "Priezvisko",
+    "country": "Krajina/región"
   },
   "successBanner": {
     "paused": "Predplatné bolo pozastavené",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Nadchádzajúce objednávky",
-    "close": "Zavrieť",
     "skipOrder": "Preskočiť",
     "skipOrderAccessibilityLabel": "Preskočiť objednávku ku dňu {{orderDate}}",
     "unSkipOrder": "Zrušiť preskočenie",
@@ -153,5 +146,8 @@
     "title": "Nie je zakúpené žiadne predplatné",
     "description": "Predplatné si môžete zakúpiť v obchode"
   },
-  "delayed": "Nasledujúca objednávka sa môže oneskoriť"
+  "delayed": "Nasledujúca objednávka sa môže oneskoriť",
+  "close": "Zavrieť",
+  "cancel": "Zrušiť",
+  "save": "Uložiť"
 }

@@ -11,7 +11,7 @@
   },
   "table": {
     "headings": {
-      "planTitle": "플랜 제목",
+      "planTitle": "플랜 설명",
       "products": "제품",
       "deliveryFrequency": "배송 빈도",
       "discount": "가격",

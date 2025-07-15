@@ -147,4 +147,41 @@ describe('DisableShopJob', () => {
       await expect(job.run()).rejects.toThrowError('unexpected error');
     });
   });
+
+  describe('when missing access token', () => {
+    beforeEach(async () => {
+      await prisma.session.update({
+        where: {
+          id: '123',
+          shop: TEST_SHOP,
+        },
+        data: {
+          accessToken: '',
+        },
+      });
+    });
+
+    it('disables shop', async () => {
+      const params = {
+        shop: TEST_SHOP,
+        payload: {},
+      } as any;
+
+      await new DisableShopJob(params).run();
+
+      expect(
+        (
+          await prisma.billingSchedule.findMany({
+            where: {active: true, shop: TEST_SHOP},
+          })
+        ).length,
+      ).toEqual(0);
+
+      expect(
+        await prisma.session.count({
+          where: {shop: TEST_SHOP},
+        }),
+      ).toEqual(0);
+    });
+  });
 });

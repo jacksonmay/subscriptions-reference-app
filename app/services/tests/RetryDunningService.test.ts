@@ -6,7 +6,6 @@ import {jobs} from '~/jobs';
 import {RebillSubscriptionJob} from '~/jobs/billing/RebillSubscriptionJob';
 import {CustomerSendEmailService} from '../CustomerSendEmailService';
 import {RetryDunningService} from '../RetryDunningService';
-import {SubscriptionContractFailService} from '../SubscriptionContractFailService';
 
 vi.mock('~/jobs', () => {
   const originalModule = vi.importActual('~/jobs');
@@ -24,15 +23,6 @@ vi.mock('~/services/CustomerSendEmailService', async (importOriginal) => {
   CustomerSendEmailService.prototype.run = vi.fn().mockResolvedValue(undefined);
 
   return {...original, CustomerSendEmailService};
-});
-
-vi.mock('~/services/SubscriptionContractFailService', async () => {
-  const SubscriptionContractFailService = vi.fn();
-  SubscriptionContractFailService.prototype.run = vi
-    .fn()
-    .mockResolvedValue(undefined);
-
-  return {SubscriptionContractFailService};
 });
 
 const shopDomain = 'shop-example.myshopify.com';
@@ -120,26 +110,5 @@ describe('RetryDunningService#run', () => {
         billingCycleIndex,
       },
     );
-  });
-
-  it('fails subscription contract', async () => {
-    const retryDunningService = new RetryDunningService({
-      shopDomain,
-      subscriptionContract,
-      billingAttempt,
-      daysBetweenRetryAttempts,
-      billingCycleIndex,
-      sendCustomerEmail: true,
-    });
-
-    mockGraphQL(defaultGraphQLResponses());
-    const service = new SubscriptionContractFailService(
-      shopDomain,
-      subscriptionContract.id,
-    );
-
-    await retryDunningService.run();
-
-    expect(service.run).toHaveBeenCalledOnce();
   });
 });

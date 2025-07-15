@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Abonelik planlarına dön",
-  "planTitle": "Plan başlığı",
-  "planTitleHelpText": "Müşteriler bunu görmez.",
-  "purchaseOptionTitle": "Satın alım seçeneği başlığı",
+  "planTitle": "Dahili açıklama",
+  "planTitleHelpText": "Yalnızca sizin referansınız için",
+  "purchaseOptionTitle": "Başlık",
   "purchaseOptionTitleHelpText": "Müşteriler bunu, abonelikleri içeren {{howToDisplayProductsLink}} görür.",
   "defaultPurchaseOptionTitle": "Abone ol ve kaydet",
   "saveButtonText": "Kaydet",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Geçersiz ürün seçildi",
     "invalidVariant": "Geçersiz ürün varyasyonu seçildi",
-    "merchantCodeEmptyError": "Plan başlığı gereklidir",
-    "nameEmptyError": "Satın alım seçeneği başlığı gereklidir",
+    "merchantCodeEmptyError": "Dahili açıklama gereklidir",
+    "nameEmptyError": "Başlık gereklidir",
     "createError": "Abonelik planı oluşturulurken bir hata oluştu",
     "updateError": "Abonelik planı güncellenirken bir hata oluştu",
     "deliveryFrequencyError": "Sıklık 0 değerinden büyük olmalıdır",
@@ -92,7 +92,7 @@
     "productAndVariantTextSeparatedList": "{productText}, {variantText}",
     "fixedPrice": "{amount}"
   },
-  "purchaseOptionTitleHelpLinkText": "vitrin ürün sayfalarında",
+  "purchaseOptionTitleHelpLinkText": "dijital vitrin ürün sayfalarında",
   "creationMutation": {
     "options": {
       "deliveryFrequency": "Teslimat sıklığı"

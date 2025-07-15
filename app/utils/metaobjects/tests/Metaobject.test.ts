@@ -3,7 +3,7 @@ import Metaobject from '../Metaobject';
 import {MetafieldType, type MetaobjectField} from '../MetaobjectField';
 
 describe('Metaobject', () => {
-  const id = 'gid://shopify/MetaObject/9';
+  const id = 'gid://shopify/Metaobject/9';
   const singleLineTextField: MetaobjectField = {
     key: 'foo',
     value: 'Text Value',

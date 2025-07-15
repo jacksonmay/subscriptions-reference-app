@@ -62,8 +62,14 @@ export type MetaobjectDefinitionTypeInput = {
   type: string;
 };
 
+export class MaxMetaobjectDefinitionsExceededError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'MaxMetaobjectDefinitionsExceededError';
+  }
+}
+
 export default class MetaobjectRepository {
-  // eslint-disable-next-line no-useless-constructor
   constructor(private graphqlClient: GraphQLClient) {}
 
   public async fetchMetaobjectByHandle({
@@ -224,10 +230,28 @@ export default class MetaobjectRepository {
       metaobjectDefinitionCreateUserErrors &&
       metaobjectDefinitionCreateUserErrors.length > 0
     ) {
-      throw new Error(
-        'MetaobjectDefinitionCreate Mutation returned User Errors: ' +
-          JSON.stringify(metaobjectDefinitionCreateUserErrors),
+      const hasMaxDefinitionsError = metaobjectDefinitionCreateUserErrors.some(
+        (error) => error.code === 'MAX_DEFINITIONS_EXCEEDED',
       );
+
+      if (hasMaxDefinitionsError) {
+        logger.error(
+          {
+            userErrors: metaobjectDefinitionCreateUserErrors,
+            definitionType: definition.type,
+          },
+          'Maximum metaobject definitions limit exceeded when creating definition',
+        );
+
+        throw new MaxMetaobjectDefinitionsExceededError(
+          'Maximum metaobject definitions limit exceeded when creating definition',
+        );
+      } else {
+        throw new Error(
+          'MetaobjectDefinitionCreate Mutation returned User Errors: ' +
+            JSON.stringify(metaobjectDefinitionCreateUserErrors),
+        );
+      }
     }
 
     if (!data?.metaobjectDefinitionCreate?.metaobjectDefinition) {
@@ -451,11 +475,14 @@ export default class MetaobjectRepository {
   public async createOrUpdateMetaobjectFields({
     handle,
     fields,
+    metaobject: existingMetaobject,
   }: {
     handle: MetaobjectHandleInput;
     fields: NonNullMetaobjectField[];
+    metaobject?: Metaobject;
   }): Promise<Metaobject> {
-    const metaobject = await this.fetchMetaobjectByHandle(handle);
+    const metaobject =
+      existingMetaobject || (await this.fetchMetaobjectByHandle(handle));
     if (!metaobject) {
       return this.createMetaobject({
         handle,
@@ -463,18 +490,29 @@ export default class MetaobjectRepository {
       });
     }
 
+    // If there are new fields, we need to update the metaobject
+    let updateRequired = false;
     const fieldsToUpdate = fields.map((field) => {
       const existingField = metaobject.fields?.find(
         (existingField) => existingField.key === field.key,
       );
-      // if the existing field is null, return the new field
-      // otherwise, return the existing field
-      return existingField
-        ? isNullField(existingField)
-          ? field
-          : existingField
-        : field;
+
+      if (existingField) {
+        if (isNullField(existingField)) {
+          updateRequired = true;
+          return field;
+        } else {
+          return existingField;
+        }
+      } else {
+        updateRequired = true;
+        return field;
+      }
     });
+
+    if (!updateRequired) {
+      return metaobject;
+    }
 
     return this.updateMetaobject({
       id: metaobject.id,

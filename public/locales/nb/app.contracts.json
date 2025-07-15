@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "Avbryt",
         "update": "Oppdater"
+      },
+      "localDeliveryBanner": {
+        "content": "En adresse med et telefonnummer kreves for lokal levering. {link}",
+        "link": "Administrer adresser på kundesiden"
       }
     }
   },
@@ -330,6 +334,11 @@
         "cancel": "Avbryt"
       },
       "outOfStock": "Produktet blir oversolgt når du legger inn denne bestillingen"
+    },
+    "allocationError": {
+      "title": "Bestillingen {date} kunne ikke opprettes",
+      "description": "Kundens adresse er i en fraktsone som det ikke finnes tilgjengelig lagerbeholdning for, eller som ikke støttes av de gjeldende fraktinnstillingene. Oppdater lagerbeholdningen eller {settingsLink} for å gjenoppta bestillingene.",
+      "settingsLinkText": "rediger fraktinnstillingene"
     }
   }
 }

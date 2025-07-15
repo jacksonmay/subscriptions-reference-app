@@ -11,13 +11,9 @@
     "border_title": "Ramme",
     "border_thickness": "Tykkelse",
     "border_radius": "Hjørneradius",
-    "colors_text_title": "Tittel",
     "colors_text_body": "Brødtekst",
     "colors_background_border_title": "Bakgrunn og rammer",
     "colors_background": "Bakgrunn",
-    "colors_dividers": "Skiller",
-    "supporting_text_title": "Støttende tekst",
-    "supporting_text_subtitle": "Tittel",
-    "supporting_text_input_default": "Kjøpsalternativer"
+    "colors_dividers": "Skiller"
   }
 }

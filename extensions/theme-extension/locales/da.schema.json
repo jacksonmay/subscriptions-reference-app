@@ -11,13 +11,9 @@
     "border_title": "Kant",
     "border_thickness": "Tykkelse",
     "border_radius": "Hjørneradius",
-    "colors_text_title": "Titel",
     "colors_text_body": "Brødtekst",
     "colors_background_border_title": "Baggrunde og kanter",
     "colors_background": "Baggrund",
-    "colors_dividers": "Inddelere",
-    "supporting_text_title": "Støttetekst",
-    "supporting_text_subtitle": "Titel",
-    "supporting_text_input_default": "Købsmuligheder"
+    "colors_dividers": "Inddelere"
   }
 }

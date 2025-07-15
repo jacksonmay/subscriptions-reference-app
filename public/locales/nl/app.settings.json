@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Opslaan",
   "actions": {
-    "updateSuccess": "Instellingen bijgewerkt"
+    "updateSuccess": "Instellingen bijgewerkt",
+    "updateFailed": "Bijwerken van instellingen niet gelukt"
   },
   "title": "Instellingen",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Actie wanneer alle nieuwe pogingen zijn mislukt",
       "options": {
-        "skip": "Abonnement overslaan en melding sturen",
+        "skip": "Bestelling overslaan en melding sturen",
         "cancel": "Abonnement opzeggen en melding sturen",
         "pause": "Abonnement pauzeren en melding sturen"
       }

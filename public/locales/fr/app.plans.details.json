@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Retour aux forfaits",
-  "planTitle": "Titre du forfait",
-  "planTitleHelpText": "Les clients ne verront pas cette information.",
-  "purchaseOptionTitle": "Titre de l’option d’achat",
+  "planTitle": "Description interne",
+  "planTitleHelpText": "Pour référence uniquement",
+  "purchaseOptionTitle": "Titre",
   "purchaseOptionTitleHelpText": "Les clients verront ceci sur les {{howToDisplayProductsLink}} qui comportent des abonnements.",
   "defaultPurchaseOptionTitle": "S’abonner et économiser",
   "saveButtonText": "Enregistrer",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Produit sélectionné non valide",
     "invalidVariant": "Variante de produit sélectionnée non valide",
-    "merchantCodeEmptyError": "Le titre du forfait est obligatoire",
-    "nameEmptyError": "Le titre de l’option d’achat est obligatoire",
+    "merchantCodeEmptyError": "La description interne est obligatoire",
+    "nameEmptyError": "Le titre est requis",
     "createError": "Erreur lors de la création du forfait",
     "updateError": "Erreur lors de la mise à jour du forfait",
     "deliveryFrequencyError": "La fréquence doit être supérieure à 0",

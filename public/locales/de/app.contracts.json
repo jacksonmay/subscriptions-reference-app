@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "Abbrechen",
         "update": "Aktualisieren"
+      },
+      "localDeliveryBanner": {
+        "content": "Für lokale Zustellungen wird eine Adresse mit Telefonnummer benötigt. {link}",
+        "link": "Adressen auf der Kundenseite verwalten"
       }
     }
   },
@@ -330,6 +334,11 @@
         "cancel": "Abbrechen"
       },
       "outOfStock": "Dieses Produkt wird für diese Bestellung über den Bestand verkauft"
+    },
+    "allocationError": {
+      "title": "{date} Bestellung konnte nicht erstellt werden",
+      "description": "Die Kundenadresse befindet sich in einer Versandzone ohne verfügbares Inventar oder wird von den aktuellen Versandeinstellungen nicht unterstützt. Inventar aktualisieren oder {settingsLink}, um Bestellungen fortzusetzen.",
+      "settingsLinkText": "Versandeinstellungen bearbeiten"
     }
   }
 }

@@ -46,10 +46,17 @@ function getDraftAddressUpdateInput(
       },
     };
   } else if (deliveryMethodName == 'SubscriptionDeliveryMethodLocalDelivery') {
+    if (!addressInput.phone) {
+      return null;
+    }
+
     return {
       deliveryMethod: {
         localDelivery: {
           address: addressInput,
+          localDeliveryOption: {
+            phone: addressInput.phone,
+          },
         },
       },
     };

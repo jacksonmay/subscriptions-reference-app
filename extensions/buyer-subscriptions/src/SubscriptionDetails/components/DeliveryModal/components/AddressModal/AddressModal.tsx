@@ -9,7 +9,7 @@ import {
   Banner,
 } from '@shopify/ui-extensions-react/customer-account';
 
-import type {Address as AddressType} from '@shopify/address';
+import type {Address as AddressType, FieldName} from '@shopify/address';
 import {buildOrderedFields} from '@shopify/address';
 import type {UserError} from 'types';
 
@@ -85,15 +85,20 @@ export function AddressModal({
 
   const currentCountry = countries?.find(({code}) => code === country);
 
-  if (!currentCountry) {
-    throw new Error(`Country ${country} not found`);
-  }
+  const defaultOrderedFields = [
+    ['country'],
+    ['firstName', 'lastName'],
+  ] as FieldName[][];
 
-  const orderedFields = buildOrderedFields(currentCountry);
+  const orderedFields = currentCountry
+    ? buildOrderedFields(currentCountry)
+    : defaultOrderedFields;
 
-  const zoneSelectOptions = currentCountry.zones.map(({code, name}) => {
-    return {value: code, label: name};
-  });
+  const zoneSelectOptions = currentCountry
+    ? currentCountry.zones.map(({code, name}) => {
+        return {value: code, label: name};
+      })
+    : [];
 
   return (
     <>
@@ -106,10 +111,11 @@ export function AddressModal({
             return (
               <AddressLine
                 // eslint-disable-next-line react/no-array-index-key
+                i18n={i18n}
                 key={`$line-${index}`}
                 line={line}
                 countries={countries}
-                country={currentCountry}
+                country={currentCountry ?? null}
                 address={address}
                 countrySelectOptions={countrySelectOptions}
                 zoneSelectOptions={zoneSelectOptions}
@@ -123,7 +129,7 @@ export function AddressModal({
             <></>
             <InlineStack blockAlignment="center">
               <Button kind="plain" onPress={onModalClose}>
-                {i18n.translate('addressModal.cancel')}
+                {i18n.translate('cancel')}
               </Button>
               <Button onPress={onSave} loading={loading}>
                 {i18n.translate('addressModal.continue')}

@@ -11,13 +11,9 @@
     "border_title": "Kenarlık",
     "border_thickness": "Kalınlık",
     "border_radius": "Köşe yarıçapı",
-    "colors_text_title": "Başlık",
     "colors_text_body": "Gövde",
     "colors_background_border_title": "Arka Planlar ve Kenarlıklar",
     "colors_background": "Arka plan",
-    "colors_dividers": "Ayırıcılar",
-    "supporting_text_title": "Destekleyici metin",
-    "supporting_text_subtitle": "Başlık",
-    "supporting_text_input_default": "Satın alım seçenekleri"
+    "colors_dividers": "Ayırıcılar"
   }
 }

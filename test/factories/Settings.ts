@@ -3,7 +3,7 @@ import type {Settings} from '~/types';
 
 export const settings = Factory.define<Settings>(({sequence}) => {
   return {
-    id: `gid://shopify/MetaObject/${sequence}`,
+    id: `gid://shopify/Metaobject/${sequence}`,
     daysBetweenRetryAttempts: 1,
     inventoryDaysBetweenRetryAttempts: 1,
     inventoryRetryAttempts: 3,

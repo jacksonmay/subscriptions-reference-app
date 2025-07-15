@@ -271,6 +271,10 @@
       "actions": {
         "cancel": "Anuluj",
         "update": "Aktualizuj"
+      },
+      "localDeliveryBanner": {
+        "content": "Do dostawy lokalnej wymagany jest adres i numer telefonu. {link}",
+        "link": "Zarządzaj adresami na stronie klienta"
       }
     }
   },
@@ -362,6 +366,11 @@
         "cancel": "Anuluj"
       },
       "outOfStock": "Ten produkt zostanie nadsprzedany w ramach tego zamówienia"
+    },
+    "allocationError": {
+      "title": "Zamówienie z {date} nie mogło zostać utworzone",
+      "description": "Adres klienta znajduje się w strefie wysyłkowej, w której nie ma dostępnych zapasów lub która nie jest obsługiwana przez bieżące ustawienia wysyłki. Uaktualnij zapasy lub {settingsLink}, aby przywrócić składanie zamówień.",
+      "settingsLinkText": "edytuj ustawienia wysyłki"
     }
   }
 }

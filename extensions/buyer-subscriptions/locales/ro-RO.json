@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Înlocuiește metoda de plată",
-    "save": "Salvează",
     "paymentMethod": "Metodă de plată",
     "edit": "Editează",
-    "close": "Închide",
     "errorBannerTitle": "Nu se poate actualiza metoda de plată"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Omite următoarea comandă",
     "generic": "Vrei să omiți următoarea comandă?",
     "date": "Vrei să omiți următoarea comandă? Abonamentul tău va fi reluat la {{date}}.",
-    "errorBannerTitle": "Nu se poate omite următoarea comandă",
-    "close": "Închide"
+    "errorBannerTitle": "Nu se poate omite următoarea comandă"
   },
   "pauseSubscriptionModal": {
     "title": "Suspendă abonamentul",
     "action": "Suspendă abonamentul",
-    "close": "Închide",
     "description": "Abonamentul tău va fi suspendat imediat și nu vei mai primi alte debitări sau comenzi. Poți relua în orice moment abonamentul.",
     "errorBannerTitle": "Nu se poate suspenda abonamentul"
   },
@@ -76,14 +72,12 @@
     "pause": "Suspendă",
     "skip": "Omite următoarea comandă",
     "resume": "Reia",
-    "cancel": "Anulează",
     "manage": "Gestionează",
     "viewSubscriptionDetails": "Vizualizează detaliile"
   },
   "resumeSubscriptionModal": {
     "description": "Dacă reiei acest abonament, facturarea va fi reluată imediat.",
     "descriptionWithDate": "Dacă reiei acest abonament, facturarea va fi reluată la {{date}}.",
-    "close": "Închide",
     "descriptionPriceChanged": "Prețul pentru acest abonament s-a schimbat, astfel că vei fi taxat cu {{price}} pentru fiecare comandă viitoare.",
     "continue": "Continuă",
     "title": "Reia abonamentul",
@@ -100,19 +94,19 @@
     "title": "Anulează abonamentul",
     "description": "Dacă anulezi abonamentul, facturarea și livrarea vor înceta imediat. Anularea unui abonament este ireversibilă. Pentru a opri temporar primirea comenzilor, suspendă abonamentul.",
     "action": "Anulează abonamentul",
-    "close": "Închide",
     "errorBannerTitle": "Nu se poate anula abonamentul"
   },
   "errorBoundary": {
     "content": "A intervenit o problemă, te rugăm să reîmprospătezi pagina"
   },
   "addressModal": {
-    "save": "Salvează",
     "continue": "Continuă",
-    "cancel": "Anulează",
     "title": "Editează adresa de expediere",
     "errorBannerTitle": "Nu se poate actualiza metoda de plată",
-    "noDeliveryOptions": "Acest abonament nu poate fi expediat la adresa pe care ai introdus-o. Verifică adresa și asigură-te că ai introdus informații corecte în toate câmpurile, apoi încearcă din nou."
+    "noDeliveryOptions": "Acest abonament nu poate fi expediat la adresa pe care ai introdus-o. Verifică adresa și asigură-te că ai introdus informații corecte în toate câmpurile, apoi încearcă din nou.",
+    "firstName": "Prenume",
+    "lastName": "Nume de familie",
+    "country": "Țară/regiune"
   },
   "successBanner": {
     "paused": "Abonamentul a fost suspendat",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Comenzi viitoare",
-    "close": "Închide",
     "skipOrder": "Omite",
     "skipOrderAccessibilityLabel": "Omite comanda de pe {{orderDate}}",
     "unSkipOrder": "Anulează omiterea",
@@ -153,5 +146,8 @@
     "title": "Nu a fost achiziționat niciun abonament",
     "description": "Accesează magazinul pentru a cumpăra abonamente"
   },
-  "delayed": "Este posibil ca următoarea comandă să întârzie"
+  "delayed": "Este posibil ca următoarea comandă să întârzie",
+  "close": "Închide",
+  "cancel": "Anulează",
+  "save": "Salvează"
 }

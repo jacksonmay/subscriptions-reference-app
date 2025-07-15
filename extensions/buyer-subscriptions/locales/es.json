@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Reemplazar forma de pago",
-    "save": "Guardar",
     "paymentMethod": "Forma de pago",
     "edit": "Editar",
-    "close": "Cerrar",
     "errorBannerTitle": "No se puede modificar la forma de pago"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Omitir próximo pedido",
     "generic": "¿Deseas omitir el próximo pedido?",
     "date": "¿Deseas omitir el próximo pedido? La suscripción se reanudará el {{date}}.",
-    "errorBannerTitle": "No se puede omitir el siguiente pedido",
-    "close": "Cerrar"
+    "errorBannerTitle": "No se puede omitir el siguiente pedido"
   },
   "pauseSubscriptionModal": {
     "title": "Pausar la suscripción",
     "action": "Pausar la suscripción",
-    "close": "Cerrar",
     "description": "La suscripción se pausará con efecto inmediato y no recibirás más cargos ni pedidos futuros. Puedes reanudar la suscripción en cualquier momento.",
     "errorBannerTitle": "No se puede pausar la suscripción"
   },
@@ -76,14 +72,12 @@
     "pause": "Pausar",
     "skip": "Omitir próximo pedido",
     "resume": "Reanudar",
-    "cancel": "Cancelar",
     "manage": "Gestionar",
     "viewSubscriptionDetails": "Ver detalles"
   },
   "resumeSubscriptionModal": {
     "description": "Si reanudas la suscripción, la facturación proseguirá de inmediato.",
     "descriptionWithDate": "Si reanudas esta suscripción, la facturación proseguirá el {{date}}.",
-    "close": "Cerrar",
     "descriptionPriceChanged": "El precio de este tipo de suscripción cambió y se te cobrará un monto de {{price}} por cada próximo pedido.",
     "continue": "Continuar",
     "title": "Reanudar la suscripción",
@@ -100,19 +94,19 @@
     "title": "Cancelar la suscripción",
     "description": "Si cancelas la suscripción, la facturación y la entrega se interrumpirán de inmediato. La cancelación de una suscripción no se puede deshacer. Para dejar de recibir pedidos temporalmente, pausa la suscripción.",
     "action": "Cancelar la suscripción",
-    "close": "Cerrar",
     "errorBannerTitle": "No se puede cancelar la suscripción"
   },
   "errorBoundary": {
     "content": "Se ha producido un error. Vuelve a cargar la página."
   },
   "addressModal": {
-    "save": "Guardar",
     "continue": "Continuar",
-    "cancel": "Cancelar",
     "title": "Editar dirección de envío",
     "errorBannerTitle": "No se puede actualizar la forma de entrega",
-    "noDeliveryOptions": "Esta suscripción no se puede enviar a la dirección que ingresaste. Revisa la dirección para asegurarte de que todos los campos se rellenaron correctamente e inténtalo de nuevo."
+    "noDeliveryOptions": "Esta suscripción no se puede enviar a la dirección que ingresaste. Revisa la dirección para asegurarte de que todos los campos se rellenaron correctamente e inténtalo de nuevo.",
+    "firstName": "Nombre",
+    "lastName": "Apellido(s)",
+    "country": "País o región"
   },
   "successBanner": {
     "paused": "Suscripción pausada",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Próximos pedidos",
-    "close": "Cerrar",
     "skipOrder": "Omitir",
     "skipOrderAccessibilityLabel": "Omitir el pedido del {{orderDate}}",
     "unSkipOrder": "Anular omisión",
@@ -153,5 +146,8 @@
     "title": "No se adquirió ninguna suscripción",
     "description": "Ir a la tienda para adquirir suscripciones"
   },
-  "delayed": "El próximo pedido puede demorarse"
+  "delayed": "El próximo pedido puede demorarse",
+  "close": "Cerrar",
+  "cancel": "Cerrar",
+  "save": "Guardar"
 }

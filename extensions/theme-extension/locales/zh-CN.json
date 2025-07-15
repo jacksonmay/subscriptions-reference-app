@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "自动续订，可跳过或随时取消。",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='查看订阅政策'>查看订阅政策</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>查看订阅政策</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "若要添加到购物车，请转至产品页面并选择购买选项"

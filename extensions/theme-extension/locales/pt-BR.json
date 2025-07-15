@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "Renovações automáticas, suspensões ou cancelamentos quando você quiser.",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='Veja a política de assinaturas'>Veja a política de assinaturas</a>."
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>Veja a política de assinaturas</a>."
   },
   "error": {
     "quick_add_selling_plan_only_message": "Para adicionar ao carrinho, acesse a página do produto e selecione uma opção de compra"

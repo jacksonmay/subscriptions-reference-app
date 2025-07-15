@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Salva",
   "actions": {
-    "updateSuccess": "Impostazioni aggiornate"
+    "updateSuccess": "Impostazioni aggiornate",
+    "updateFailed": "Impossibile aggiornare le impostazioni"
   },
   "title": "Impostazioni",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Azione quando tutti i tentativi non sono andati a buon fine",
       "options": {
-        "skip": "Salta l'abbonamento e invia la notifica",
+        "skip": "Ignora ordine e invia notifica",
         "cancel": "Annulla l'abbonamento e invia la notifica",
         "pause": "Metti in pausa l'abbonamento e invia la notifica"
       }

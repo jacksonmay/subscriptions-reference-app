@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "Kdykoli můžete obnovit, vynechat nebo zrušit.",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='Zobrazit zásady předplatného'>Zobrazit zásady předplatného</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>Zobrazit zásady předplatného</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "Pokud chcete přidat zboží do košíku, přejděte na příslušnou stránku produktu a vyberte možnost nákupu."

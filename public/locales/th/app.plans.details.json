@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "กลับไปยังแผนการสมัครใช้งาน",
-  "planTitle": "ชื่อแผน",
-  "planTitleHelpText": "ลูกค้าจะไม่เห็นสิ่งนี้",
-  "purchaseOptionTitle": "ชื่อตัวเลือกการซื้อ",
+  "planTitle": "คำอธิบายภายใน",
+  "planTitleHelpText": "สำหรับการอ้างอิงของคุณเท่านั้น",
+  "purchaseOptionTitle": "ชื่อ",
   "purchaseOptionTitleHelpText": "ลูกค้าจะเห็นสิ่งนี้ใน{{howToDisplayProductsLink}}ที่มีการซื้อแบบเหมาจ่ายล่วงหน้า",
   "defaultPurchaseOptionTitle": "สมัครใช้งานและบันทึก",
   "saveButtonText": "บันทึก",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "เลือกสินค้าไม่ถูกต้อง",
     "invalidVariant": "เลือกตัวเลือกสินค้าไม่ถูกต้อง",
-    "merchantCodeEmptyError": "ต้องระบุชื่อแผน",
-    "nameEmptyError": "ต้องระบุชื่อตัวเลือกการซื้อ",
+    "merchantCodeEmptyError": "ต้องระบุคำอธิบายภายใน",
+    "nameEmptyError": "ต้องระบุชื่อ",
     "createError": "เกิดข้อผิดพลาดในการสร้างแผนการซื้อแบบเหมาจ่ายล่วงหน้า",
     "updateError": "เกิดข้อผิดพลาดในการอัปเดตแผนการซื้อแบบเหมาจ่ายล่วงหน้า",
     "deliveryFrequencyError": "ความถี่ต้องมีค่ามากกว่า 0",

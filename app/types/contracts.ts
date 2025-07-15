@@ -20,6 +20,7 @@ export interface SubscriptionContractDetails {
     id: string;
   }[];
   lastPaymentStatus?: 'SUCCEEDED' | 'FAILED' | null;
+  lastBillingAttemptErrorType?: string | null;
 }
 export interface SubscriptionContractBillingAttempt {
   id: string;
@@ -32,7 +33,7 @@ export interface SubscriptionDeliveryMethod {
 
 export interface ShippingDelivery extends SubscriptionDeliveryMethod {
   shippingOption: {title?: string | null};
-  address: Omit<CustomerAddress, 'id'>;
+  address: CustomerAddress;
 }
 
 export interface LocalDelivery extends SubscriptionDeliveryMethod {
@@ -40,7 +41,7 @@ export interface LocalDelivery extends SubscriptionDeliveryMethod {
     title?: string | null;
     phone: string;
   };
-  address: Omit<CustomerAddress, 'id'>;
+  address: CustomerAddress;
 }
 
 export interface LocalPickup extends SubscriptionDeliveryMethod {

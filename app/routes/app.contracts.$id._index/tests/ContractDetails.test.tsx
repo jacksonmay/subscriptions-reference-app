@@ -18,10 +18,12 @@ import type {
   SubscriptionBillingAttemptInsufficientStockProductVariantsError,
   SubscriptionBillingCycleBillingCycleStatus,
   SubscriptionContractSubscriptionStatus,
+  SubscriptionContractLastBillingErrorType,
+  CountryCode,
 } from 'types/admin.types';
 import {afterEach, describe, expect, it, vi} from 'vitest';
 import {formatPrice} from '~/utils/helpers/money';
-import {SubscriptionContractStatus} from '~/types';
+import {SubscriptionContractStatus, BillingAttemptErrorType} from '~/types';
 import {action as pauseAction} from '../../app.contracts.$id.pause/route';
 import {action as resumeAction} from '../../app.contracts.$id.resume/route';
 import {action as billAttemptAction} from '../../app.contracts.$id.bill-contract/route';
@@ -175,7 +177,9 @@ const graphQLResponseWithInventoryError = {
       subscriptionContract: createMockSubscriptionContract({
         subscriptionContract: {
           id: 'gid://1',
-          status: 'FAILED' as SubscriptionContractSubscriptionStatus,
+          status: 'ACTIVE' as SubscriptionContractSubscriptionStatus,
+          lastBillingAttemptErrorType:
+            BillingAttemptErrorType.InventoryError as SubscriptionContractLastBillingErrorType,
         },
       }),
     },
@@ -236,6 +240,12 @@ const graphQLResponseWithInventoryError = {
     },
   },
 };
+
+const graphQLResponseWithInventoryAllocationError = structuredClone(
+  graphQLResponseWithInventoryError,
+);
+graphQLResponseWithInventoryAllocationError.SubscriptionPastBillingCycles.data.subscriptionBillingCycles.edges[0].node.billingAttempts.edges[0].node.processingError.code =
+  'INVENTORY_ALLOCATIONS_NOT_FOUND' as SubscriptionBillingAttemptErrorCode;
 
 const {mockGraphQL, graphQL} = mockShopifyServer();
 
@@ -404,8 +414,17 @@ describe('Contract details', () => {
       });
 
       it('is not displayed for local delivery delivery method', async () => {
+        const localDeliveryMethod = createGraphQLLocalDeliveryDeliveryMethod();
         const graphQLResponses = getDefaultGraphQLResponses({
-          deliveryMethod: createGraphQLLocalDeliveryDeliveryMethod(),
+          deliveryMethod: {
+            ...localDeliveryMethod,
+            address: {
+              ...localDeliveryMethod.address,
+              countryCode: localDeliveryMethod.address
+                .countryCodeV2 as CountryCode,
+            },
+            __typename: 'SubscriptionDeliveryMethodLocalDelivery' as const,
+          },
           deliveryPolicy: deliveryPolicy,
         });
 
@@ -417,8 +436,12 @@ describe('Contract details', () => {
       });
 
       it('is displayed for local pickup delivery method', async () => {
+        const pickupDeliveryMethod = createGraphQLPickupDeliveryMethod();
         const graphQLResponses = getDefaultGraphQLResponses({
-          deliveryMethod: createGraphQLPickupDeliveryMethod(),
+          deliveryMethod: {
+            ...pickupDeliveryMethod,
+            __typename: 'SubscriptionDeliveryMethodPickup' as const,
+          },
           deliveryPolicy: deliveryPolicy,
         });
 
@@ -728,6 +751,45 @@ describe('Contract details', () => {
     it('does not display the order number, and purchase date', async () => {
       await mountContractDetails({graphQLResponses: newGraphQLResponse});
       expect(screen.queryByText(`Order #`)).not.toBeInTheDocument();
+    });
+  });
+
+  describe('inventory allocation not found banner', () => {
+    it('displays displays when inventory allocation not found on most recent billing attempt', async () => {
+      await mountContractDetails({
+        graphQLResponses: graphQLResponseWithInventoryAllocationError,
+      });
+
+      const date = formatDate(defaultExpectedBillingDate.toString(), 'en');
+
+      expect(
+        screen.getByText(`${date} order couldn't be created`),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          /Customer address is in a shipping zone with no available inventory or is not supported by current shipping settings/,
+        ),
+      ).toBeInTheDocument();
+    });
+
+    it('does not display when most recemt billing attempt has INSUFFICIENT_INVENTORY error', async () => {
+      await mountContractDetails({
+        graphQLResponses: graphQLResponseWithInventoryError,
+      });
+
+      expect(
+        screen.queryByText(
+          /Customer address is in a shipping zone with no available inventory/,
+        ),
+      ).not.toBeInTheDocument();
+    });
+
+    it('does not display by default', async () => {
+      await mountContractDetails();
+
+      expect(
+        screen.queryByText(/order couldn't be created/),
+      ).not.toBeInTheDocument();
     });
   });
 

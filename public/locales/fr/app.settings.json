@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Enregistrer",
   "actions": {
-    "updateSuccess": "Paramètres mis à jour"
+    "updateSuccess": "Paramètres mis à jour",
+    "updateFailed": "Échec de la mise à jour des paramètres"
   },
   "title": "Paramètres",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Action lorsque toutes les nouvelles tentatives ont échoué",
       "options": {
-        "skip": "Ignorer l’abonnement et envoyer une notification",
+        "skip": "Ignorer la commande et envoyer une notification",
         "cancel": "Annuler l’abonnement et envoyer une notification",
         "pause": "Suspendre l’abonnement et envoyer une notification"
       }

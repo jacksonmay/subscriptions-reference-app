@@ -13,7 +13,6 @@ import {
   CustomerEmailTemplateName,
   CustomerSendEmailService,
 } from './CustomerSendEmailService';
-import {SubscriptionContractFailService} from './SubscriptionContractFailService';
 
 interface RetryDunningServiceParams {
   shopDomain: string;
@@ -39,8 +38,6 @@ export class RetryDunningService {
     if (this.params.sendCustomerEmail) {
       await this.sendPaymentFailureEmail();
     }
-
-    await this.failSubscriptionContract();
 
     this.log.info('RetryDunningService completed successfully');
   }
@@ -79,13 +76,6 @@ export class RetryDunningService {
       customerId,
       this.templateInput,
     );
-  }
-
-  private async failSubscriptionContract() {
-    await new SubscriptionContractFailService(
-      this.shopDomain,
-      this.subscriptionContract.id,
-    ).run();
   }
 
   private get scheduledTime() {

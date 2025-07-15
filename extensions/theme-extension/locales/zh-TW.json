@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "隨時自動續約、略過或取消。",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='檢視訂閱政策'>檢視訂閱政策</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>檢視訂閱政策</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "若要將商品加入購物車，請前往商店頁面並選取購買選項"

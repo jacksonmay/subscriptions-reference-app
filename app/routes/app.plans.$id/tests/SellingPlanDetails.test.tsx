@@ -361,7 +361,7 @@ async function mountSellingPlanDetails({
   });
 
   try {
-    return await screen.findByLabelText('Plan title');
+    return await screen.findByLabelText('Internal description');
   } catch {
     return await screen.getAllByText('Unexpected Application Error!')[0];
   }
@@ -376,10 +376,8 @@ describe('SellingPlanDetails', () => {
     it('renders the form with default field values', async () => {
       await mountSellingPlanDetails({id: 'create'});
 
-      const merchantCodeInput = screen.getByLabelText('Plan title');
-      const purchaseOptionTitleInput = screen.getByLabelText(
-        'Purchase option title',
-      );
+      const merchantCodeInput = screen.getByLabelText('Internal description');
+      const purchaseOptionTitleInput = screen.getByLabelText('Title');
 
       expect(merchantCodeInput).toHaveValue('');
       expect(purchaseOptionTitleInput).toHaveValue('Subscribe and save');
@@ -401,30 +399,22 @@ describe('SellingPlanDetails', () => {
       await userEvent.click(screen.getByRole('button', {name: 'Save'}));
 
       expect(
-        await screen.findByText('Plan title is required'),
+        await screen.findByText('Internal description is required'),
       ).toBeInTheDocument();
     });
 
     it('returns an error when name is blank', async () => {
       await mountSellingPlanDetails({id: 'create'});
 
-      userEvent.clear(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
-      );
+      userEvent.clear(screen.getByRole('textbox', {name: 'Title'}));
 
       await userEvent.click(screen.getByRole('button', {name: 'Save'}));
 
-      expect(
-        await screen.findByText('Purchase option title is required'),
-      ).toBeInTheDocument();
+      expect(await screen.findByText('Title is required')).toBeInTheDocument();
     });
 
     it('returns an error when delivery frequency is less than 1', async () => {
       await mountSellingPlanDetails({id: 'create'});
-
-      userEvent.clear(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
-      );
 
       await userEvent.clear(screen.getByLabelText('Delivery frequency'));
       await userEvent.type(screen.getByLabelText('Delivery frequency'), '0');
@@ -439,10 +429,6 @@ describe('SellingPlanDetails', () => {
     it('returns an error when discount value not positive', async () => {
       await mountSellingPlanDetails({id: 'create'});
 
-      userEvent.clear(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
-      );
-
       await userEvent.clear(screen.getAllByLabelText('Percentage off')[1]);
       await userEvent.type(screen.getAllByLabelText('Percentage off')[1], '0');
 
@@ -455,10 +441,6 @@ describe('SellingPlanDetails', () => {
 
     it('returns an error when percent discount is over 100', async () => {
       await mountSellingPlanDetails({id: 'create'});
-
-      userEvent.clear(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
-      );
 
       await userEvent.type(
         screen.getAllByLabelText('Percentage off')[1],
@@ -476,16 +458,14 @@ describe('SellingPlanDetails', () => {
       await mountSellingPlanDetails({id: 'create'});
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Plan title'}),
+        screen.getByRole('textbox', {name: 'Internal description'}),
         'Plan Title',
       );
 
-      await userEvent.clear(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
-      );
+      await userEvent.clear(screen.getByRole('textbox', {name: 'Title'}));
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
+        screen.getByRole('textbox', {name: 'Title'}),
         'Purchase Option Title',
       );
 
@@ -527,7 +507,7 @@ describe('SellingPlanDetails', () => {
       await mountSellingPlanDetails({id: 'create'});
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Plan title'}),
+        screen.getByRole('textbox', {name: 'Internal description'}),
         'Plan Title',
       );
 
@@ -613,7 +593,7 @@ describe('SellingPlanDetails', () => {
       await mountSellingPlanDetails({id: 'create'});
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Plan title'}),
+        screen.getByRole('textbox', {name: 'Internal description'}),
         'Plan Title',
       );
 
@@ -702,7 +682,7 @@ describe('SellingPlanDetails', () => {
       await mountSellingPlanDetails({id: 'create'});
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Plan title'}),
+        screen.getByRole('textbox', {name: 'Internal description'}),
         'Plan Title',
       );
 
@@ -805,7 +785,7 @@ describe('SellingPlanDetails', () => {
       });
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
+        screen.getByRole('textbox', {name: 'Title'}),
         'Purchase Option Title',
       );
 
@@ -823,7 +803,7 @@ describe('SellingPlanDetails', () => {
       await mountSellingPlanDetails({id: 'create'});
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Plan title'}),
+        screen.getByRole('textbox', {name: 'Internal description'}),
         'Plan Title',
       );
 
@@ -858,7 +838,7 @@ describe('SellingPlanDetails', () => {
       await mountSellingPlanDetails({id: 'create', shopCurrencyCode: 'GBP'});
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Plan title'}),
+        screen.getByRole('textbox', {name: 'Internal description'}),
         'Plan Title',
       );
       await userEvent.click(screen.getByRole('radio', {name: 'Amount off'}));
@@ -924,12 +904,10 @@ describe('SellingPlanDetails', () => {
         graphQLResponses: mockGraphQLResponses,
       });
 
-      expect(screen.getByLabelText('Plan title')).toHaveValue(
+      expect(screen.getByLabelText('Internal description')).toHaveValue(
         'subscribe-2-save',
       );
-      expect(screen.getByLabelText('Purchase option title')).toHaveValue(
-        'Subscribe 2 save',
-      );
+      expect(screen.getByLabelText('Title')).toHaveValue('Subscribe 2 save');
     });
     it('displays merchantCode as page title', async () => {
       const mockGraphQLResponses = {
@@ -1144,25 +1122,23 @@ describe('SellingPlanDetails', () => {
     it('returns an error when merchant code is blank', async () => {
       await mountSellingPlanDetails({id: '1'});
 
-      await userEvent.clear(screen.getByRole('textbox', {name: 'Plan title'}));
+      await userEvent.clear(
+        screen.getByRole('textbox', {name: 'Internal description'}),
+      );
       await userEvent.click(screen.getByRole('button', {name: 'Save'}));
 
       expect(
-        await screen.findByText('Plan title is required'),
+        await screen.findByText('Internal description is required'),
       ).toBeInTheDocument();
     });
     it('returns an error when name is blank', async () => {
       await mountSellingPlanDetails({id: '1'});
 
-      await userEvent.clear(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
-      );
+      await userEvent.clear(screen.getByRole('textbox', {name: 'Title'}));
 
       await userEvent.click(screen.getByRole('button', {name: 'Save'}));
 
-      expect(
-        await screen.findByText('Purchase option title is required'),
-      ).toBeInTheDocument();
+      expect(await screen.findByText('Title is required')).toBeInTheDocument();
     });
 
     it('shows an error message when there are selling plans with the same delivery options', async () => {
@@ -1234,18 +1210,18 @@ describe('SellingPlanDetails', () => {
         graphQLResponses: mockGraphQLResponses,
       });
 
-      await userEvent.clear(screen.getByRole('textbox', {name: 'Plan title'}));
+      await userEvent.clear(
+        screen.getByRole('textbox', {name: 'Internal description'}),
+      );
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Plan title'}),
+        screen.getByRole('textbox', {name: 'Internal description'}),
         'New plan Title',
       );
 
-      await userEvent.clear(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
-      );
+      await userEvent.clear(screen.getByRole('textbox', {name: 'Title'}));
 
       await userEvent.type(
-        screen.getByRole('textbox', {name: 'Purchase option title'}),
+        screen.getByRole('textbox', {name: 'Title'}),
         'New purchase option title',
       );
 
@@ -1907,7 +1883,7 @@ describe('SellingPlanDetails', () => {
 
       expect(mockShopify.saveBar.show).not.toHaveBeenCalled();
 
-      const planTitle = screen.getByLabelText('Plan title');
+      const planTitle = screen.getByLabelText('Internal description');
       await userEvent.type(planTitle, 'My test plan');
 
       expect(mockShopify.saveBar.show).toHaveBeenCalledOnce();
@@ -1953,7 +1929,7 @@ describe('SellingPlanDetails', () => {
       await mountSellingPlanDetails({id: '34', graphQLResponses});
 
       expect(mockShopify.saveBar.show).not.toHaveBeenCalled();
-      const planTitle = screen.getByLabelText('Plan title');
+      const planTitle = screen.getByLabelText('Internal description');
       await userEvent.type(planTitle, 'My test plan');
       expect(mockShopify.saveBar.show).toHaveBeenCalled();
 

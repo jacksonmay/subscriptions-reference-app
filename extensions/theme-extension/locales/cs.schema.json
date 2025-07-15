@@ -11,13 +11,9 @@
     "border_title": "Ohraničení",
     "border_thickness": "Tloušťka",
     "border_radius": "Poloměr rohu",
-    "colors_text_title": "Název",
     "colors_text_body": "Hlavní část",
     "colors_background_border_title": "Pozadí a ohraničení",
     "colors_background": "Pozadí",
-    "colors_dividers": "Oddělovače",
-    "supporting_text_title": "Podpůrný text",
-    "supporting_text_subtitle": "Název",
-    "supporting_text_input_default": "Možnosti nákupu"
+    "colors_dividers": "Oddělovače"
   }
 }

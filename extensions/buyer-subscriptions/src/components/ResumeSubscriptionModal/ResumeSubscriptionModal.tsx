@@ -127,7 +127,7 @@ export function ResumeSubscriptionModal({
         <InlineLayout spacing="loose" columns={['fill', 'auto', 'auto']}>
           <InlineSpacer />
           <Button onPress={() => overlay.close(RESUME_MODAL_ID)} kind="plain">
-            {i18n.translate('resumeSubscriptionModal.close')}
+            {i18n.translate('close')}
           </Button>
           <Button onPress={handleResumeSubscription} loading={loading}>
             {i18n.translate('resumeSubscriptionModal.continue')}

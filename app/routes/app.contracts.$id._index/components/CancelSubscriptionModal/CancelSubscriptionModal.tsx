@@ -43,7 +43,7 @@ export function CancelSubscriptionModal({
         <button
           variant="primary"
           tone="critical"
-          loading={loading ? 'true' : undefined}
+          loading={loading ? '' : undefined}
           onClick={cancelSubscription}
         >
           {t('actions.cancel.modalTitle')}

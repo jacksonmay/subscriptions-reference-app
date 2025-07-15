@@ -19,13 +19,14 @@ import {DisableShopJob, DeleteBillingScheduleJob} from './shop';
 import {
   AddFieldsToMetaobjectJob,
   EnqueueAddFieldsToMetaobjectJob,
+  TransitionFailedContractsToActiveJob,
+  EnqueueTransitionFailedContractsToActiveJob,
 } from './migrations';
 
 import {DunningStartJob, DunningStopJob} from './dunning';
 import {TagSubscriptionOrderJob} from './tags';
 import {CustomerSendEmailJob, MerchantSendEmailJob} from './email';
-import {SendWeeklyInventoryFailureEmailJob} from './email/SendWeeklyInventoryFailureEmailJob';
-import {SendMonthlyInventoryFailureEmailJob} from './email/SendMonthlyInventoryFailureEmailJob';
+import {EnqueueInventoryFailureEmailJob} from './email/EnqueueInventoryFailureEmailJob';
 import {SendInventoryFailureEmailJob} from './email/SendInventoryFailureEmailJob';
 
 export {
@@ -47,8 +48,7 @@ export {TagSubscriptionOrderJob} from './tags';
 export {CreateSellingPlanTranslationsJob} from './webhooks';
 
 export {CustomerSendEmailJob, MerchantSendEmailJob} from './email';
-export {SendMonthlyInventoryFailureEmailJob} from './email/SendMonthlyInventoryFailureEmailJob';
-export {SendWeeklyInventoryFailureEmailJob} from './email/SendWeeklyInventoryFailureEmailJob';
+export {EnqueueInventoryFailureEmailJob} from './email/EnqueueInventoryFailureEmailJob';
 export {SendInventoryFailureEmailJob} from './email/SendInventoryFailureEmailJob';
 
 export const jobs = (() => {
@@ -73,6 +73,8 @@ export const jobs = (() => {
   DisableShopJob,
   EnqueueAddFieldsToMetaobjectJob,
   AddFieldsToMetaobjectJob,
+  EnqueueTransitionFailedContractsToActiveJob,
+  TransitionFailedContractsToActiveJob,
   ChargeBillingCyclesJob,
   RecurringBillingChargeJob,
   ScheduleShopsToChargeBillingCyclesJob,
@@ -82,8 +84,7 @@ export const jobs = (() => {
   DunningStopJob,
   CustomerSendEmailJob,
   MerchantSendEmailJob,
-  SendMonthlyInventoryFailureEmailJob,
-  SendWeeklyInventoryFailureEmailJob,
+  EnqueueInventoryFailureEmailJob,
   SendInventoryFailureEmailJob,
   TagSubscriptionOrderJob,
   CreateSellingPlanTranslationsJob,

@@ -3,10 +3,7 @@ import '@shopify/shopify-app-remix/adapters/node';
 import {createActiveBillingSchedule} from '~/models/BillingSchedule/BillingSchedule.server';
 import {logger} from '~/utils/logger.server';
 
-import {
-  ensureSettingsMetaobjectDefinitionExists,
-  ensureSettingsMetaobjectExists,
-} from '~/models/Settings/Settings.server';
+import {ensureSettingsMetaobjectDefinitionAndObjectExists} from '~/models/Settings/Settings.server';
 
 export class AfterAuthService {
   steps: Function[] = [
@@ -15,10 +12,8 @@ export class AfterAuthService {
     },
 
     async function ensureSettingsMetaobjectStep(this: AfterAuthService) {
-      await ensureSettingsMetaobjectDefinitionExists(this.admin.graphql);
-      await ensureSettingsMetaobjectExists(
+      await ensureSettingsMetaobjectDefinitionAndObjectExists(
         this.admin.graphql,
-        this.session.shop,
       );
     },
   ];

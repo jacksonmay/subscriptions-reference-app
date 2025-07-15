@@ -11,13 +11,9 @@
     "border_title": "Bordo",
     "border_thickness": "Spessore",
     "border_radius": "Raggio angolo",
-    "colors_text_title": "Titolo",
     "colors_text_body": "Corpo",
     "colors_background_border_title": "Sfondi e bordi",
     "colors_background": "Sfondo",
-    "colors_dividers": "Divisori",
-    "supporting_text_title": "Testo di supporto",
-    "supporting_text_subtitle": "Titolo",
-    "supporting_text_input_default": "Opzioni di acquisto"
+    "colors_dividers": "Divisori"
   }
 }

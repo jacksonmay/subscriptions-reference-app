@@ -11,13 +11,9 @@
     "border_title": "Kant",
     "border_thickness": "Tjocklek",
     "border_radius": "Hörnradie",
-    "colors_text_title": "Titel",
     "colors_text_body": "Brödtext",
     "colors_background_border_title": "Bakgrunder och kanter",
     "colors_background": "Bakgrund",
-    "colors_dividers": "Avgränsare",
-    "supporting_text_title": "Stödtext",
-    "supporting_text_subtitle": "Titel",
-    "supporting_text_input_default": "Köpalternativ"
+    "colors_dividers": "Avgränsare"
   }
 }

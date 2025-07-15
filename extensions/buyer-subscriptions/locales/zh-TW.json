@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "更換付款方式",
-    "save": "儲存",
     "paymentMethod": "付款方式",
     "edit": "編輯",
-    "close": "關閉",
     "errorBannerTitle": "無法更新付款方式"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "略過下一筆訂單",
     "generic": "是否要略過下一筆訂單？",
     "date": "是否要略過下一筆訂單？您的訂閱將於 {{date}}恢復。",
-    "errorBannerTitle": "無法略過下一筆訂單",
-    "close": "關閉"
+    "errorBannerTitle": "無法略過下一筆訂單"
   },
   "pauseSubscriptionModal": {
     "title": "暫停訂閱",
     "action": "暫停訂閱",
-    "close": "關閉",
     "description": "暫停訂閱將立即生效，您將不會收到任何進一步的收費或下期訂單。您可以隨時恢復此訂閱。",
     "errorBannerTitle": "無法暫停訂閱"
   },
@@ -76,14 +72,12 @@
     "pause": "暫停",
     "skip": "略過下一筆訂單",
     "resume": "繼續",
-    "cancel": "取消",
     "manage": "管理",
     "viewSubscriptionDetails": "檢視詳細資訊"
   },
   "resumeSubscriptionModal": {
     "description": "若您恢復此訂閱，系統會立即恢復計費。",
     "descriptionWithDate": "若您恢復此訂閱，系統將於 {{date}}恢復計費。",
-    "close": "關閉",
     "descriptionPriceChanged": "此訂閱方案的價格有所變動，您後續每筆訂單將會收取 {{price}}。",
     "continue": "繼續",
     "title": "恢復訂閱",
@@ -100,19 +94,19 @@
     "title": "取消訂閱",
     "description": "若您取消訂閱，系統會立即結束計費和配送。取消訂閱的動作無法復原。若要暫時停止接收訂單，請暫停訂閱。",
     "action": "取消訂閱",
-    "close": "關閉",
     "errorBannerTitle": "無法取消訂閱"
   },
   "errorBoundary": {
     "content": "發生錯誤，請重新整理頁面"
   },
   "addressModal": {
-    "save": "儲存",
     "continue": "繼續",
-    "cancel": "取消",
     "title": "編輯運送地址",
     "errorBannerTitle": "無法更新配送方式",
-    "noDeliveryOptions": "此訂閱無法運送至您輸入的地址。請檢視您的地址，以確認已正確輸入所有欄位，然後再試一次。"
+    "noDeliveryOptions": "此訂閱無法運送至您輸入的地址。請檢視您的地址，以確認已正確輸入所有欄位，然後再試一次。",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "country": "國家/地區"
   },
   "successBanner": {
     "paused": "訂閱已暫停",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "下期訂單",
-    "close": "關閉",
     "skipOrder": "跳過",
     "skipOrderAccessibilityLabel": "略過 {{orderDate}}的訂單",
     "unSkipOrder": "取消略過",
@@ -153,5 +146,8 @@
     "title": "未購買訂閱方案",
     "description": "前往商店購買訂閱方案"
   },
-  "delayed": "下一筆訂單可能會延遲"
+  "delayed": "下一筆訂單可能會延遲",
+  "close": "關閉",
+  "cancel": "取消",
+  "save": "儲存"
 }

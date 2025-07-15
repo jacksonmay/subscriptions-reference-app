@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Kaydet",
   "actions": {
-    "updateSuccess": "Ayarlar güncellendi"
+    "updateSuccess": "Ayarlar güncellendi",
+    "updateFailed": "Ayarlar güncellenemedi"
   },
   "title": "Ayarlar",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Tüm yeniden deneme girişimleri başarısız olduğunda yapılacak işlem",
       "options": {
-        "skip": "Aboneliği atla ve bildirim gönder",
+        "skip": "Siparişi atla ve bildirim gönder",
         "cancel": "Aboneliği iptal et ve bildirim gönder",
         "pause": "Aboneliği duraklat ve bildirim gönder"
       }

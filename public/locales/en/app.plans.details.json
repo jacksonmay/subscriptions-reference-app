@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Back to subscription plans",
-  "planTitle": "Plan title",
-  "planTitleHelpText": "Customers won't see this.",
-  "purchaseOptionTitle": "Purchase option title",
+  "planTitle": "Internal description",
+  "planTitleHelpText": "For your reference only",
+  "purchaseOptionTitle": "Title",
   "purchaseOptionTitleHelpText": "Customers will see this on {{howToDisplayProductsLink}} that have subscriptions.",
   "purchaseOptionTitleHelpLinkText": "storefront product pages",
   "defaultPurchaseOptionTitle": "Subscribe and save",
@@ -12,9 +12,9 @@
     "pageTitle": "Create subscription plan"
   },
   "SubscriptionPlanForm": {
-    "merchantCodeEmptyError": "Plan title is required",
+    "merchantCodeEmptyError": "Internal description is required",
     "missingSellingPlanGroup": "Subscription plan not found",
-    "nameEmptyError": "Purchase option title is required",
+    "nameEmptyError": "Title is required",
     "createError": "Error creating subscription plan",
     "createSuccess": "Subscription plan created",
     "updateError": "Error updating subscription plan",

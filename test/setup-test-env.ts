@@ -2,7 +2,6 @@ import '@testing-library/jest-dom/vitest';
 import '@testing-library/react';
 import '@shopify/react-testing/matchers';
 
-import {installGlobals} from '@remix-run/node';
 import {beforeAll, vi} from 'vitest';
 import {API_KEY, API_SECRET_KEY, APP_URL, SCOPE} from './constants';
 
@@ -10,8 +9,6 @@ process.env.SCOPES = SCOPE;
 process.env.SHOPIFY_APP_URL = APP_URL;
 process.env.SHOPIFY_API_KEY = API_KEY;
 process.env.SHOPIFY_API_SECRET = API_SECRET_KEY;
-
-installGlobals();
 
 globalThis.__REACT_DEVTOOLS_GLOBAL_HOOK__ = {isDisabled: true};
 

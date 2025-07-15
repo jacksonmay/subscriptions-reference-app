@@ -9,7 +9,8 @@ import {
 } from '@shopify/polaris';
 import {useCallback, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {SubscriptionContractStatus, type UpcomingBillingCycle} from '~/types';
+import type {PastBillingCycle, UpcomingBillingCycle} from '~/types';
+import {SubscriptionContractStatus} from '~/types';
 import {StatusBadge} from '~/components';
 import {
   getNextBillingCycleDates,
@@ -32,6 +33,7 @@ import {useFormatDate} from '~/utils/helpers/date';
 import {useBillContractAction} from '~/routes/app.contracts.$id._index/hooks/useBillContractAction';
 import {CreateOrderModal} from '~/routes/app.contracts.$id._index/components/CreateOrderModal/CreateOrderModal';
 import {FailedBillingAttemptBanner} from './components/FailedBillingAttemptBanner/FailedBillingAttemptBanner';
+import {InventoryAllocationErrorBanner} from './components/InventoryAllocationErrorBanner/InventoryAllocationErrorBanner';
 
 export const handle = {
   i18n: 'app.contracts',
@@ -202,10 +204,16 @@ export default function ContractsDetailsPage() {
 
   const shouldShowFailedBillingAttemptBanner =
     !hideStaleInventoryBanner &&
-    failedBillingCycle &&
+    subscriptionContract.lastBillingAttemptErrorType === 'INVENTORY_ERROR' &&
+    failedBillingCycle?.billingAttemptErrorCode === 'INSUFFICIENT_INVENTORY' &&
     !isAttemptInProgress &&
     (status === SubscriptionContractStatus.Active ||
       status === SubscriptionContractStatus.Failed);
+
+  const shouldShowInventoryAllocationErrorBanner =
+    subscriptionContract.lastBillingAttemptErrorType === 'INVENTORY_ERROR' &&
+    failedBillingCycle?.billingAttemptErrorCode ===
+      'INVENTORY_ALLOCATIONS_NOT_FOUND';
 
   return (
     <Page
@@ -227,6 +235,11 @@ export default function ContractsDetailsPage() {
           productCount={
             failedBillingCycle.insufficientStockProductVariants.length
           }
+        />
+      ) : null}
+      {shouldShowInventoryAllocationErrorBanner ? (
+        <InventoryAllocationErrorBanner
+          billingCycleDate={failedBillingCycle.billingAttemptExpectedDate}
         />
       ) : null}
       <Box paddingBlockEnd="400">
@@ -285,7 +298,9 @@ export default function ContractsDetailsPage() {
                 />
               ) : null}
               {pastBillingCycles.length > 0 ? (
-                <PastOrdersCard pastBillingCycles={pastBillingCycles} />
+                <PastOrdersCard
+                  pastBillingCycles={pastBillingCycles as PastBillingCycle[]}
+                />
               ) : null}
             </BlockStack>
           </Grid.Cell>

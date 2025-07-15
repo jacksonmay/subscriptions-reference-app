@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Guardar",
   "actions": {
-    "updateSuccess": "Definições atualizadas"
+    "updateSuccess": "Definições atualizadas",
+    "updateFailed": "Falha ao atualizar definições"
   },
   "title": "Definições",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Ação quando todas as tentativas de repetição falharem",
       "options": {
-        "skip": "Ignorar subscrição e enviar notificação",
+        "skip": "Ignorar encomenda e enviar notificação",
         "cancel": "Cancelar subscrição e enviar notificação",
         "pause": "Suspender a subscrição e enviar notificação"
       }

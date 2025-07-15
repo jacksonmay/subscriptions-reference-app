@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Zahlungsmethode ersetzen",
-    "save": "Speichern",
     "paymentMethod": "Zahlungsmethode",
     "edit": "Bearbeiten",
-    "close": "Schließen",
     "errorBannerTitle": "Zahlungsmethode kann nicht aktualisiert werden"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Nächste Bestellung überspringen",
     "generic": "Möchtest du die nächste Bestellung überspringen?",
     "date": "Möchtest du die nächste Bestellung überspringen? Dein Abonnement wird am {{date}} fortgesetzt",
-    "errorBannerTitle": "Nächste Bestellung kann nicht übersprungen werden",
-    "close": "Schließen"
+    "errorBannerTitle": "Nächste Bestellung kann nicht übersprungen werden"
   },
   "pauseSubscriptionModal": {
     "title": "Abonnement pausieren",
     "action": "Abonnement pausieren",
-    "close": "Schließen",
     "description": "Dein Abonnement wird ab sofort pausiert. Dir wird nichts weiter in Rechnung gestellt und du erhältst keine weiteren Bestellungen. Du kannst dieses Abonnement jederzeit fortsetzen.",
     "errorBannerTitle": "Abonnement kann nicht pausiert werden"
   },
@@ -76,14 +72,12 @@
     "pause": "Pausieren",
     "skip": "Nächste Bestellung überspringen",
     "resume": "Fortsetzen",
-    "cancel": "Abbrechen",
     "manage": "Verwalten",
     "viewSubscriptionDetails": "Details anzeigen"
   },
   "resumeSubscriptionModal": {
     "description": "Wenn du dieses Abonnement fortsetzt, wird auch die Abrechnung sofort fortgesetzt.",
     "descriptionWithDate": "Wenn du dieses Abonnement fortsetzt, wird die Abrechnung am {{date}} fortgesetzt.",
-    "close": "Schließen",
     "descriptionPriceChanged": "Der Preis für dieses Abonnement hat sich geändert und dir werden pro anstehende Bestellung {{price}} berechnet.",
     "continue": "Fortfahren",
     "title": "Abonnement fortsetzen",
@@ -100,19 +94,19 @@
     "title": "Abonnement stornieren",
     "description": "Wenn du dein Abonnement stornierst, erhältst du keine Abrechnungen oder Zustellungen mehr. Die Stornierung eines Abonnement kann nicht rückgängig gemacht werden. Um vorübergehend keine Bestellungen zu erhalten, pausiere dein Abonnement.",
     "action": "Abonnement stornieren",
-    "close": "Schließen",
     "errorBannerTitle": "Abonnement kann nicht storniert werden"
   },
   "errorBoundary": {
     "content": "Etwas ist schiefgelaufen. Bitte lade die Seite erneut."
   },
   "addressModal": {
-    "save": "Speichern",
     "continue": "Fortfahren",
-    "cancel": "Abbrechen",
     "title": "Lieferadresse bearbeiten",
     "errorBannerTitle": "Zustellmethode kann nicht aktualisiert werden",
-    "noDeliveryOptions": "Dieses Abonnement kann nicht an die von dir angegebene Adresse versendet werden. Überprüfe deine Adresse, um sicherzustellen, dass alle Felder richtig ausgefüllt wurden, und versuche es erneut."
+    "noDeliveryOptions": "Dieses Abonnement kann nicht an die von dir angegebene Adresse versendet werden. Überprüfe deine Adresse, um sicherzustellen, dass alle Felder richtig ausgefüllt wurden, und versuche es erneut.",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "country": "Land/Region"
   },
   "successBanner": {
     "paused": "Abonnement pausiert",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Anstehende Bestellung",
-    "close": "Schließen",
     "skipOrder": "Überspringen",
     "skipOrderAccessibilityLabel": "Bestellung am {{orderDate}} übersprungen",
     "unSkipOrder": "Überspringen aufheben",
@@ -153,5 +146,8 @@
     "title": "Keine Abonnements gekauft",
     "description": "Gehe zum Shop, um Abonnements zu kaufen."
   },
-  "delayed": "Die nächste Bestellung ist möglicherweise verspätet."
+  "delayed": "Die nächste Bestellung ist möglicherweise verspätet.",
+  "close": "Schließen",
+  "cancel": "Schließen",
+  "save": "Speichern"
 }

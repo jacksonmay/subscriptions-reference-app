@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "いつでも自動更新、スキップ、キャンセルできます。",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='サブスクリプションのポリシーを表示する'>サブスクリプションのポリシーを表示する</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>サブスクリプションのポリシーを表示する</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "カートに追加するには、商品ページに移動し、購入オプションを選択してください"

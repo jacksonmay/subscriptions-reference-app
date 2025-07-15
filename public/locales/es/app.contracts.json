@@ -257,6 +257,10 @@
       "actions": {
         "cancel": "Cancelar",
         "update": "Actualizar"
+      },
+      "localDeliveryBanner": {
+        "content": "Para la entrega local se requieren una dirección y un número de teléfono. {link}",
+        "link": "Gestionar direcciones en la página del cliente"
       }
     }
   },
@@ -346,6 +350,11 @@
         "cancel": "Cancelar"
       },
       "outOfStock": "Este producto se sobrevenderá en este pedido"
+    },
+    "allocationError": {
+      "title": "No se ha podido crear el pedido del {date}",
+      "description": "la dirección del cliente está en una zona de envío sin inventario o no se admite con la configuración de envío actual. Actualiza el inventario o {settingsLink} para reanudar los pedidos.",
+      "settingsLinkText": "edita la configuración de envío"
     }
   }
 }

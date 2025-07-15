@@ -118,8 +118,10 @@ export default function Index() {
     sellingPlanGroupPageInfo.hasNextPage;
 
   useEffect(() => {
-    searchParams.delete(SELLING_PLAN_DELETED_PARAM);
-    setSearchParams(searchParams);
+    if (searchParams.has(SELLING_PLAN_DELETED_PARAM)) {
+      searchParams.delete(SELLING_PLAN_DELETED_PARAM);
+      setSearchParams(searchParams);
+    }
   }, [searchParams, setSearchParams]);
 
   return (

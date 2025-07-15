@@ -11,13 +11,9 @@
     "border_title": "邊框",
     "border_thickness": "粗細",
     "border_radius": "圓角半徑",
-    "colors_text_title": "名稱",
     "colors_text_body": "內文",
     "colors_background_border_title": "背景和邊框",
     "colors_background": "背景",
-    "colors_dividers": "分隔線",
-    "supporting_text_title": "說明文字",
-    "supporting_text_subtitle": "名稱",
-    "supporting_text_input_default": "購買選項"
+    "colors_dividers": "分隔線"
   }
 }

@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "取消",
         "update": "更新"
+      },
+      "localDeliveryBanner": {
+        "content": "當地配送須提供含電話號碼的地址。{link}",
+        "link": "管理顧客頁面中的地址"
       }
     }
   },
@@ -330,6 +334,11 @@
         "ignoreAndCreate": "建立訂單",
         "cancel": "取消"
       }
+    },
+    "allocationError": {
+      "title": "無法建立 {date} 的訂單",
+      "description": "顧客地址所在運送區域沒有可用庫存，或不符合目前運送設定的支援範圍。請更新庫存，或{settingsLink}以恢復訂單。",
+      "settingsLinkText": "編輯運送設定"
     }
   }
 }

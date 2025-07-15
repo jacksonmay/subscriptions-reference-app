@@ -96,7 +96,7 @@ export function CancelSubscriptionModal({
         <InlineLayout spacing="loose" columns={['fill', 'auto', 'auto']}>
           <InlineSpacer />
           <Button onPress={() => overlay.close(CANCEL_MODAL_ID)} kind="plain">
-            {i18n.translate('skipNextOrder.close')}
+            {i18n.translate('close')}
           </Button>
           <Button
             appearance="critical"

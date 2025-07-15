@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Tallenna",
   "actions": {
-    "updateSuccess": "Asetukset päivitetty"
+    "updateSuccess": "Asetukset päivitetty",
+    "updateFailed": "Asetusten päivittäminen epäonnistui"
   },
   "title": "Asetukset",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Toiminto, kun kaikki uudelleenyritykset ovat epäonnistuneet",
       "options": {
-        "skip": "Ohita toistuva tilaus ja lähetä ilmoitus",
+        "skip": "Ohita tilaus- ja lähetys­ilmoitus",
         "cancel": "Peruuta toistuva tilaus ja lähetä ilmoitus",
         "pause": "Keskeytä toistuva tilaus ja lähetä ilmoitus"
       }

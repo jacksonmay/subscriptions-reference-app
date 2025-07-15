@@ -312,13 +312,13 @@ describe('ContractsList', () => {
     it('loads new sort order when changing order in the UI', async () => {
       await mountContractsList();
 
-      userEvent.click(screen.getByLabelText('Sort the results'));
+      await userEvent.click(screen.getByLabelText('Sort the results'));
 
       await waitFor(() => {
         expect(screen.getByLabelText('Updated')).toBeInTheDocument();
       });
 
-      userEvent.click(screen.getByLabelText('Updated'));
+      await userEvent.click(screen.getByLabelText('Updated'));
 
       await waitForGraphQL();
 
@@ -338,13 +338,13 @@ describe('ContractsList', () => {
         initialPath: '/app/contracts?savedView=active',
       });
 
-      userEvent.click(screen.getByLabelText('Sort the results'));
+      await userEvent.click(screen.getByLabelText('Sort the results'));
 
       await waitFor(() => {
         expect(screen.getByLabelText('Updated')).toBeInTheDocument();
       });
 
-      userEvent.click(screen.getByLabelText('Updated'));
+      await userEvent.click(screen.getByLabelText('Updated'));
 
       await waitForGraphQL();
 
@@ -365,13 +365,13 @@ describe('ContractsList', () => {
         initialPath: '/app/contracts?after=123',
       });
 
-      userEvent.click(screen.getByLabelText('Sort the results'));
+      await userEvent.click(screen.getByLabelText('Sort the results'));
 
       await waitFor(() => {
         expect(screen.getByLabelText('Updated')).toBeInTheDocument();
       });
 
-      userEvent.click(screen.getByLabelText('Updated'));
+      await userEvent.click(screen.getByLabelText('Updated'));
 
       await waitForGraphQL();
 

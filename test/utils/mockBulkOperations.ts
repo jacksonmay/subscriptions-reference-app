@@ -1,6 +1,5 @@
 import type {NodeOnDiskFile} from '@remix-run/node';
 import {vi} from 'vitest';
-import type {T} from 'vitest/dist/chunks/environment.LoooBwUu.js';
 import type {GraphQLClient} from '~/types';
 import type {BulkMutationResult} from '~/utils/bulkOperations';
 import type {BulkOperationWithMetadata} from '~/utils/bulkOperations/bulkOperations';
@@ -21,7 +20,7 @@ export function mockBulkOperations() {
       (
         graphql: GraphQLClient,
         mutationString: string,
-        input: File | NodeOnDiskFile | ReadonlyArray<T>,
+        input: File | NodeOnDiskFile | ReadonlyArray<'web' | 'ssr'>,
         onSuccess?: (results: ReadonlyArray<BulkMutationResult>) => void,
         onFailure?: (error: string) => void,
       ): Promise<BulkOperationWithMetadata> => {

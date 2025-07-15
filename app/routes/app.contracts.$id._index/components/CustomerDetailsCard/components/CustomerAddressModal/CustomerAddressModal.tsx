@@ -1,8 +1,9 @@
 import type {FetcherWithComponents} from '@remix-run/react';
 import {useFetcher} from '@remix-run/react';
 import type {Address as AddressType} from '@shopify/address';
+import {parseGid} from '@shopify/admin-graphql-api-utilities';
 import {Modal, TitleBar} from '@shopify/app-bridge-react';
-import {Box, Divider, RadioButton} from '@shopify/polaris';
+import {Banner, Box, Divider, Link, RadioButton} from '@shopify/polaris';
 import {Fragment, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {Address} from '~/components/Address/Address';
@@ -16,6 +17,7 @@ export interface CustomerAddressModalProps {
   currentContractAddress: AddressType;
   customerAddresses: FormattedAddressWithId[];
   deliveryMethodName: string | undefined;
+  customerId: string;
 }
 
 export function CustomerAddressModal({
@@ -24,9 +26,17 @@ export function CustomerAddressModal({
   currentContractAddress,
   customerAddresses,
   deliveryMethodName,
+  customerId,
 }: CustomerAddressModalProps) {
   const {t} = useTranslation('app.contracts');
   const {showToasts} = useToasts();
+
+  const isLocalDelivery =
+    deliveryMethodName === 'SubscriptionDeliveryMethodLocalDelivery';
+
+  const hasInvalidLocalDeliveryAddresses =
+    isLocalDelivery &&
+    customerAddresses.some((address) => !address.address.phone);
 
   const [selectedAddress, setSelectedAddress] = useState<string>(() => {
     // currentContractAddress does not have an ID.
@@ -77,6 +87,22 @@ export function CustomerAddressModal({
 
   return (
     <Modal open={open} onHide={onClose}>
+      {hasInvalidLocalDeliveryAddresses && (
+        <Box padding="400">
+          <Banner tone="warning">
+            {t('customerDetails.addressModal.localDeliveryBanner.content', {
+              link: (
+                <Link
+                  target="_top"
+                  url={`shopify:admin/customers/${parseGid(customerId)}`}
+                >
+                  {t('customerDetails.addressModal.localDeliveryBanner.link')}
+                </Link>
+              ),
+            })}
+          </Banner>
+        </Box>
+      )}
       {customerAddresses!.map((address) => {
         return (
           <Fragment key={address.id}>
@@ -90,6 +116,7 @@ export function CustomerAddressModal({
                 value={address.id}
                 checked={selectedAddress === address.id}
                 onChange={() => setSelectedAddress(address.id)}
+                disabled={isLocalDelivery && !address.address.phone}
               />
             </Box>
             <Divider />

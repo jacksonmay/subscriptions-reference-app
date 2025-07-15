@@ -63,7 +63,7 @@ export async function buildInventoryService({
 }: DunningArgs): Promise<InventoryService> {
   const log = logger.child({class: 'InventoryDunning'});
   const {admin} = await unauthenticated.admin(shopDomain);
-  const settings = await loadSettingsMetaobject(admin.graphql);
+  const settings = await loadSettingsMetaobject(admin.graphql, shopDomain);
 
   if (settings === null) {
     log.error(

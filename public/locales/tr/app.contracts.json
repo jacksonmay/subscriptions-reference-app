@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "İptal",
         "update": "Güncelle"
+      },
+      "localDeliveryBanner": {
+        "content": "Yerel teslimat için telefon numarası olan bir adres gereklidir. {link}",
+        "link": "Müşteri sayfasında adresleri yönetin"
       }
     }
   },
@@ -330,6 +334,11 @@
         "cancel": "İptal Et"
       },
       "outOfStock": "Bu siparişte bu ürünün fazla satışı yapılacak"
+    },
+    "allocationError": {
+      "title": "{date} tarihli sipariş oluşturulamadı",
+      "description": "Müşterinin adresi, kullanılabilir envanter olmayan bir kargo bölgesinde ya da mevcut kargo ayarları tarafından desteklenmiyor. Envanteri güncelleyin veya siparişleri sürdürmek için {settingsLink}.",
+      "settingsLinkText": "kargo ayarlarını düzenleyin"
     }
   }
 }

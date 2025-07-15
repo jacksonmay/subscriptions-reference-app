@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "Avbryt",
         "update": "Uppdatera"
+      },
+      "localDeliveryBanner": {
+        "content": "En adress med ett telefonnummer krävs för lokal leverans. {link}",
+        "link": "Hantera adresser på kundsida"
       }
     }
   },
@@ -330,6 +334,11 @@
         "cancel": "Avbryt"
       },
       "outOfStock": "Den här produkten kommer ha överförsäljning i ordern"
+    },
+    "allocationError": {
+      "title": "Ordern från den {date} kunde inte skapas",
+      "description": "Kundens adress är i en fraktzon som inte har något tillgängligt lager eller inte stöds av de nuvarande leveransinställningarna. Uppdatera lagret eller {settingsLink} för att återuppta ordern.",
+      "settingsLinkText": "redigera leveransinställningarna"
     }
   }
 }

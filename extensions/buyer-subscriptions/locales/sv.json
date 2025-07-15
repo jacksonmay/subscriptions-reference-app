@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Ersätt betalningsmetod",
-    "save": "Spara",
     "paymentMethod": "Betalningsmetod",
     "edit": "Redigera",
-    "close": "Stäng",
     "errorBannerTitle": "Det gick inte att uppdatera betalningsmetoden"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Hoppa över nästa order",
     "generic": "Vill du hoppa över nästa order?",
     "date": "Vill du hoppa över nästa order? Din prenumeration återupptas den {{date}}.",
-    "errorBannerTitle": "Det gick inte att hoppa över nästa order",
-    "close": "Stäng"
+    "errorBannerTitle": "Det gick inte att hoppa över nästa order"
   },
   "pauseSubscriptionModal": {
     "title": "Pausa prenumeration",
     "action": "Pausa prenumeration",
-    "close": "Stäng",
     "description": "Din prenumeration kommer att pausas omedelbart och du kommer inte att debiteras mer eller få några fler ordrar. Du kan när som helst återuppta din prenumeration.",
     "errorBannerTitle": "Det gick inte att pausa prenumerationen"
   },
@@ -76,14 +72,12 @@
     "pause": "Pausa",
     "skip": "Hoppa över nästa order",
     "resume": "Återuppta",
-    "cancel": "Avbryt",
     "manage": "Hantera",
     "viewSubscriptionDetails": "Visa uppgifter"
   },
   "resumeSubscriptionModal": {
     "description": "Om du återupptar prenumerationen återupptas även fakturering omedelbart.",
     "descriptionWithDate": "Om du återupptar prenumerationen återupptas faktureringen den {{date}}.",
-    "close": "Stäng",
     "descriptionPriceChanged": "Priset för den här prenumerationen har ändrats och du kommer att bli debiterad {{price}} per kommande order.",
     "continue": "Fortsätt",
     "title": "Återuppta prenumeration",
@@ -100,19 +94,19 @@
     "title": "Avbryt prenumeration",
     "description": "Om du avbryter din prenumeration upphör fakturering och leverans omedelbart. Om du avbryter en prenumeration så kan du inte ångra det. Du kan pausa prenumerationen om du tillfälligt vill sluta ta emot ordrar.",
     "action": "Avbryt prenumeration",
-    "close": "Stäng",
     "errorBannerTitle": "Det gick inte att avbryta prenumerationen"
   },
   "errorBoundary": {
     "content": "Det uppstod ett fel, uppdatera sidan"
   },
   "addressModal": {
-    "save": "Spara",
     "continue": "Fortsätt",
-    "cancel": "Avbryt",
     "title": "Redigera leveransadress",
     "errorBannerTitle": "Det gick inte att uppdatera leveransmetod",
-    "noDeliveryOptions": "Denna prenumeration kan inte levereras till den adress du angav. Granska din adress för att säkerställa att alla fält har fyllts i korrekt och försök igen."
+    "noDeliveryOptions": "Denna prenumeration kan inte levereras till den adress du angav. Granska din adress för att säkerställa att alla fält har fyllts i korrekt och försök igen.",
+    "firstName": "Förnamn",
+    "lastName": "Efternamn",
+    "country": "Land/region"
   },
   "successBanner": {
     "paused": "Prenumeration pausad",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Kommande ordrar",
-    "close": "Stäng",
     "skipOrder": "Hoppa över",
     "skipOrderAccessibilityLabel": "Hoppa över order den {{orderDate}}",
     "unSkipOrder": "Ångra överhoppning",
@@ -153,5 +146,8 @@
     "title": "Inga prenumerationer köptes",
     "description": "Gå till butik för att handla prenumerationer"
   },
-  "delayed": "Nästa order kan bli försenad"
+  "delayed": "Nästa order kan bli försenad",
+  "close": "Stäng",
+  "cancel": "Avbryt",
+  "save": "Spara"
 }

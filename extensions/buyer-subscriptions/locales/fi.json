@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Korvaa maksutapa",
-    "save": "Tallenna",
     "paymentMethod": "Maksutapa",
     "edit": "Muokkaa",
-    "close": "Sulje",
     "errorBannerTitle": "Maksutapaa ei voida päivittää"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Ohita seuraava tilaus",
     "generic": "Haluatko ohittaa seuraavan tilauksen?",
     "date": "Haluatko ohittaa seuraavan tilauksen? Tilauksesi jatkuu {{date}}.",
-    "errorBannerTitle": "Seuraavaa tilausta ei voida ohittaa",
-    "close": "Sulje"
+    "errorBannerTitle": "Seuraavaa tilausta ei voida ohittaa"
   },
   "pauseSubscriptionModal": {
     "title": "Keskeytä tilaus",
     "action": "Keskeytä tilaus",
-    "close": "Sulje",
     "description": "Tilauksesi keskeytetään välittömästi eikä sinua veloiteta tulevista tilauksista. Voit jatkaa tätä tilausta milloin tahansa.",
     "errorBannerTitle": "Tilausta ei voida keskeyttää"
   },
@@ -76,14 +72,12 @@
     "pause": "Keskeytä",
     "skip": "Ohita seuraava tilaus",
     "resume": "Jatka",
-    "cancel": "Peruuta",
     "manage": "Hallinnoi",
     "viewSubscriptionDetails": "Näytä tiedot"
   },
   "resumeSubscriptionModal": {
     "description": "Jos jatkat tätä tilausta, laskutusta jatketaan välittömästi.",
     "descriptionWithDate": "Jos jatkat tätä tilausta, laskutusta jatketaan {{date}}.",
-    "close": "Sulje",
     "descriptionPriceChanged": "Tämän tilauksen hinta on muuttunut, ja sinulta veloitetaan {{price}} tulevaa tilausta kohden.",
     "continue": "Jatka",
     "title": "Jatka tilausta",
@@ -100,19 +94,19 @@
     "title": "Peruuta tilaus",
     "description": "Jos peruutat tilauksesi, laskutus ja toimitus päättyy välittömästi. Tilauksen peruuttamista ei voi perua. Jos haluat väliaikaisesti keskeyttää tilausten vastaanottamisen, keskeytä tilauksesi.",
     "action": "Peruuta tilaus",
-    "close": "Sulje",
     "errorBannerTitle": "Tilausta ei voida peruuttaa"
   },
   "errorBoundary": {
     "content": "Jokin meni pieleen, yritä päivittää sivu"
   },
   "addressModal": {
-    "save": "Tallenna",
     "continue": "Jatka",
-    "cancel": "Peruuta",
     "title": "Muokkaa toimitusosoitetta",
     "errorBannerTitle": "Toimitustapaa ei voida päivittää",
-    "noDeliveryOptions": "Tätä tilausta ei voida toimittaa valitsemaasi osoitteeseen. Tarkista osoite varmistaaksesi, että kaikki kentät on täytetty oikein. Yritä sitten uudelleen."
+    "noDeliveryOptions": "Tätä tilausta ei voida toimittaa valitsemaasi osoitteeseen. Tarkista osoite varmistaaksesi, että kaikki kentät on täytetty oikein. Yritä sitten uudelleen.",
+    "firstName": "Etunimi",
+    "lastName": "Sukunimi",
+    "country": "Maa/alue"
   },
   "successBanner": {
     "paused": "Tilaus keskeytetty",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Tulevat tilaukset",
-    "close": "Sulje",
     "skipOrder": "Ohita",
     "skipOrderAccessibilityLabel": "Ohita päivämäärällä {{orderDate}} tehty tilaus",
     "unSkipOrder": "Poista ohitus",
@@ -153,5 +146,8 @@
     "title": "Ei ostettuja toistuvia tilauksia",
     "description": "Voit ostaa toistuvia tilauksia kaupasta"
   },
-  "delayed": "Seuraava tilaus voi viivästyä"
+  "delayed": "Seuraava tilaus voi viivästyä",
+  "close": "Sulje",
+  "cancel": "Peruuta",
+  "save": "Tallenna"
 }

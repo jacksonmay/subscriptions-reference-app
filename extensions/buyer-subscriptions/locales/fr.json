@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Remplacer le moyen de paiement",
-    "save": "Enregistrer",
     "paymentMethod": "Moyen de paiement",
     "edit": "Modifier",
-    "close": "Fermer",
     "errorBannerTitle": "Impossible de mettre à jour le moyen de paiement"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Ignorer la prochaine commande",
     "generic": "Voulez-vous ne pas recevoir la prochaine commande ?",
     "date": "Voulez-vous ne pas recevoir la prochaine commande ? Votre abonnement reprendra le {{date}}.",
-    "errorBannerTitle": "Impossible d’ignorer la prochaine commande",
-    "close": "Fermer"
+    "errorBannerTitle": "Impossible d’ignorer la prochaine commande"
   },
   "pauseSubscriptionModal": {
     "title": "Suspendre un abonnement",
     "action": "Suspendre un abonnement",
-    "close": "Fermer",
     "description": "Votre abonnement sera immédiatement suspendu et vous ne serez plus facturé(e) et ne recevrez plus de commandes. Vous pouvez reprendre votre abonnement à tout moment.",
     "errorBannerTitle": "Impossible de suspendre l’abonnement"
   },
@@ -76,14 +72,12 @@
     "pause": "Suspendre",
     "skip": "Ignorer la prochaine commande",
     "resume": "Reprendre",
-    "cancel": "Annuler",
     "manage": "Gérer",
     "viewSubscriptionDetails": "Voir les détails"
   },
   "resumeSubscriptionModal": {
     "description": "Si vous reprenez cet abonnement, la facturation reprendra sur-le-champ.",
     "descriptionWithDate": "Si vous reprenez cet abonnement, la facturation reprendra le {{date}}.",
-    "close": "Fermer",
     "descriptionPriceChanged": "Le prix de cet abonnement a changé et la somme de {{price}} vous sera facturée pour chaque commande à venir.",
     "continue": "Continuer",
     "title": "Reprendre l’abonnement",
@@ -100,19 +94,19 @@
     "title": "Annuler l’abonnement",
     "description": "Si vous annulez votre abonnement, la facturation et la livraison prendront immédiatement fin. L’annulation d’abonnement est définitive. Pour arrêter temporairement de recevoir des commandes, suspendez votre abonnement.",
     "action": "Annuler l’abonnement",
-    "close": "Fermer",
     "errorBannerTitle": "Impossible d’annuler l’abonnement"
   },
   "errorBoundary": {
     "content": "Une erreur s’est produite, essayez d’actualiser la page"
   },
   "addressModal": {
-    "save": "Enregistrer",
     "continue": "Continuer",
-    "cancel": "Annuler",
     "title": "Modifier l’adresse d’expédition",
     "errorBannerTitle": "Impossible de mettre à jour le mode de livraison",
-    "noDeliveryOptions": "Il n’est pas possible d’expédier cet abonnement à l’adresse que vous avez saisie. Vérifiez que tous les champs de votre adresse ont été renseignés correctement, puis réessayez."
+    "noDeliveryOptions": "Il n’est pas possible d’expédier cet abonnement à l’adresse que vous avez saisie. Vérifiez que tous les champs de votre adresse ont été renseignés correctement, puis réessayez.",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "country": "Pays/région"
   },
   "successBanner": {
     "paused": "Abonnement suspendu",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Commandes à venir",
-    "close": "Fermer",
     "skipOrder": "Ignorer",
     "skipOrderAccessibilityLabel": "Ignorer la commande du {{orderDate}}",
     "unSkipOrder": "Ne pas ignorer",
@@ -153,5 +146,8 @@
     "title": "Aucun abonnement acheté",
     "description": "Accédez à la boutique pour acheter des abonnements"
   },
-  "delayed": "La prochaine commande pourrait être retardée."
+  "delayed": "La prochaine commande pourrait être retardée.",
+  "close": "Fermer",
+  "cancel": "Annuler",
+  "save": "Enregistrer"
 }

@@ -15,9 +15,6 @@
       {% if variant.selling_plan_allocations.size > 0 %}
         <section data-variant-id='{{ variant.id }}' class='shopify_subscriptions_app_block {% if variant.id != current_variant.id %}shopify_subscriptions_app_block--hidden{% endif %}'>
           <fieldset class="shopify_subscriptions_fieldset">
-            <legend class='shopify_subscriptions_app__title' style='color: {{ block.settings.color_text_title }};'>
-              {{ block.settings.supporting_text_title }}
-            </legend>
             <div style='border-color:{{ block.settings.dividers_color }}; border-width: {{ block.settings.border_thickness }}px; border-style: solid; background: {{ block.settings.bacgkround_color }}; border-radius: {{ block.settings.border_radius }}px; color: {{ block.settings.color_text_body }};'>
               {% unless product.requires_selling_plan %}
                 <div class='shopify_subscriptions_app_block_label shopify_subscriptions_purchase_option_wrapper' style='border-bottom:{{ block.settings.border_thickness }}px solid {{ block.settings.dividers_color }};'>
@@ -148,12 +145,6 @@
       },
       {
         "type": "color",
-        "id": "color_text_title",
-        "label": "t:settings.colors_text_title",
-        "default": "#6D7175"
-      },
-      {
-        "type": "color",
         "id": "color_text_body",
         "label": "t:settings.colors_text_body",
         "default": "#6D7175"
@@ -188,15 +179,6 @@
         "unit": "px",
         "label": "t:settings.border_radius",
         "default": 0
-      }, {
-        "type": "header",
-        "content": "t:settings.supporting_text_title"
-      }, {
-        "type": "text",
-        "id": "supporting_text_title",
-        "label": "t:settings.supporting_text_subtitle",
-        "default": "Purchase options",
-        "placeholder": "t:settings.supporting_text_input_default"
       }, {
         "type": "header",
         "content": "t:settings.subscription_policy_title"

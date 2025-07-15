@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Terug naar abonnementen",
-  "planTitle": "Titel abonnement",
-  "planTitleHelpText": "Klanten krijgen dit niet te zien.",
-  "purchaseOptionTitle": "Titel aankoopoptie",
+  "planTitle": "Interne beschrijving",
+  "planTitleHelpText": "Alleen ter referentie",
+  "purchaseOptionTitle": "Titel",
   "purchaseOptionTitleHelpText": "Klanten zien dit op {{howToDisplayProductsLink}} met abonnementen.",
   "defaultPurchaseOptionTitle": "Abonneren en opslaan",
   "saveButtonText": "Opslaan",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Ongeldig product geselecteerd",
     "invalidVariant": "Ongeldige productvariant geselecteerd",
-    "merchantCodeEmptyError": "Titel abonnement is vereist",
-    "nameEmptyError": "Titel aankoopoptie is vereist",
+    "merchantCodeEmptyError": "Interne beschrijving is vereist",
+    "nameEmptyError": "Titel is vereist",
     "createError": "Fout bij het aanmaken van het abonnement",
     "updateError": "Fout bij het bijwerken van het abonnement",
     "deliveryFrequencyError": "Frequentie dient groter te zijn dan nul",

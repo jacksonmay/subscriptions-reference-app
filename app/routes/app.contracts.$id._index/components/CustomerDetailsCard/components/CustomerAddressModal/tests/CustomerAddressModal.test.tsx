@@ -58,6 +58,7 @@ const mockAddresses = [
       country: 'Canada',
       province: 'ON',
       countryCode: 'CA' as CountryCode,
+      phone: '1234567890',
     },
   },
   {
@@ -72,6 +73,7 @@ const mockAddresses = [
       country: 'Canada',
       province: 'ON',
       countryCode: 'CA' as CountryCode,
+      phone: '9876543210',
     },
   },
 ];
@@ -82,6 +84,7 @@ const mockProps = {
   currentContractAddress: mockAddresses[0].address,
   customerAddresses: mockAddresses,
   deliveryMethodName: 'SubscriptionDeliveryMethodShipping',
+  customerId: 'gid://shopify/Customer/1',
 };
 
 const mockDraftId = composeGid('SubscriptionContractDraft', 1);
@@ -236,5 +239,114 @@ describe('CustomerAddressModal', () => {
         isError: true,
       },
     );
+  });
+
+  describe('Local delivery banner', () => {
+    it('does not display if the delivery method is not local delivery', async () => {
+      await mountAddressModalWithRemixStub({
+        ...mockProps,
+        deliveryMethodName: 'SubscriptionDeliveryMethodShipping',
+        customerAddresses: [
+          {
+            id: '1',
+            address: {
+              ...mockAddresses[0].address,
+              phone: undefined,
+            },
+          },
+        ],
+      });
+
+      expect(
+        screen.queryByText(
+          /An address with a phone number is required for local delivery/,
+        ),
+      ).not.toBeInTheDocument();
+    });
+
+    it('does not display if contract has local delivery but all addresses have a phone number', async () => {
+      const mockCustomerAddresses = [
+        {
+          id: '1',
+          address: {
+            ...mockAddresses[0].address,
+            phone: '1234567890',
+          },
+        },
+      ];
+
+      await mountAddressModalWithRemixStub({
+        ...mockProps,
+        customerAddresses: mockCustomerAddresses,
+        deliveryMethodName: 'SubscriptionDeliveryMethodLocalDelivery',
+      });
+
+      expect(
+        screen.queryByText(
+          /An address with a phone number is required for local delivery/,
+        ),
+      ).not.toBeInTheDocument();
+    });
+
+    it('displays if contract has local delivery and at least one address does not have a phone number', async () => {
+      const mockCustomerAddresses = [
+        {
+          id: '1',
+          address: {
+            ...mockAddresses[0].address,
+            phone: undefined,
+          },
+        },
+      ];
+
+      await mountAddressModalWithRemixStub({
+        ...mockProps,
+        customerAddresses: mockCustomerAddresses,
+        deliveryMethodName: 'SubscriptionDeliveryMethodLocalDelivery',
+      });
+
+      expect(
+        screen.getByText(
+          /An address with a phone number is required for local delivery/,
+        ),
+      ).toBeInTheDocument();
+    });
+
+    it('disables addresses without a phone number on local delivery contracts', async () => {
+      const mockCustomerAddresses = [
+        {
+          id: '1',
+          address: {
+            ...mockAddresses[0].address,
+            phone: undefined,
+          },
+        },
+        {
+          id: '2',
+          address: {
+            ...mockAddresses[1].address,
+            phone: '1234567890',
+          },
+        },
+      ];
+
+      await mountAddressModalWithRemixStub({
+        ...mockProps,
+        customerAddresses: mockCustomerAddresses,
+        deliveryMethodName: 'SubscriptionDeliveryMethodLocalDelivery',
+      });
+
+      expect(
+        screen.getByRole('radio', {
+          name: 'John, Doe, 150 Test Street, Ottawa, 111111, Canada, ON, CA',
+        }),
+      ).toBeDisabled();
+
+      expect(
+        screen.getByRole('radio', {
+          name: 'Jane, Doe, 150 Elgin Street, Ottawa, 111111, Canada, ON, CA, 1234567890',
+        }),
+      ).toBeEnabled();
+    });
   });
 });

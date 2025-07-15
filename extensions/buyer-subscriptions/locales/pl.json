@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Zastąp metodę płatności",
-    "save": "Zapisz",
     "paymentMethod": "Metoda płatności",
     "edit": "Edytuj",
-    "close": "Zamknij",
     "errorBannerTitle": "Nie można aktualizować metody płatności"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Pomiń następne zamówienie",
     "generic": "Czy chcesz pominąć następne zamówienie?",
     "date": "Czy chcesz pominąć następne zamówienie? Subskrypcja zostanie wznowiona w dniu {{date}}.",
-    "errorBannerTitle": "Nie można pominąć następnego zamówienia",
-    "close": "Zamknij"
+    "errorBannerTitle": "Nie można pominąć następnego zamówienia"
   },
   "pauseSubscriptionModal": {
     "title": "Wstrzymaj subskrypcję",
     "action": "Wstrzymaj subskrypcję",
-    "close": "Zamknij",
     "description": "Subskrypcja zostanie natychmiast wstrzymana i nie będziesz otrzymywać żadnych dalszych opłat ani kolejnych zamówień. Możesz wznowić subskrypcję w dowolnym momencie.",
     "errorBannerTitle": "Nie można wstrzymać subskrypcji"
   },
@@ -76,14 +72,12 @@
     "pause": "Wstrzymaj",
     "skip": "Pomiń następne zamówienie",
     "resume": "Wznów",
-    "cancel": "Anuluj",
     "manage": "Zarządzaj",
     "viewSubscriptionDetails": "Wyświetl szczegóły"
   },
   "resumeSubscriptionModal": {
     "description": "Po wznowieniu subskrypcji naliczanie opłat zostanie natychmiast wznowione.",
     "descriptionWithDate": "Po wznowieniu subskrypcji naliczanie opłat zostanie wznowione dnia {{date}}.",
-    "close": "Zamknij",
     "descriptionPriceChanged": "Cena tej subskrypcji uległa zmianie i Twoja opłata za kolejne zamówienie wyniesie {{price}}.",
     "continue": "Kontynuuj",
     "title": "Wznów subskrypcję",
@@ -100,19 +94,19 @@
     "title": "Anuluj subskrypcję",
     "description": "W przypadku anulowania subskrypcji naliczanie opłat i dostawa zostaną natychmiast zakończone. Anulowania subskrypcji nie można cofnąć. Aby tymczasowo przestać otrzymywać zamówienia, wstrzymaj subskrypcję.",
     "action": "Anuluj subskrypcję",
-    "close": "Zamknij",
     "errorBannerTitle": "Nie można anulować subskrypcji"
   },
   "errorBoundary": {
     "content": "Coś poszło nie tak. Odśwież stronę."
   },
   "addressModal": {
-    "save": "Zapisz",
     "continue": "Kontynuuj",
-    "cancel": "Anuluj",
     "title": "Edytuj adres wysyłki",
     "errorBannerTitle": "Nie można aktualizować metody dostawy",
-    "noDeliveryOptions": "Nie można wysłać tej subskrypcji na podany adres. Sprawdź swój adres, aby upewnić się, że wszystkie pola zostały wprowadzone poprawnie i spróbuj ponownie."
+    "noDeliveryOptions": "Nie można wysłać tej subskrypcji na podany adres. Sprawdź swój adres, aby upewnić się, że wszystkie pola zostały wprowadzone poprawnie i spróbuj ponownie.",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "country": "Kraj/region"
   },
   "successBanner": {
     "paused": "Wstrzymano subskrypcję",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Kolejne zamówienia",
-    "close": "Zamknij",
     "skipOrder": "Pomiń",
     "skipOrderAccessibilityLabel": "Pomiń zamówienie dnia {{orderDate}}",
     "unSkipOrder": "Anuluj pominięcie",
@@ -153,5 +146,8 @@
     "title": "Nie zakupiono żadnych subskrypcji",
     "description": "Przejdź do sklepu, aby kupić subskrypcje"
   },
-  "delayed": "Następne zamówienie może być opóźnione"
+  "delayed": "Następne zamówienie może być opóźnione",
+  "close": "Zamknij",
+  "cancel": "Anuluj",
+  "save": "Zapisz"
 }

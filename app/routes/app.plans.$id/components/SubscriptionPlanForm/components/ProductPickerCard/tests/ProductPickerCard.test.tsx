@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import {mountComponentWithRemixStub} from '#/test-utils';
 import {afterEach, describe, expect, it, vi} from 'vitest';
 import type {Product} from '~/types';
-import {useSellingPlanFormValidator} from '~/routes/app.plans.$id/validator';
+import {useSellingPlanFormSchema} from '~/routes/app.plans.$id/validator';
 import {Form} from '~/components/Form';
 import {ProductPickerCard} from '..';
 import type {ProductPickerCardProps} from '../ProductPickerCard';
@@ -64,10 +64,10 @@ function WithForm({
   defaultValues: any;
   children: React.ReactNode;
 }) {
-  const validator = useSellingPlanFormValidator();
+  const schema = useSellingPlanFormSchema();
 
   return (
-    <Form validator={validator} defaultValues={defaultValues}>
+    <Form schema={schema} defaultValues={defaultValues}>
       {children}
     </Form>
   );

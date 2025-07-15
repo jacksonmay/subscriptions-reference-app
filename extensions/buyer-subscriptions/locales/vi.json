@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Thay phương thức thanh toán",
-    "save": "Lưu",
     "paymentMethod": "Phương thức thanh toán",
     "edit": "Chỉnh sửa",
-    "close": "Đóng",
     "errorBannerTitle": "Không thể cập nhật phương thức thanh toán"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Bỏ qua đơn hàng tiếp theo",
     "generic": "Bạn muốn bỏ qua đơn hàng tiếp theo?",
     "date": "Bạn muốn bỏ qua đơn hàng tiếp theo? Gói đăng ký sẽ tiếp tục vào {{date}}.",
-    "errorBannerTitle": "Không thể bỏ qua đơn hàng tiếp theo",
-    "close": "Đóng"
+    "errorBannerTitle": "Không thể bỏ qua đơn hàng tiếp theo"
   },
   "pauseSubscriptionModal": {
     "title": "Tạm dừng gói đăng ký",
     "action": "Tạm dừng gói đăng ký",
-    "close": "Đóng",
     "description": "Gói đăng ký của bạn sẽ tạm dừng hiệu lực ngay lập tức và bạn sẽ không nhận thêm bất kỳ khoản phí hay đơn hàng sắp tới nào. Bạn có thể tiếp tục gói đăng ký này bất kỳ lúc nào.",
     "errorBannerTitle": "Không thể tạm dừng gói đăng ký"
   },
@@ -76,14 +72,12 @@
     "pause": "Tạm dừng",
     "skip": "Bỏ qua đơn hàng tiếp theo",
     "resume": "Tiếp tục",
-    "cancel": "Hủy",
     "manage": "Quản lý",
     "viewSubscriptionDetails": "Xem chi tiết"
   },
   "resumeSubscriptionModal": {
     "description": "Việc thanh toán sẽ tiếp tục ngay khi bạn tiếp tục gói đăng ký này.",
     "descriptionWithDate": "Việc thanh toán sẽ tiếp tục vào ngày {{date}} nếu bạn tiếp tục gói đăng ký này.",
-    "close": "Đóng",
     "descriptionPriceChanged": "Giá của gói đăng ký này đã thay đổi và bạn sẽ chịu khoản phí {{price}} trên mỗi đơn hàng sắp tới.",
     "continue": "Tiếp tục",
     "title": "Tiếp tục gói đăng ký",
@@ -100,19 +94,19 @@
     "title": "Hủy gói đăng ký",
     "description": "Việc thanh toán và giao hàng sẽ dừng ngay khi bạn hủy gói đăng ký. Không thể khôi phục gói đăng ký đã hủy. Để tạm dừng nhận đơn hàng, hãy tạm dừng gói đăng ký.",
     "action": "Hủy gói đăng ký",
-    "close": "Đóng",
     "errorBannerTitle": "Không thể hủy gói đăng ký"
   },
   "errorBoundary": {
     "content": "Đã xảy ra lỗi, vui lòng tải lại trang"
   },
   "addressModal": {
-    "save": "Lưu",
     "continue": "Tiếp tục",
-    "cancel": "Hủy",
     "title": "Chỉnh sửa địa chỉ giao hàng",
     "errorBannerTitle": "Không thể cập nhật phương thức giao hàng",
-    "noDeliveryOptions": "Không thể gửi gói đăng ký đến địa chỉ đã nhập. Xem lại địa chỉ để đảm bảo đã nhập đúng tất cả các trường và thử lại."
+    "noDeliveryOptions": "Không thể gửi gói đăng ký đến địa chỉ đã nhập. Xem lại địa chỉ để đảm bảo đã nhập đúng tất cả các trường và thử lại.",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "country": "Quốc gia/khu vực"
   },
   "successBanner": {
     "paused": "Đã tạm dừng gói đăng ký",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Đơn hàng sắp tới",
-    "close": "Đóng",
     "skipOrder": "Bỏ qua",
     "skipOrderAccessibilityLabel": "Bỏ qua đơn hàng vào {{orderDate}}",
     "unSkipOrder": "Hủy bỏ qua",
@@ -153,5 +146,8 @@
     "title": "Bạn chưa mua gói đăng ký nào",
     "description": "Hãy vào cửa hàng để mua gói đăng ký"
   },
-  "delayed": "Đơn hàng tiếp theo có thể bị chậm trễ"
+  "delayed": "Đơn hàng tiếp theo có thể bị chậm trễ",
+  "close": "Đóng",
+  "cancel": "Hủy",
+  "save": "Lưu"
 }

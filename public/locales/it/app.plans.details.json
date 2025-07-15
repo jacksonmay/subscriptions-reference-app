@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Torna ai piani di abbonamento",
-  "planTitle": "Titolo del piano",
-  "planTitleHelpText": "Questa informazione non verrà mostrata ai clienti.",
-  "purchaseOptionTitle": "Titolo dell'opzione di acquisto",
+  "planTitle": "Descrizione interna",
+  "planTitleHelpText": "Solo per tuo riferimento",
+  "purchaseOptionTitle": "Titolo",
   "purchaseOptionTitleHelpText": "I clienti lo visualizzeranno sulle {{howToDisplayProductsLink}} che contengono abbonamenti.",
   "defaultPurchaseOptionTitle": "Abbonati e risparmia",
   "saveButtonText": "Salva",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Il prodotto selezionato non è valido",
     "invalidVariant": "La variante di prodotto selezionata non è valida",
-    "merchantCodeEmptyError": "Il titolo del piano è obbligatorio",
-    "nameEmptyError": "Titolo dell'opzione di acquisto obbligatorio",
+    "merchantCodeEmptyError": "La descrizione interna è obbligatoria",
+    "nameEmptyError": "Il titolo è obbligatorio",
     "createError": "Errore durante la creazione del piano di abbonamento",
     "updateError": "Errore durante l'aggiornamento del piano di abbonamento",
     "deliveryFrequencyError": "La frequenza deve essere superiore a 0",

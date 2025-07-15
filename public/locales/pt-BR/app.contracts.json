@@ -257,6 +257,10 @@
       "actions": {
         "cancel": "Cancelar",
         "update": "Atualizar"
+      },
+      "localDeliveryBanner": {
+        "content": "É necessário um endereço com um número de telefone para entrega local. {link}",
+        "link": "Gerenciar endereços na página do cliente"
       }
     }
   },
@@ -346,6 +350,11 @@
         "cancel": "Cancelar"
       },
       "outOfStock": "Haverá sobrevenda do produto para este pedido"
+    },
+    "allocationError": {
+      "title": "Não foi possível criar o pedido de {date}",
+      "description": "O endereço do cliente está em uma zona de frete sem estoque disponível ou não é compatível com as configurações de frete atuais. Atualize o estoque ou {settingsLink} para retomar os pedidos.",
+      "settingsLinkText": "editar as configurações de frete"
     }
   }
 }

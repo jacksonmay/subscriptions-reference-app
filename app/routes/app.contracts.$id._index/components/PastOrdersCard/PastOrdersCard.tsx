@@ -50,6 +50,7 @@ export function PastOrdersCard({pastBillingCycles}: PastOrdersCardProps) {
                 {order ? (
                   <Link
                     removeUnderline
+                    target="_top"
                     url={`shopify://admin/orders/${parseGid(order.id)}`}
                   >
                     {t('details.viewOrder')}

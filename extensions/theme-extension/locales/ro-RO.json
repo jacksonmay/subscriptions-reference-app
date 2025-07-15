@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "Se reînnoiește automat; poți omite sau anula oricând.",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='Vezi politica de abonare'>Vezi politica de abonare</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>Vezi politica de abonare</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "Pentru a adăuga în coș, accesează pagina produsului și selectează o opțiune de cumpărare"

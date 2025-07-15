@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Zurück zu Abonnements",
-  "planTitle": "Plantitel",
-  "planTitleHelpText": "Kunden können diese Eingabe nicht sehen.",
-  "purchaseOptionTitle": "Titel der Kaufoption",
+  "planTitle": "Interne Beschreibung",
+  "planTitleHelpText": "Nur zur Referenz",
+  "purchaseOptionTitle": "Titel",
   "purchaseOptionTitleHelpText": "Kunden sehen dies auf {{howToDisplayProductsLink}}, auf denen es Abonnements gibt.",
   "defaultPurchaseOptionTitle": "Im Abo kaufen und sparen",
   "saveButtonText": "Speichern",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Ungültiges Produkt ausgewählt",
     "invalidVariant": "Ungültige Produktvariante ausgewählt",
-    "merchantCodeEmptyError": "Plantitel ist erforderlich",
-    "nameEmptyError": "Titel für Verkaufsoption ist erforderlich",
+    "merchantCodeEmptyError": "Interne Beschreibung ist erforderlich",
+    "nameEmptyError": "Titel ist erforderlich",
     "createError": "Fehler beim Erstellen des Abonnements",
     "updateError": "Fehler beim Aktualisieren des Abonnements",
     "deliveryFrequencyError": "Frequenz muss höher als 0 sein",

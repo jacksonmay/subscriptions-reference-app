@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Spara",
   "actions": {
-    "updateSuccess": "Inställningarna är uppdaterade"
+    "updateSuccess": "Inställningarna är uppdaterade",
+    "updateFailed": "Det gick inte att uppdatera inställningarna"
   },
   "title": "Inställningar",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Åtgärd när alla omförsök har misslyckats",
       "options": {
-        "skip": "Hoppa över prenumerationen och skicka avisering",
+        "skip": "Hoppa över order och skicka avisering",
         "cancel": "Avbryt prenumerationen och skicka avisering",
         "pause": "Pausa prenumerationen och skicka avisering"
       }

@@ -11,13 +11,9 @@
     "border_title": "Obramowanie",
     "border_thickness": "Grubość",
     "border_radius": "Promień narożnika",
-    "colors_text_title": "Tytuł",
     "colors_text_body": "Tekst podstawowy",
     "colors_background_border_title": "Tła i obramowania",
     "colors_background": "Tło",
-    "colors_dividers": "Rozdzielacze",
-    "supporting_text_title": "Tekst pomocniczy",
-    "supporting_text_subtitle": "Tytuł",
-    "supporting_text_input_default": "Opcje zakupu"
+    "colors_dividers": "Rozdzielacze"
   }
 }

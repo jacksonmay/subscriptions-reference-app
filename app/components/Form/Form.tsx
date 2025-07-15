@@ -45,7 +45,7 @@ export function Form(
         form.subscribe.value(key, (value: any) => {
           if (compareValues(value, defaultValue)) {
             // If the form is clean, we want to hide the save bar, so we reset the form to the default values
-            form.resetField(key, defaultValue);
+            form.resetField(key);
           } else {
             // Sometimes RVF doesn't mark the field as dirty when it should, so we do it manually here
             form.setDirty(key, true);
@@ -68,7 +68,7 @@ export function Form(
         <SaveBar id={barId}>
           <button
             variant="primary"
-            loading={form.formState.isSubmitting ? 'true' : undefined}
+            loading={form.formState.isSubmitting ? '' : undefined}
           ></button>
           <button
             type="button"

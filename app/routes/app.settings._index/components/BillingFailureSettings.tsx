@@ -11,17 +11,8 @@ import {useTranslation} from 'react-i18next';
 import {Select} from '~/components/Select';
 import {TextField} from '~/components/TextField';
 import {OnFailureType, InventoryNotificationFrequencyType} from '../validator';
-import type {Settings} from '~/types';
 
-interface BillingFailureSettingsProps {
-  inventoryEnabled?: boolean;
-  settings: Settings;
-}
-
-export function BillingFailureSettings({
-  inventoryEnabled,
-  settings,
-}: BillingFailureSettingsProps) {
+export function BillingFailureSettings() {
   const {t} = useTranslation('app.settings', {
     keyPrefix: 'billingFailureSettings',
   });
@@ -100,71 +91,46 @@ export function BillingFailureSettings({
               />
             </BlockStack>
           </FormLayout>
-          {inventoryEnabled ? (
-            <>
-              <Box paddingBlockStart="200" paddingBlockEnd="200">
-                <Divider />
-              </Box>
-              <Text as="h2" variant="headingSm">
-                {t('inventoryFailureTitle')}
-              </Text>
-              <FormLayout>
-                <FormLayout.Group>
-                  <TextField
-                    label={t('retryAttempts.label')}
-                    name="inventoryRetryAttempts"
-                    helpText={t('retryAttempts.helpText')}
-                    type="number"
-                    min={0}
-                    max={10}
-                  />
-                  <TextField
-                    label={t('daysBetweenRetryAttempts.label')}
-                    name="inventoryDaysBetweenRetryAttempts"
-                    helpText={t('daysBetweenRetryAttempts.helpText')}
-                    type="number"
-                    min={1}
-                    max={14}
-                  />
-                </FormLayout.Group>
-                <Select
-                  label={t('onFailure.label')}
-                  name="inventoryOnFailure"
-                  options={onFailureOptions}
+          <>
+            <Box paddingBlockStart="200" paddingBlockEnd="200">
+              <Divider />
+            </Box>
+            <Text as="h2" variant="headingSm">
+              {t('inventoryFailureTitle')}
+            </Text>
+            <FormLayout>
+              <FormLayout.Group>
+                <TextField
+                  label={t('retryAttempts.label')}
+                  name="inventoryRetryAttempts"
+                  helpText={t('retryAttempts.helpText')}
+                  type="number"
+                  min={0}
+                  max={10}
                 />
-                <BlockStack gap="200">
-                  <Select
-                    label={t('staffNotificationFrequency.label')}
-                    name="inventoryNotificationFrequency"
-                    options={staffNotificationFrequencyOptions}
-                  />
-                </BlockStack>
-              </FormLayout>
-            </>
-          ) : (
-            <>
-              <input
-                hidden
-                defaultValue={settings.inventoryOnFailure}
+                <TextField
+                  label={t('daysBetweenRetryAttempts.label')}
+                  name="inventoryDaysBetweenRetryAttempts"
+                  helpText={t('daysBetweenRetryAttempts.helpText')}
+                  type="number"
+                  min={1}
+                  max={14}
+                />
+              </FormLayout.Group>
+              <Select
+                label={t('onFailure.label')}
                 name="inventoryOnFailure"
+                options={onFailureOptions}
               />
-              <input
-                hidden
-                defaultValue={settings.inventoryRetryAttempts}
-                name="inventoryRetryAttempts"
-              />
-              <input
-                hidden
-                defaultValue={settings.inventoryDaysBetweenRetryAttempts}
-                name="inventoryDaysBetweenRetryAttempts"
-              />
-              <input
-                hidden
-                defaultValue={settings.inventoryNotificationFrequency}
-                name="inventoryNotificationFrequency"
-              />
-            </>
-          )}
+              <BlockStack gap="200">
+                <Select
+                  label={t('staffNotificationFrequency.label')}
+                  name="inventoryNotificationFrequency"
+                  options={staffNotificationFrequencyOptions}
+                />
+              </BlockStack>
+            </FormLayout>
+          </>
         </BlockStack>
       </Card>
     </InlineGrid>

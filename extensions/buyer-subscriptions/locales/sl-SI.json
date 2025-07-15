@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Zamenjaj način plačila",
-    "save": "Shrani",
     "paymentMethod": "Način plačila",
     "edit": "Uredi",
-    "close": "Zapri",
     "errorBannerTitle": "Načina plačila ni mogoče posodobiti"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Preskoči naslednje naročilo",
     "generic": "Ali želite preskočiti naslednje naročilo?",
     "date": "Ali želite preskočiti naslednje naročilo? Vaša naročnina bo znova aktivirana dne {{date}}.",
-    "errorBannerTitle": "Naslednjega naročila ni mogoče preskočiti",
-    "close": "Zapri"
+    "errorBannerTitle": "Naslednjega naročila ni mogoče preskočiti"
   },
   "pauseSubscriptionModal": {
     "title": "Zamrzni naročnino",
     "action": "Zamrzni naročnino",
-    "close": "Zapri",
     "description": "Vaša naročnina bo takoj zamrznjena, zato vam v prihodnje ne bo zaračunana in ne boste prejeli prihajajočih naročil. Naročnino lahko kadar koli znova aktivirate.",
     "errorBannerTitle": "Naročnine ni mogoče zamrzniti"
   },
@@ -76,14 +72,12 @@
     "pause": "Premor",
     "skip": "Preskoči naslednje naročilo",
     "resume": "Nadaljevanje",
-    "cancel": "Prekliči",
     "manage": "Upravljanje",
     "viewSubscriptionDetails": "Prikaži podrobnosti"
   },
   "resumeSubscriptionModal": {
     "description": "Če naročnino znova aktivirate, bo takoj znova aktivirano tudi obračunavanje.",
     "descriptionWithDate": "Če to naročnino znova aktivirate, bo obračunavanje aktivno dne {{date}}.",
-    "close": "Zapri",
     "descriptionPriceChanged": "Cena za to naročnino se je spremenila in ob prihajajočem naročilu vam bomo zaračunali {{price}}.",
     "continue": "Želite nadaljevati",
     "title": "Znova aktiviraj naročnino",
@@ -100,19 +94,19 @@
     "title": "Prekliči naročnino",
     "description": "Če prekličete naročnino, bosta obračunavanje in dostava takoj ustavljena. Preklica naročnine ni mogoče razveljaviti. Če želite začasno prenehati prejemati naročila, zamrznite naročnino.",
     "action": "Prekliči naročnino",
-    "close": "Zapri",
     "errorBannerTitle": "Naročnine ni mogoče preklicati"
   },
   "errorBoundary": {
     "content": "Prišlo je do napake, osvežite stran"
   },
   "addressModal": {
-    "save": "Shrani",
     "continue": "Želite nadaljevati",
-    "cancel": "Prekliči",
     "title": "Uredi naslov za dostavo",
     "errorBannerTitle": "Načina dostave ni mogoče posodobiti",
-    "noDeliveryOptions": "Te naročnine ni mogoče dostaviti na naslov, ki ste ga vnesli. Preglejte naslov in se prepričajte, da so vsa polja ustrezno izpolnjena, ter poskusite znova."
+    "noDeliveryOptions": "Te naročnine ni mogoče dostaviti na naslov, ki ste ga vnesli. Preglejte naslov in se prepričajte, da so vsa polja ustrezno izpolnjena, ter poskusite znova.",
+    "firstName": "Ime",
+    "lastName": "Priimek",
+    "country": "Država/regija"
   },
   "successBanner": {
     "paused": "Naročnina je zamrznjena",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Prihajajoča naročila",
-    "close": "Zapri",
     "skipOrder": "Preskoči",
     "skipOrderAccessibilityLabel": "Preskoči naročilo na dan {{orderDate}}",
     "unSkipOrder": "Razveljavi preskok",
@@ -153,5 +146,8 @@
     "title": "Ni kupljenih naročnin",
     "description": "Odpri trgovino za nakup naročnin"
   },
-  "delayed": "Naslednje naročilo se lahko zavleče"
+  "delayed": "Naslednje naročilo se lahko zavleče",
+  "close": "Zapri",
+  "cancel": "Prekliči",
+  "save": "Shrani"
 }

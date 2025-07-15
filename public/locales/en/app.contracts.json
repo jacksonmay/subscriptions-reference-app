@@ -200,6 +200,11 @@
         "ignoreAndCreate": "Create order",
         "cancel": "Cancel"
       }
+    },
+    "allocationError": {
+      "title": "{date} order couldn't be created",
+      "description": "Customer address is in a shipping zone with no available inventory or is not supported by current shipping settings. Update inventory or {settingsLink} to resume orders.",
+      "settingsLinkText": "edit shipping settings"
     }
   },
   "paymentMethodDetails": {
@@ -265,6 +270,10 @@
       "actions": {
         "cancel": "Cancel",
         "update": "Update"
+      },
+      "localDeliveryBanner": {
+        "content": "An address with a phone number is required for local delivery. {link}",
+        "link": "Manage addresses on customer page"
       }
     }
   },

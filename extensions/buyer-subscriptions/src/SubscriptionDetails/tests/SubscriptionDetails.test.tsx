@@ -133,7 +133,7 @@ describe('<SubscriptionDetails />', () => {
       });
 
       expect(screen.getAllByText('8th Floor')).toHaveLength(2);
-      expect(screen.getAllByText('Ottawa Ontario K2P1L4')).toHaveLength(2);
+      expect(screen.getAllByText('Ottawa ON K2P1L4')).toHaveLength(2);
     });
 
     it('Displays the delivery method title and address when method is local delivery', async () => {
@@ -167,7 +167,7 @@ describe('<SubscriptionDetails />', () => {
       });
 
       expect(screen.getAllByText('8th Floor')).toHaveLength(2);
-      expect(screen.getAllByText('Ottawa Ontario K2P1L4')).toHaveLength(2);
+      expect(screen.getAllByText('Ottawa ON K2P1L4')).toHaveLength(2);
     });
 
     it('is passed the pickup address when method is pickup in store', async () => {
@@ -194,7 +194,7 @@ describe('<SubscriptionDetails />', () => {
       });
 
       expect(screen.getAllByText('8th Floor')).toHaveLength(2);
-      expect(screen.getAllByText('Ottawa Ontario K2P1L4')).toHaveLength(2);
+      expect(screen.getAllByText('Ottawa ON K2P1L4')).toHaveLength(2);
     });
   });
 

@@ -8,16 +8,12 @@
     "border_thickness": "Thickness",
     "border_radius": "Corner radius",
     "colors_title": "Color",
-    "colors_text_title": "Title",
     "colors_text_body": "Body",
     "colors_background_border_title": "Backgrounds & Borders",
     "colors_background": "Background",
     "colors_dividers": "Dividers",
-    "supporting_text_title": "Supporting text",
-    "supporting_text_subtitle": "Title",
     "subscription_policy_title": "Subscription policy",
     "subscription_policy_url": "Subscription policy link",
-    "subscription_policy_url_info": "Select an existing page or paste an external link to display subscription policy.",
-    "supporting_text_input_default": "Purchase options"
+    "subscription_policy_url_info": "Select an existing page or paste an external link to display subscription policy."
   }
 }

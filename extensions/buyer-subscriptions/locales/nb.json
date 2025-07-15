@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Bytt betalingsmåte",
-    "save": "Lagre",
     "paymentMethod": "Betalingsmetode",
     "edit": "Rediger",
-    "close": "Lukk",
     "errorBannerTitle": "Kan ikke oppdatere betalingsmåte"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Hopp over neste bestilling",
     "generic": "Vil du hoppe over neste bestilling?",
     "date": "Vil du hoppe over neste bestilling? Abonnementet ditt gjenopptas {{date}}.",
-    "errorBannerTitle": "Kan ikke hoppe over neste bestilling",
-    "close": "Lukk"
+    "errorBannerTitle": "Kan ikke hoppe over neste bestilling"
   },
   "pauseSubscriptionModal": {
     "title": "Sett abonnement på pause",
     "action": "Sett abonnement på pause",
-    "close": "Lukk",
     "description": "Abonnementet blir satt på pause umiddelbart, og du blir ikke lenger belastet eller får flere bestillinger. Du kan gjenoppta abonnementet når som helst.",
     "errorBannerTitle": "Kan ikke sette abonnement på pause"
   },
@@ -76,14 +72,12 @@
     "pause": "Pause",
     "skip": "Hopp over neste bestilling",
     "resume": "Fortsett",
-    "cancel": "Avbryt",
     "manage": "Administrer",
     "viewSubscriptionDetails": "Vis detaljer"
   },
   "resumeSubscriptionModal": {
     "description": "Hvis du gjenopptar dette abonnementet, blir fakturaen gjenopptatt umiddelbart.",
     "descriptionWithDate": "Hvis du gjenopptar dette abonnementet, gjenopptas faktureringen {{date}}.",
-    "close": "Lukk",
     "descriptionPriceChanged": "Prisen på dette abonnementet er endret og du blir belastet med {{price}} per kommende bestilling.",
     "continue": "Fortsett",
     "title": "Gjenoppta abonnement",
@@ -100,19 +94,19 @@
     "title": "Avslutt abonnement",
     "description": "Hvis du avslutter abonnementet, avsluttes fakturering og leveranse umiddelbart. Kan ikke angre avslutting av abonnement. Sett abonnementet på pause for å stanse mottakelsen av bestillinger midlertidig.",
     "action": "Avslutt abonnement",
-    "close": "Lukk",
     "errorBannerTitle": "Kan ikke avslutte abonnement"
   },
   "errorBoundary": {
     "content": "Noe gikk galt, oppdater siden"
   },
   "addressModal": {
-    "save": "Lagre",
     "continue": "Fortsett",
-    "cancel": "Avbryt",
     "title": "Endre forsendelsesadresse",
     "errorBannerTitle": "Kan ikke oppdatere leveringsmåte",
-    "noDeliveryOptions": "Dette abonnementet kan ikke sendes til adressen du skrev inn. Se gjennom adressen for å sikre at alle felter er riktig innskrevet, og prøv på nytt."
+    "noDeliveryOptions": "Dette abonnementet kan ikke sendes til adressen du skrev inn. Se gjennom adressen for å sikre at alle felter er riktig innskrevet, og prøv på nytt.",
+    "firstName": "Fornavn",
+    "lastName": "Etternavn",
+    "country": "Land/område"
   },
   "successBanner": {
     "paused": "Abonnement satt på pause",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Kommende bestillinger",
-    "close": "Lukk",
     "skipOrder": "Hopp over",
     "skipOrderAccessibilityLabel": "Hopp over bestillingen den {{orderDate}}",
     "unSkipOrder": "Angre hopp over",
@@ -153,5 +146,8 @@
     "title": "Ingen abonnement er kjøpt",
     "description": "Gå til butikken for å kjøpe abonnement"
   },
-  "delayed": "Neste bestilling er muligens forsinket"
+  "delayed": "Neste bestilling er muligens forsinket",
+  "close": "Lukk",
+  "cancel": "Avbryt",
+  "save": "Lagre"
 }

@@ -11,7 +11,7 @@
   },
   "table": {
     "headings": {
-      "planTitle": "Titre du forfait",
+      "planTitle": "Description du forfait",
       "products": "Produits",
       "deliveryFrequency": "Fréquence de livraison",
       "discount": "Tarification",

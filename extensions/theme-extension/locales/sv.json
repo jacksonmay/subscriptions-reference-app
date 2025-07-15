@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "Förnyas automatiskt, hoppa över eller avbryt när som helst.",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='Se prenumerationspolicy'>Se prenumerationspolicy</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>Se prenumerationspolicy</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "Du kan lägga till ett kort genom att gå till produktsidan och välja ett inköpsalternativ"

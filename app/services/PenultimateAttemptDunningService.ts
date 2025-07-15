@@ -18,7 +18,6 @@ import {
   CustomerEmailTemplateName,
   CustomerSendEmailService,
 } from './CustomerSendEmailService';
-import {SubscriptionContractFailService} from './SubscriptionContractFailService';
 
 interface PenultimateAttemptDunningServiceArgs {
   shopDomain: string;
@@ -58,7 +57,6 @@ export class PenultimateAttemptDunningService {
   async run() {
     this.log.info('Running PenultimateAttemptDunningService');
     await this.scheduleRebillSubscriptionJob();
-    await this.failSubscriptionContract();
     await this.sendLastPaymentFailureEmail();
     this.log.info('PenultimateAttemptDunningService completed successfully');
   }
@@ -85,13 +83,6 @@ export class PenultimateAttemptDunningService {
       {jobScheduleEpochTimestamp},
       'Scheduled RebillSubscriptionJob for',
     );
-  }
-
-  private async failSubscriptionContract() {
-    await new SubscriptionContractFailService(
-      this.shopDomain,
-      this.subscriptionContract.id,
-    ).run();
   }
 
   private async sendLastPaymentFailureEmail() {

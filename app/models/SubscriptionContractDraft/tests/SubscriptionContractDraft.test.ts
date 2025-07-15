@@ -790,5 +790,107 @@ describe('SubscriptionContractDraft', () => {
 
       expect(updateDraftResult).toBe(false);
     });
+
+    describe('local delivery', () => {
+      it('passes delivery option with phone number to mutation ', async () => {
+        mockGraphQL(defaultGraphQLResponses);
+
+        const mockContractId = composeGid('SubscriptionContract', 1);
+        const mockDraft = await buildDraftFromContract(
+          TEST_SHOP,
+          mockContractId,
+          graphQL,
+        );
+
+        const mockAddress: Address = {
+          firstName: faker.person.firstName(),
+          lastName: faker.person.lastName(),
+          address1: faker.location.streetAddress(false),
+          address2: faker.location.secondaryAddress(),
+          city: faker.location.city(),
+          zip: faker.location.zipCode(),
+          country: 'CA',
+          phone: faker.phone.number(),
+        };
+
+        const updateDraftResult = await mockDraft.updateAddress(
+          mockAddress,
+          'SubscriptionDeliveryMethodLocalDelivery',
+        );
+
+        const {country, province, ...rest} = mockAddress;
+
+        const expectedAddressInput = {
+          countryCode: country,
+          provinceCode: province,
+          ...rest,
+        };
+
+        expect(updateDraftResult).toBe(true);
+
+        expect(graphQL).toHaveBeenCalledWith(
+          SubscriptionContractDraftUpdateMutation,
+          {
+            variables: {
+              draftId: mockDraft.id,
+              input: {
+                deliveryMethod: {
+                  localDelivery: {
+                    address: expectedAddressInput,
+                    localDeliveryOption: {
+                      phone: expectedAddressInput.phone,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        );
+      });
+
+      it('returns false if no phone number is provided', async () => {
+        mockGraphQL({
+          ...defaultGraphQLResponses,
+          SubscriptionDraftUpdate: {
+            data: {
+              subscriptionDraftUpdate: {
+                draft: null,
+                userErrors: [
+                  {
+                    field: ['address'],
+                    message: 'Invalid Address',
+                  },
+                ],
+              },
+            },
+          },
+        });
+
+        const mockContractId = composeGid('SubscriptionContract', 1);
+        const mockDraft = await buildDraftFromContract(
+          TEST_SHOP,
+          mockContractId,
+          graphQL,
+        );
+
+        const mockAddress = {
+          firstName: faker.person.firstName(),
+          lastName: faker.person.lastName(),
+          address1: faker.location.streetAddress(false),
+          address2: faker.location.secondaryAddress(),
+          city: faker.location.city(),
+          zip: faker.location.zipCode(),
+          country: 'Canada',
+          countryCode: 'CA' as CountryCode,
+        };
+
+        const updateDraftResult = await mockDraft.updateAddress(
+          mockAddress,
+          'SubscriptionDeliveryMethodLocalDelivery',
+        );
+
+        expect(updateDraftResult).toBe(false);
+      });
+    });
   });
 });

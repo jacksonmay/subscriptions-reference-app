@@ -11,13 +11,9 @@
     "border_title": "边框",
     "border_thickness": "粗细",
     "border_radius": "圆角半径",
-    "colors_text_title": "标题",
     "colors_text_body": "正文",
     "colors_background_border_title": "背景和边框",
     "colors_background": "背景",
-    "colors_dividers": "分隔线",
-    "supporting_text_title": "支持文本",
-    "supporting_text_subtitle": "标题",
-    "supporting_text_input_default": "购买选项"
+    "colors_dividers": "分隔线"
   }
 }

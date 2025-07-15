@@ -98,7 +98,7 @@ export function PauseSubscriptionModal({
         <InlineLayout spacing="loose" columns={['fill', 'auto', 'auto']}>
           <InlineSpacer />
           <Button onPress={() => overlay.close(PAUSE_MODAL_ID)} kind="plain">
-            {i18n.translate('pauseSubscriptionModal.close')}
+            {i18n.translate('close')}
           </Button>
           <Button onPress={handlePauseSubscription} loading={loading}>
             {i18n.translate('pauseSubscriptionModal.action')}

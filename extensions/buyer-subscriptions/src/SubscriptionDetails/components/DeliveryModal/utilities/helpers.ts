@@ -1,6 +1,5 @@
-import type {Address, Country} from '@shopify/address';
+import type {Address} from '@shopify/address';
 import {FieldName} from '@shopify/address';
-import {PhoneNumberFormat, PhoneNumberUtil} from 'google-libphonenumber';
 import type {CountryCode} from 'generatedTypes/customer.types';
 import type {
   DeliveryOption,
@@ -25,21 +24,6 @@ export interface FormattedPhoneNumber {
   countryCodeForRegion?: number;
 }
 
-export function getCountry(
-  countries: Country[],
-  countryCode: string,
-  shopCountry: string,
-  currentLocationCountry?: string,
-) {
-  return (
-    countries.find(({code}) => code === countryCode) ||
-    (currentLocationCountry &&
-      countries.find(({code}) => code === currentLocationCountry)) ||
-    countries.find(({code}) => code === shopCountry) ||
-    countries[0]
-  );
-}
-
 export function formatUserErrorsForFields(submitErrors: FormError[]) {
   const errors: {[key in FieldName]?: string} = {};
   const addressFieldNames = Object.values<string>(FieldName);
@@ -57,66 +41,6 @@ export function formatUserErrorsForFields(submitErrors: FormError[]) {
   });
 
   return errors;
-}
-
-export function formatPhoneNumber(
-  rawPhoneNumber: string,
-  regionCode?: string,
-): FormattedPhoneNumber {
-  const detectedRegionCode = getRegionCode(rawPhoneNumber);
-  const phoneUtil = PhoneNumberUtil.getInstance();
-  try {
-    const parsedPhoneNumber = phoneUtil.parseAndKeepRawInput(
-      rawPhoneNumber,
-      regionCode,
-    );
-    const formatted = phoneUtil.format(
-      parsedPhoneNumber,
-      PhoneNumberFormat.INTERNATIONAL,
-    );
-    const isValid = phoneUtil.isValidNumber(parsedPhoneNumber);
-    return {
-      inputPhoneNumber: rawPhoneNumber,
-      inputRegionCode: regionCode,
-      forcedFormattedPhoneNumber: formatted,
-      detectedRegionCode,
-      isValid,
-      formattedPhoneNumber: isValid ? formatted : rawPhoneNumber,
-    };
-  } catch {
-    return {
-      inputPhoneNumber: rawPhoneNumber,
-      inputRegionCode: regionCode,
-      forcedFormattedPhoneNumber: undefined,
-      detectedRegionCode,
-      isValid: false,
-      formattedPhoneNumber: rawPhoneNumber,
-    };
-  }
-}
-
-export function getCountryCodeForRegion(
-  regionCode: string,
-): number | undefined {
-  const phoneUtil = PhoneNumberUtil.getInstance();
-  try {
-    const countryCode = phoneUtil.getCountryCodeForRegion(regionCode);
-    return countryCode;
-  } catch {
-    return undefined;
-  }
-}
-
-function getRegionCode(rawPhoneNumber: string): string | undefined {
-  const phoneUtil = PhoneNumberUtil.getInstance();
-  try {
-    const parsedPhoneNumber = phoneUtil.parseAndKeepRawInput(rawPhoneNumber);
-    const region = phoneUtil.getRegionCodeForNumber(parsedPhoneNumber);
-    // Note: Though type annotations seem to show that getRegionCodeForNumber returns string | undefined, it actually returns string | null
-    return region ?? undefined;
-  } catch {
-    return undefined;
-  }
 }
 
 export function deliveryOptionIsShipping(

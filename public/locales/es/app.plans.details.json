@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Volver a los planes de suscripción",
-  "planTitle": "Nombre del plan",
-  "planTitleHelpText": "Los clientes no lo verán.",
-  "purchaseOptionTitle": "Nombre de la opción de compra",
+  "planTitle": "Descripción interna",
+  "planTitleHelpText": "Solo para tu referencia",
+  "purchaseOptionTitle": "Nombre",
   "purchaseOptionTitleHelpText": "Los clientes lo verán en las {{howToDisplayProductsLink}} que tengan suscripciones.",
   "defaultPurchaseOptionTitle": "Suscribirse y ahorrar",
   "saveButtonText": "Guardar",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Producto inválido seleccionado",
     "invalidVariant": "Variante de producto inválida seleccionada",
-    "merchantCodeEmptyError": "El nombre del plan es obligatorio",
-    "nameEmptyError": "El nombre de la opción de compra es obligatorio",
+    "merchantCodeEmptyError": "La descripción interna es obligatoria",
+    "nameEmptyError": "El título es obligatorio",
     "createError": "Error al crear el plan de suscripción",
     "updateError": "Error al actualizar el plan de suscripción",
     "deliveryFrequencyError": "La frecuencia debe ser mayor que 0.",

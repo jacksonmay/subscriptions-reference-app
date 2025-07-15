@@ -11,7 +11,7 @@
   },
   "table": {
     "headings": {
-      "planTitle": "套餐标题",
+      "planTitle": "套餐描述",
       "products": "产品",
       "deliveryFrequency": "配送频率",
       "discount": "定价",

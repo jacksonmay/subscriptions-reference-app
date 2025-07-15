@@ -1,4 +1,3 @@
-import {withZod} from '@rvf/zod';
 import type {TFunction} from 'i18next';
 import {useTranslation} from 'react-i18next';
 import type {TypeOf} from 'zod';
@@ -115,19 +114,17 @@ const pricingPolicyInput = () =>
     ),
   });
 
-export function getContractEditFormValidator(t: TFunction) {
-  return withZod(
-    z.object({
-      lines: z.array(subscriptionLine(t)),
-      deliveryPolicy: deliveryPolicy(t),
-    }),
-  );
+export function getContractEditFormSchema(t: TFunction) {
+  return z.object({
+    lines: z.array(subscriptionLine(t)),
+    deliveryPolicy: deliveryPolicy(t),
+  });
 }
 
-export function useContractEditFormValidator() {
+export function useContractEditFormSchema() {
   const {t} = useTranslation('app.contracts');
 
-  return getContractEditFormValidator(t);
+  return getContractEditFormSchema(t);
 }
 
 export type CycleDiscountAdjustmentValue = TypeOf<

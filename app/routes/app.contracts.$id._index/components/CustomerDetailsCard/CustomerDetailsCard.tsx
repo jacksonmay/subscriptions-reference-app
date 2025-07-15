@@ -66,7 +66,11 @@ export function CustomerDetailsCard({
           <Text as="h2" variant="headingMd" fontWeight="semibold">
             {t('customerDetails.title')}
           </Text>
-          <Link removeUnderline url={`shopify:admin/customers/${parseGid(id)}`}>
+          <Link
+            removeUnderline
+            target="_parent"
+            url={`shopify:admin/customers/${parseGid(id)}`}
+          >
             <Text as="p" variant="bodyMd">
               {displayName}
             </Text>
@@ -79,6 +83,7 @@ export function CustomerDetailsCard({
             </Text>
             <Link
               removeUnderline
+              target="_parent"
               url={`shopify:admin/customers/${parseGid(id)}`}
             >
               <Text as="p" variant="bodyMd">
@@ -135,6 +140,7 @@ export function CustomerDetailsCard({
               currentContractAddress={formattedAddress}
               customerAddresses={addresses}
               deliveryMethodName={deliveryMethod?.name}
+              customerId={id}
             />
           </BlockStack>
         ) : null}

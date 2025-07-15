@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Tilbake til abonnementstyper",
-  "planTitle": "Tittel for plan",
-  "planTitleHelpText": "Kundene ser ikke dette.",
-  "purchaseOptionTitle": "Tittel for kjøpsalternativ",
+  "planTitle": "Intern beskrivelse",
+  "planTitleHelpText": "Bare for referanse",
+  "purchaseOptionTitle": "Tittel",
   "purchaseOptionTitleHelpText": "Kundene vil se dette på {{howToDisplayProductsLink}} som har abonnementer.",
   "defaultPurchaseOptionTitle": "Abonner og lagre",
   "saveButtonText": "Lagre",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Ugyldig produkt valgt",
     "invalidVariant": "Ugyldig produktvariant valgt",
-    "merchantCodeEmptyError": "Abonnementstittel kreves",
-    "nameEmptyError": "Tittel for kjøpsalternativet kreves",
+    "merchantCodeEmptyError": "Intern beskrivelse kreves",
+    "nameEmptyError": "Tittel kreves",
     "createError": "Feil ved opprettelse av abonnementstype",
     "updateError": "Feil ved oppdatering av abonnementstype",
     "deliveryFrequencyError": "Frekvensen må være høyere enn 0",
@@ -92,7 +92,7 @@
     "productAndVariantTextSeparatedList": "{productText}, {variantText}",
     "fixedPrice": "{amount}"
   },
-  "purchaseOptionTitleHelpLinkText": "produktsider i butikkfronten",
+  "purchaseOptionTitleHelpLinkText": "produktsider i utstillingsvindu",
   "creationMutation": {
     "options": {
       "deliveryFrequency": "Leveringsfrekvens"

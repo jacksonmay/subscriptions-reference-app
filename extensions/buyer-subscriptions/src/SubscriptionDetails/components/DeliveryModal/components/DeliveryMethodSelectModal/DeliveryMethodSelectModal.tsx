@@ -204,10 +204,10 @@ export function DeliveryMethodSelectModal({
         <></>
         <InlineStack blockAlignment="center">
           <Button kind="plain" onPress={onClose}>
-            {i18n.translate('addressModal.cancel')}
+            {i18n.translate('cancel')}
           </Button>
           <Button onPress={handleSave} loading={loading}>
-            {i18n.translate('addressModal.save')}
+            {i18n.translate('save')}
           </Button>
         </InlineStack>
       </InlineLayout>

@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "更换付款方式",
-    "save": "保存",
     "paymentMethod": "付款方式",
     "edit": "编辑",
-    "close": "关闭",
     "errorBannerTitle": "无法更新付款方式"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "跳过下一个订单",
     "generic": "是否要跳过下一个订单？",
     "date": "是否要跳过下一个订单？您的订阅将于 {{date}} 恢复。",
-    "errorBannerTitle": "无法跳过下一个订单",
-    "close": "关闭"
+    "errorBannerTitle": "无法跳过下一个订单"
   },
   "pauseSubscriptionModal": {
     "title": "暂停订阅",
     "action": "暂停订阅",
-    "close": "关闭",
     "description": "您的订阅将立即暂停，您无需支付任何后续费用，也不会收到后续订单。您可以随时恢复此订阅。",
     "errorBannerTitle": "无法暂停订阅"
   },
@@ -76,14 +72,12 @@
     "pause": "暂停",
     "skip": "跳过下一个订单",
     "resume": "恢复",
-    "cancel": "取消",
     "manage": "管理",
     "viewSubscriptionDetails": "查看详细信息"
   },
   "resumeSubscriptionModal": {
     "description": "如果您恢复此订阅，则系统将立即开始计费。",
     "descriptionWithDate": "如果您恢复此订阅，则系统将于 {{date}} 恢复计费。",
-    "close": "关闭",
     "descriptionPriceChanged": "此订阅的价格已更改，您将需要为之后的每个订单支付 {{price}}。",
     "continue": "继续",
     "title": "恢复订阅",
@@ -100,19 +94,19 @@
     "title": "取消订阅",
     "description": "如果您取消订阅，则计费和配送将立刻停止。取消订阅则无法撤销。若要暂时停止接收订单，请将订阅暂停。",
     "action": "取消订阅",
-    "close": "关闭",
     "errorBannerTitle": "无法取消订阅"
   },
   "errorBoundary": {
     "content": "出现错误，请刷新页面"
   },
   "addressModal": {
-    "save": "保存",
     "continue": "继续",
-    "cancel": "取消",
     "title": "编辑收货地址",
     "errorBannerTitle": "无法更新配送方式",
-    "noDeliveryOptions": "无法将此订阅配送到您输入的地址。请查看您的地址，确保所有字段均已输入正确内容，然后重试。"
+    "noDeliveryOptions": "无法将此订阅配送到您输入的地址。请查看您的地址，确保所有字段均已输入正确内容，然后重试。",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "country": "国家/地区或区域"
   },
   "successBanner": {
     "paused": "订阅已暂停",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "后续订单",
-    "close": "关闭",
     "skipOrder": "跳过",
     "skipOrderAccessibilityLabel": "跳过 {{orderDate}} 的订单",
     "unSkipOrder": "取消跳过",
@@ -153,5 +146,8 @@
     "title": "未购买订阅",
     "description": "请前往商店购买订阅"
   },
-  "delayed": "下一笔订单可能会延迟"
+  "delayed": "下一笔订单可能会延迟",
+  "close": "关闭",
+  "cancel": "取消",
+  "save": "保存"
 }

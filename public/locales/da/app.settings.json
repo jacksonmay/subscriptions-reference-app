@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Gem",
   "actions": {
-    "updateSuccess": "Indstillingerne er opdateret"
+    "updateSuccess": "Indstillingerne er opdateret",
+    "updateFailed": "Indstillingerne blev ikke opdateret"
   },
   "title": "Indstillinger",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Handling, når alle nye forsøg er mislykkedes",
       "options": {
-        "skip": "Spring abonnement over, og send meddelelse",
+        "skip": "Spring ordre over og send meddelelse",
         "cancel": "Opsig abonnement, og send meddelelse",
         "pause": "Sæt abonnement på pause, og send meddelelse"
       }

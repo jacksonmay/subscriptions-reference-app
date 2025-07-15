@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "Annuller",
         "update": "Opdater"
+      },
+      "localDeliveryBanner": {
+        "content": "En adresse med et telefonnummer er påkrævet for lokal levering. {link}",
+        "link": "Administrer adresser på kundesiden"
       }
     }
   },
@@ -330,6 +334,11 @@
         "one": "Opret ordren for at oversælge dette produkt. Dette kan medføre problemer med at klargøre alle ordrer.",
         "other": "Opret ordren for at oversælge disse produkter. Dette kan medføre problemer med at klargøre alle ordrer."
       }
+    },
+    "allocationError": {
+      "title": "Ordren fra {date} kunne ikke oprettes",
+      "description": "Kundens adresse er i en leveringszone, hvor der ikke er nogen tilgængelig lagerbeholdning, eller den understøttes ikke af de aktuelle indstillinger for levering. Opdater lagerbeholdningen, eller {settingsLink} for at fortsætte med ordrer.",
+      "settingsLinkText": "rediger indstillingerne for levering"
     }
   }
 }

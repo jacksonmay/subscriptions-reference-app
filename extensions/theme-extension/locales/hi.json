@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "यह अपने आप रिन्यू हो जाता है, किसी भी समय छोड़ें या रद्द करें।",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='सब्सक्रिप्शन पॉलिसी देखें'>सब्सक्रिप्शन पॉलिसी देखें</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>सब्सक्रिप्शन पॉलिसी देखें</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "इसे कार्ट में जोड़ने के लिए, उत्पाद पेज पर जाएँ और खरीदारी का कोई विकल्प चुनें"

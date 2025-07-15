@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "サブスクリプションプランに戻る",
-  "planTitle": "プラン名",
-  "planTitleHelpText": "お客様にはこちらが表示されません。",
-  "purchaseOptionTitle": "購入オプション名",
+  "planTitle": "内部説明",
+  "planTitleHelpText": "参照用",
+  "purchaseOptionTitle": "タイトル",
   "purchaseOptionTitleHelpText": "お客様は、サブスクリプションを提供する{{howToDisplayProductsLink}}でこれを見ることができます。",
   "defaultPurchaseOptionTitle": "お得な定期購入",
   "saveButtonText": "保存",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "無効な商品が選択されました",
     "invalidVariant": "無効な商品バリエーションが選択されました",
-    "merchantCodeEmptyError": "プラン名が必要です",
-    "nameEmptyError": "購入オプション名が必要です",
+    "merchantCodeEmptyError": "内部説明は必須です",
+    "nameEmptyError": "タイトルは必須です",
     "createError": "サブスクリプションプランの作成中にエラーが発生しました",
     "updateError": "サブスクリプションプランの更新中にエラーが発生しました",
     "deliveryFrequencyError": "頻度は0より多い必要があります",

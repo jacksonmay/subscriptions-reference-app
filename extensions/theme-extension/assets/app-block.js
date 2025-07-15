@@ -121,8 +121,26 @@
       this.listenToSellingPlanFormRadioButtonChange();
     }
 
-    listenToVariantChange() {
-      this.listenToAddToCartForms();
+    listentoShopifySectionChanges() {
+      if (this.shopifySection) {
+        const shopifySectionObserver = new MutationObserver((mutationList) => {
+          mutationList.forEach((mutationRecord) => {
+            mutationRecord.addedNodes.forEach((node) => {
+              if (node.attributes?.name?.textContent === 'id') {
+                this.handleVariantChange(mutationRecord.target.value);
+              }
+            });
+          });
+        });
+
+        shopifySectionObserver.observe(this.shopifySection, {
+          subtree: true,
+          childList: true,
+        });
+      }
+    }
+
+    listenToVariantInputChange() {
       if (this.variantIdInput.tagName === 'INPUT') {
         const variantIdObserver = new MutationObserver((mutationList) => {
           mutationList.forEach((mutationRecord) => {
@@ -134,6 +152,24 @@
           attributes: true,
         });
       }
+    }
+
+    listenToVariantChange() {
+      /*
+      This function contains multiple solutions to listen to variant changes.
+      We need multiple solutions because themes do not update the variant in the same way.
+      When adding a solution, we need to make sure it doesn't break the other solutions,
+      that it is not overly specific to a certain theme, and that it does not interfere
+      with other blocks within the section, or other sections within the page.
+
+      Some themes may trigger multiple solutions.
+      */
+
+      this.listenToAddToCartForms();
+
+      this.listentoShopifySectionChanges();
+
+      this.listenToVariantInputChange();
     }
 
     listenToAddToCartForms() {
@@ -373,10 +409,11 @@
           if (entry.initiatorType !== 'fetch') return;
 
           const url = new URL(entry.name);
-          // When the variant changes, the price is updated via a fetch request - update the price to reflect the selected selling plan price
+          // When the variant changes, the section (including the price) is updated - update the price to reflect the selected selling plan price
           if (
             url.search.includes('variant') ||
-            url.search.includes('variants')
+            url.search.includes('variants') ||
+            url.search.includes('option_values')
           ) {
             this.updatePrice();
           }
@@ -384,9 +421,8 @@
           if (url.pathname.includes('/cart/add'))
             this.toggleQuickAddErrorMessage();
         });
-
-        variantPerformanceObserver.observe({entryTypes: ['resource']});
       });
+      variantPerformanceObserver.observe({type: 'resource'});
     }
 
     enableCartAddPerformanceObserver() {

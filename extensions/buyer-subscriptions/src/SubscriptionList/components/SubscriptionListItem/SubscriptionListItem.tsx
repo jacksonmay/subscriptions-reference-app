@@ -89,7 +89,7 @@ export function SubscriptionListItem({
 
   const hasInventoryError =
     lastBillingAttemptErrorType === BillingAttemptErrorType.InventoryError &&
-    status === 'FAILED';
+    (status === 'ACTIVE' || status === 'FAILED');
 
   const nextOrderText = (() => {
     if (hasInventoryError) {
@@ -123,7 +123,6 @@ export function SubscriptionListItem({
             lastOrderPrice={lastOrderPrice}
             nextOrderPrice={totalPrice}
             resumeDateIfNextCycleSkipped={resumeDateIfNextCycleSkipped}
-            hasInventoryError={hasInventoryError}
           />
         }
       >

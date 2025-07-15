@@ -11,13 +11,9 @@
     "border_title": "Bordure",
     "border_thickness": "Épaisseur",
     "border_radius": "Rayon de coin",
-    "colors_text_title": "Titre",
     "colors_text_body": "Corps",
     "colors_background_border_title": "Arrière-plans et bordures",
     "colors_background": "Arrière‑plan",
-    "colors_dividers": "Séparateurs",
-    "supporting_text_title": "Texte d’appui",
-    "supporting_text_subtitle": "Titre",
-    "supporting_text_input_default": "Options d’achat"
+    "colors_dividers": "Séparateurs"
   }
 }

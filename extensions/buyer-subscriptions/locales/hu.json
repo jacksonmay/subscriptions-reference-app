@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Fizetési mód cseréje",
-    "save": "Mentés",
     "paymentMethod": "Fizetési mód",
     "edit": "Szerkesztés",
-    "close": "Bezárás",
     "errorBannerTitle": "Nem sikerült frissíteni a fizetési módot"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "A következő megrendelés kihagyása",
     "generic": "Ki szeretnéd hagyni a következő megrendelést?",
     "date": "Ki szeretnéd hagyni a következő megrendelést? Az előfizetésed ekkor folytatódik: {{date}}.",
-    "errorBannerTitle": "Nem sikerült kihagyni a következő megrendelést",
-    "close": "Bezárás"
+    "errorBannerTitle": "Nem sikerült kihagyni a következő megrendelést"
   },
   "pauseSubscriptionModal": {
     "title": "Előfizetés felfüggesztése",
     "action": "Előfizetés felfüggesztése",
-    "close": "Bezárás",
     "description": "Az előfizetésedet haladéktalanul felfüggesztjük, így a továbbiakban nem számítjuk fel a díját, és nem kapod meg a közelgő megrendeléseket. Az előfizetést bármikor újraindíthatod.",
     "errorBannerTitle": "Nem sikerült szüneteltetni az előfizetést"
   },
@@ -76,14 +72,12 @@
     "pause": "Szünet",
     "skip": "A következő megrendelés kihagyása",
     "resume": "Folytatás",
-    "cancel": "Mégse",
     "manage": "Kezelés",
     "viewSubscriptionDetails": "Részletek megtekintése"
   },
   "resumeSubscriptionModal": {
     "description": "Az előfizetés újraindításával a számlázás is azonnal folytatódik.",
     "descriptionWithDate": "Ha újraindítod az előfizetést, ekkor fog folytatódni a számlázás: {{date}}.",
-    "close": "Bezárás",
     "descriptionPriceChanged": "Ennek az előfizetésnek az ára megváltozott, ezért a következő rendeléstől már {{price}} összeget kell fizetned.",
     "continue": "Folytatás",
     "title": "Előfizetés újraindítása",
@@ -100,19 +94,19 @@
     "title": "Előfizetés lemondása",
     "description": "Ha lemondod az előfizetést, azonnal leállítjuk a számlázást és a kézbesítést. Az előfizetés lemondása nem vonható vissza. Ha csak ideiglenesen szeretnéd leállítani a megrendeléseket, válaszd az előfizetés felfüggesztését.",
     "action": "Előfizetés lemondása",
-    "close": "Bezárás",
     "errorBannerTitle": "Nem sikerült lemondani az előfizetést"
   },
   "errorBoundary": {
     "content": "Hiba történt. Kérjük, frissítsd az oldalt"
   },
   "addressModal": {
-    "save": "Mentés",
     "continue": "Folytatás",
-    "cancel": "Mégse",
     "title": "Szállítási cím szerkesztése",
     "errorBannerTitle": "Nem sikerült megváltoztatni a szállítási módot",
-    "noDeliveryOptions": "Ez az előfizetés nem szállítható az általad megadott címre. Ellenőrizd a beírt címet, és hogy minden mezőt helyesen töltöttél-e ki, majd próbáld meg újra."
+    "noDeliveryOptions": "Ez az előfizetés nem szállítható az általad megadott címre. Ellenőrizd a beírt címet, és hogy minden mezőt helyesen töltöttél-e ki, majd próbáld meg újra.",
+    "firstName": "Utónév",
+    "lastName": "Vezetéknév",
+    "country": "Ország/régió"
   },
   "successBanner": {
     "paused": "Az előfizetés szüneteltetve",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Közelgő megrendelések",
-    "close": "Bezárás",
     "skipOrder": "Kihagyás",
     "skipOrderAccessibilityLabel": "Az ekkori rendelés kihagyása: {{orderDate}}",
     "unSkipOrder": "Kihagyás visszavonása",
@@ -153,5 +146,8 @@
     "title": "Nincs megvásárolt előfizetés",
     "description": "Látogass el az üzletbe az előfizetéshez"
   },
-  "delayed": "Előfordulhat, hogy a következő megrendelés késni fog"
+  "delayed": "Előfordulhat, hogy a következő megrendelés késni fog",
+  "close": "Bezárás",
+  "cancel": "Mégse",
+  "save": "Mentés"
 }

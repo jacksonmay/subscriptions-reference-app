@@ -84,7 +84,7 @@ export function DetailsActions({
           />
         }
       >
-        <Text>{i18n.translate('subscriptionActions.cancel')}</Text>
+        <Text>{i18n.translate('cancel')}</Text>
       </Button>
     </>
   );

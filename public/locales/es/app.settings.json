@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Guardar",
   "actions": {
-    "updateSuccess": "Configuración actualizada"
+    "updateSuccess": "Configuración actualizada",
+    "updateFailed": "Error al actualizar la configuración"
   },
   "title": "Configuración",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Acción cuando todos los reintentos fallaron",
       "options": {
-        "skip": "Omitir suscripción y enviar notificación",
+        "skip": "Omitir pedido y enviar notificación",
         "cancel": "Cancelar suscripción y enviar notificación",
         "pause": "Pausar suscripción y enviar notificación"
       }

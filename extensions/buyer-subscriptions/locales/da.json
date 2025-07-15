@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Erstat betalingsmetode",
-    "save": "Gem",
     "paymentMethod": "Betalingsmetode",
     "edit": "Rediger",
-    "close": "Luk",
     "errorBannerTitle": "Betalingsmetoden kunne ikke opdateres"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Spring næste ordre over",
     "generic": "Vil du springe næste ordre over?",
     "date": "Vil du springe næste ordre over? Dit abonnement fortsætter d. {{date}}.",
-    "errorBannerTitle": "Næste ordre kunne ikke springes over",
-    "close": "Luk"
+    "errorBannerTitle": "Næste ordre kunne ikke springes over"
   },
   "pauseSubscriptionModal": {
     "title": "Sæt abonnement på pause",
     "action": "Sæt abonnement på pause",
-    "close": "Luk",
     "description": "Dit abonnement sættes straks på pause, og du modtager ikke yderligere debiteringer eller kommende ordrer. Du kan genoptage dette abonnement når som helst.",
     "errorBannerTitle": "Abonnementet kunne ikke sættes på pause"
   },
@@ -76,14 +72,12 @@
     "pause": "Sæt på pause",
     "skip": "Spring næste ordre over",
     "resume": "Genoptag",
-    "cancel": "Annuller",
     "manage": "Administrer",
     "viewSubscriptionDetails": "Se detaljer"
   },
   "resumeSubscriptionModal": {
     "description": "Når du genoptager abonnementet, fortsætter fakturering straks.",
     "descriptionWithDate": "Hvis du genoptager dette abonnement, fortsætter faktureringen den {{date}}.",
-    "close": "Luk",
     "descriptionPriceChanged": "Prisen på dette abonnement er blevet ændret, og du vil blive opkrævet {{price}} for hver kommende ordre.",
     "continue": "Fortsæt",
     "title": "Genoptag abonnement",
@@ -100,19 +94,19 @@
     "title": "Opsig abonnement",
     "description": "Hvis du annullerer dit abonnement, slutter fakturering og levering straks. Annullering af abonnement kan ikke fortrydes. Hvis du vil stoppe med at modtage ordrer midlertidigt, kan du sætte dit abonnement på pause.",
     "action": "Opsig abonnement",
-    "close": "Luk",
     "errorBannerTitle": "Abonnementet kunne ikke annulleres"
   },
   "errorBoundary": {
     "content": "Der gik noget galt. Opdater siden."
   },
   "addressModal": {
-    "save": "Gem",
     "continue": "Fortsæt",
-    "cancel": "Annuller",
     "title": "Rediger leveringsadresse",
     "errorBannerTitle": "Leveringsmetoden kunne ikke opdateres",
-    "noDeliveryOptions": "Dette abonnement kan ikke afsendes til den angivne adresse. Tjek din adresse for at sikre, at alle felter er udfyldt korrekt, og prøv igen."
+    "noDeliveryOptions": "Dette abonnement kan ikke afsendes til den angivne adresse. Tjek din adresse for at sikre, at alle felter er udfyldt korrekt, og prøv igen.",
+    "firstName": "Fornavn",
+    "lastName": "Efternavn",
+    "country": "Land/område"
   },
   "successBanner": {
     "paused": "Abonnementet blev sat på pause",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Kommende ordrer",
-    "close": "Luk",
     "skipOrder": "Spring over",
     "skipOrderAccessibilityLabel": "Spring over ordren fra den {{orderDate}}",
     "unSkipOrder": "Annuller at springe over ordre",
@@ -153,5 +146,8 @@
     "title": "Der er ikke købt nogen abonnementer",
     "description": "Gå til butikken for at købe abonnementer"
   },
-  "delayed": "Næste ordre kan blive forsinket"
+  "delayed": "Næste ordre kan blive forsinket",
+  "close": "Luk",
+  "cancel": "Opsig",
+  "save": "Gem"
 }

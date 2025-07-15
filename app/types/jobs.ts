@@ -21,3 +21,7 @@ export interface TagSubscriptionsOrderPayload {
   orderId: string | null;
   tags: string[];
 }
+
+export interface SendInventoryFailureEmailParameters {
+  frequency: string;
+}

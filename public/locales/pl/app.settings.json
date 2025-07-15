@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Zapisz",
   "actions": {
-    "updateSuccess": "Zaktualizowano ustawienia"
+    "updateSuccess": "Zaktualizowano ustawienia",
+    "updateFailed": "Nie udało się uaktualnić ustawień"
   },
   "title": "Ustawienia",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Czynność w przypadku, gdy wszystkie próby zakończyły się niepowodzeniem",
       "options": {
-        "skip": "Pomiń subskrypcję i wyślij powiadomienie",
+        "skip": "Pomiń zamówienie i wyślij powiadomienie",
         "cancel": "Anuluj subskrypcję i wyślij powiadomienie",
         "pause": "Wstrzymaj subskrypcję i wyślij powiadomienie"
       }

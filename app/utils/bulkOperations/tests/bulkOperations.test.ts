@@ -250,7 +250,7 @@ describe('pollBulkOperationById', () => {
     };
     mockGraphQL({BulkOperationById: mockResponse});
 
-    const result = await pollBulkOperationById(graphQL, '1');
+    const result = await pollBulkOperationById(graphQL, '1', 10);
 
     expect(result).toEqual(mockResponse.data.bulkOperationById);
   });
@@ -258,7 +258,7 @@ describe('pollBulkOperationById', () => {
   it('should throw an error when the query fails', async () => {
     mockGraphQL({BulkOperationById: {data: null}});
 
-    await expect(pollBulkOperationById(graphQL, '1')).rejects.toThrow(
+    await expect(pollBulkOperationById(graphQL, '1', 10)).rejects.toThrow(
       new BulkOperationError(`BulkOperationById query with id '1' failed.`),
     );
   });
@@ -273,7 +273,7 @@ describe('pollBulkOperationById', () => {
     };
     mockGraphQL({BulkOperationById: mockResponse});
 
-    await expect(pollBulkOperationById(graphQL, '1')).rejects.toThrow(
+    await expect(pollBulkOperationById(graphQL, '1', 10)).rejects.toThrow(
       new BulkOperationError(`BulkOperation '1' failed.`),
     );
   });
@@ -304,7 +304,7 @@ describe('pollBulkOperationById', () => {
     };
     mockGraphQL({BulkOperationById: mockResponse});
 
-    await expect(pollBulkOperationById(graphQL, '1')).rejects.toThrow(
+    await expect(pollBulkOperationById(graphQL, '1', 10)).rejects.toThrow(
       new BulkOperationError(
         `Unexpected status for BulkOperation '1': UnexpectedStatus`,
       ),

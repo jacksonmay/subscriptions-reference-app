@@ -106,7 +106,9 @@ export class InventoryService {
     if (this.settings.inventoryNotificationFrequency === 'immediately') {
       const job = new SendInventoryFailureEmailJob({
         shop: this.shopDomain,
-        payload: {},
+        payload: {
+          frequency: 'immediately',
+        },
       });
       await jobs.enqueue(job);
     }

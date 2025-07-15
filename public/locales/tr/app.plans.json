@@ -11,7 +11,7 @@
   },
   "table": {
     "headings": {
-      "planTitle": "Plan başlığı",
+      "planTitle": "Plan açıklaması",
       "products": "Ürünler",
       "deliveryFrequency": "Teslimat sıklığı",
       "discount": "Fiyatlandırma",

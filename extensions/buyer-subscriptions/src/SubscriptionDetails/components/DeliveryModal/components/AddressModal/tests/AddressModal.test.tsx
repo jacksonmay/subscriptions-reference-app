@@ -28,6 +28,17 @@ describe('<AddressModal />', () => {
     handleAddressChange: vi.fn(),
   };
 
+  const mockAddressWithoutCountry = createMockAddress({
+    country: '',
+    province: '',
+  });
+
+  const defaultPropsWithoutCountry = {
+    ...defaultProps,
+    address: mockAddressWithoutCountry,
+    currentAddress: mockAddressWithoutCountry,
+  };
+
   it('renders address lines', async () => {
     await mountWithAppContext(<AddressModal {...defaultProps} />);
 
@@ -37,6 +48,17 @@ describe('<AddressModal />', () => {
     expect(screen.getByText('City')).toBeInTheDocument();
     expect(screen.getByText('Province')).toBeInTheDocument();
     expect(screen.getByText('Postal code')).toBeInTheDocument();
+  });
+
+  it('renders default address lines when country is not set', async () => {
+    await mountWithAppContext(<AddressModal {...defaultPropsWithoutCountry} />);
+
+    expect(screen.getByText('Country/region')).toBeInTheDocument();
+    expect(screen.getByText('First name')).toBeInTheDocument();
+    expect(screen.getByText('Last name')).toBeInTheDocument();
+    expect(screen.queryByText('City')).not.toBeInTheDocument();
+    expect(screen.queryByText('Province')).not.toBeInTheDocument();
+    expect(screen.queryByText('Postal code')).not.toBeInTheDocument();
   });
 
   it('shows different countries in the dropdown', async () => {

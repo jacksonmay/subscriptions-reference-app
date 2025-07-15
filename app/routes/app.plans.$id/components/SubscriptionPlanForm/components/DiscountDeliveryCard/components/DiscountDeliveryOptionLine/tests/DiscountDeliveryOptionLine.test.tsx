@@ -4,15 +4,15 @@ import {describe, expect, it} from 'vitest';
 
 import {
   DiscountType,
-  useSellingPlanFormValidator,
+  useSellingPlanFormSchema,
 } from '~/routes/app.plans.$id/validator';
 import {Form} from '~/components/Form';
 import {DiscountDeliveryOptionLine} from '../DiscountDeliveryOptionLine';
 
 function WithForm({children}: {children: React.ReactNode}) {
-  const validator = useSellingPlanFormValidator();
+  const schema = useSellingPlanFormSchema();
 
-  return <Form validator={validator}>{children}</Form>;
+  return <Form schema={schema}>{children}</Form>;
 }
 
 function mountWithForm(children: React.ReactNode) {
@@ -104,7 +104,7 @@ describe('DiscountDeliveryOptionLine', () => {
       );
 
       expect(screen.getByLabelText('Amount off')).toBeInTheDocument();
-      expect(screen.queryByText('$')).toBeInTheDocument();
+      expect(screen.getByText('$')).toBeInTheDocument();
       expect(
         screen.queryByText('This will be the price displayed to customers'),
       ).not.toBeInTheDocument();
@@ -120,7 +120,7 @@ describe('DiscountDeliveryOptionLine', () => {
         />,
       );
 
-      expect(screen.queryByText('¥')).toBeInTheDocument();
+      expect(screen.getByText('¥')).toBeInTheDocument();
     });
 
     it('renders with percentage off label and helptext when discountType is fixed price', () => {

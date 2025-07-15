@@ -16,7 +16,6 @@ import {SuccessToastType, useToast} from 'utilities/hooks/useToast';
 export interface SubscriptionActionsProps {
   id: string;
   status: SubscriptionStatus;
-  hasInventoryError: boolean;
   resumeDate?: string | null;
   resumeDateIfNextCycleSkipped?: string | null;
   cycleIndexToSkip?: number | null;
@@ -30,7 +29,6 @@ export const SUBSCRIPTION_ACTIONS_POPOVER_ID = 'subscription-actions-popover';
 export function SubscriptionActions({
   id,
   status,
-  hasInventoryError,
   resumeDate,
   resumeDateIfNextCycleSkipped,
   cycleIndexToSkip,
@@ -47,7 +45,7 @@ export function SubscriptionActions({
 
   const subscriptionDetailsUrl = `extension:/subscriptions/${parseGid(id)}`;
 
-  if (!['ACTIVE', 'PAUSED'].includes(status) && !hasInventoryError) {
+  if (!['ACTIVE', 'PAUSED'].includes(status)) {
     return (
       <Button
         kind="secondary"
@@ -147,7 +145,6 @@ export function SubscriptionActions({
           </View>
         </Button>
       ) : null}
-      {hasInventoryError ? <>{skipButton()}</> : null}
     </>
   );
 }

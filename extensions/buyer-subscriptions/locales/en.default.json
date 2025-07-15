@@ -4,6 +4,9 @@
   "subscriptionDetails": "Subscription details",
   "upcomingOrder": "Upcoming order",
   "skip": "Skip",
+  "close": "Close",
+  "cancel": "Cancel",
+  "save": "Save",
   "listItem": {
     "multipleItemsName": "{{count}} items",
     "accessibilityLabel": "Manage subscription: {{title}}"
@@ -46,10 +49,8 @@
   },
   "paymentModal": {
     "title": "Replace payment method",
-    "save": "Save",
     "paymentMethod": "Payment method",
     "edit": "Edit",
-    "close": "Close",
     "errorBannerTitle": "Unable to update payment method"
   },
   "pastOrdersCard": {
@@ -60,13 +61,11 @@
     "text": "Skip next order",
     "generic": "Do you want to skip the next order?",
     "date": "Do you want to skip the next order? Your subscription will resume on {{date}}.",
-    "errorBannerTitle": "Unable to skip next order",
-    "close": "Close"
+    "errorBannerTitle": "Unable to skip next order"
   },
   "pauseSubscriptionModal": {
     "title": "Pause subscription",
     "action": "Pause subscription",
-    "close": "Close",
     "description": "Your subscription will be paused effective immediately and you will not receive any further charges or upcoming orders. You can resume this subscription at any time.",
     "errorBannerTitle": "Unable to pause subscription"
   },
@@ -74,14 +73,12 @@
     "pause": "Pause",
     "skip": "Skip next order",
     "resume": "Resume",
-    "cancel": "Cancel",
     "manage": "Manage",
     "viewSubscriptionDetails": "View details"
   },
   "resumeSubscriptionModal": {
     "description": "If you resume this subscription, billing will resume immediately.",
     "descriptionWithDate": "If you resume this subscription, billing will resume on {{date}}.",
-    "close": "Close",
     "descriptionPriceChanged": "The price for this subscription has changed and you will be charged {{price}} per upcoming order.",
     "continue": "Continue",
     "title": "Resume subscription",
@@ -98,19 +95,19 @@
     "title": "Cancel subscription",
     "description": "If you cancel your subscription, billing and delivery will end immediately. Canceling a subscription cannot be undone. To temporarily stop receiving orders, pause your subscription.",
     "action": "Cancel subscription",
-    "close": "Close",
     "errorBannerTitle": "Unable to cancel subscription"
   },
   "errorBoundary": {
     "content": "Something went wrong, please refresh the page"
   },
   "addressModal": {
-    "save": "Save",
     "continue": "Continue",
-    "cancel": "Cancel",
     "title": "Edit shipping address",
     "errorBannerTitle": "Unable to update delivery method",
-    "noDeliveryOptions": "This subscription can't be shipped to the address you entered. Review your address to ensure that all fields have been entered correctly and try again."
+    "noDeliveryOptions": "This subscription can't be shipped to the address you entered. Review your address to ensure that all fields have been entered correctly and try again.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "country": "Country/region"
   },
   "successBanner": {
     "paused": "Subscription paused",
@@ -126,7 +123,6 @@
   "paymentMethodInvalidBadge": "Invalid payment method",
   "upcomingOrdersModal": {
     "title": "Upcoming orders",
-    "close": "Close",
     "skipOrder": "Skip",
     "skipOrderAccessibilityLabel": "Skip order on {{orderDate}}",
     "unSkipOrder": "Unskip",

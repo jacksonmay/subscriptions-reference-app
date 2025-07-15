@@ -7,7 +7,6 @@ import {screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type {UserError} from 'types/admin.types';
 import {describe, expect, it, vi} from 'vitest';
-import MetaobjectFieldsUpdateMutation from '~/graphql/MetaobjectFieldsUpdateMutation';
 import {createMockShopContext} from '~/routes/app.contracts.$id._index/tests/Fixtures';
 import SettingsIndex, {action, loader} from '../route';
 import type {
@@ -15,6 +14,8 @@ import type {
   InventoryNotificationFrequencyTypeType,
 } from '../validator';
 import {mockShopify} from '#/setup-app-bridge';
+import {MetafieldType} from '~/utils/metaobjects';
+import MetaobjectUpdateMutation from '~/graphql/MetaobjectUpdateMutation';
 
 const mockShopContext = createMockShopContext();
 const {graphQL, mockGraphQL} = mockShopifyServer();
@@ -69,59 +70,92 @@ const buildGraphQLMock = ({
   inventoryNotificationFrequency: InventoryNotificationFrequencyTypeType;
   userErrors: UserError[];
 }) => ({
-  SettingsMetaobject: {
+  MetaobjectByHandle: {
     data: {
       metaobjectByHandle: {
         id: 'gid://shopify/Metaobject/1',
-        retryAttempts: {
-          value: retryAttempts,
-        },
-        daysBetweenRetryAttempts: {
-          value: daysBetweenRetryAttempts,
-        },
-        onFailure: {
-          value: onFailure,
-        },
-        inventoryRetryAttempts: {
-          value: inventoryRetryAttempts,
-        },
-        inventoryDaysBetweenRetryAttempts: {
-          value: inventoryDaysBetweenRetryAttempts,
-        },
-        inventoryOnFailure: {
-          value: inventoryOnFailure,
-        },
-        inventoryNotificationFrequency: {
-          value: inventoryNotificationFrequency,
-        },
-        userErrors,
+        fields: [
+          {
+            key: 'retryAttempts',
+            value: retryAttempts,
+            type: MetafieldType.NUMBER_INTEGER,
+          },
+          {
+            key: 'daysBetweenRetryAttempts',
+            value: daysBetweenRetryAttempts,
+            type: MetafieldType.NUMBER_INTEGER,
+          },
+          {
+            key: 'onFailure',
+            value: onFailure,
+            type: MetafieldType.SINGLE_LINE_TEXT_FIELD,
+          },
+          {
+            key: 'inventoryRetryAttempts',
+            value: inventoryRetryAttempts,
+            type: MetafieldType.NUMBER_INTEGER,
+          },
+          {
+            key: 'inventoryDaysBetweenRetryAttempts',
+            value: inventoryDaysBetweenRetryAttempts,
+            type: MetafieldType.NUMBER_INTEGER,
+          },
+          {
+            key: 'inventoryOnFailure',
+            value: inventoryOnFailure,
+            type: MetafieldType.SINGLE_LINE_TEXT_FIELD,
+          },
+          {
+            key: 'inventoryNotificationFrequency',
+            value: inventoryNotificationFrequency,
+            type: MetafieldType.SINGLE_LINE_TEXT_FIELD,
+          },
+        ],
       },
     },
   },
-  MetaobjectFieldsUpdateMutation: {
+  MetaobjectUpdate: {
     data: {
       metaobjectUpdate: {
-        id: 'gid://shopify/Metaobject/1',
-        retryAttempts: {
-          value: retryAttempts,
-        },
-        daysBetweenRetryAttempts: {
-          value: daysBetweenRetryAttempts,
-        },
-        onFailure: {
-          value: onFailure,
-        },
-        inventoryRetryAttempts: {
-          value: inventoryRetryAttempts,
-        },
-        inventoryDaysBetweenRetryAttempts: {
-          value: inventoryDaysBetweenRetryAttempts,
-        },
-        inventoryOnFailure: {
-          value: inventoryOnFailure,
-        },
-        inventoryNotificationFrequency: {
-          value: inventoryNotificationFrequency,
+        metaobject: {
+          id: 'gid://shopify/Metaobject/1',
+          fields: [
+            {
+              key: 'retryAttempts',
+              value: retryAttempts,
+              type: MetafieldType.NUMBER_INTEGER,
+            },
+            {
+              key: 'daysBetweenRetryAttempts',
+              value: daysBetweenRetryAttempts,
+              type: MetafieldType.NUMBER_INTEGER,
+            },
+            {
+              key: 'onFailure',
+              value: onFailure,
+              type: MetafieldType.SINGLE_LINE_TEXT_FIELD,
+            },
+            {
+              key: 'inventoryRetryAttempts',
+              value: inventoryRetryAttempts,
+              type: MetafieldType.NUMBER_INTEGER,
+            },
+            {
+              key: 'inventoryDaysBetweenRetryAttempts',
+              value: inventoryDaysBetweenRetryAttempts,
+              type: MetafieldType.NUMBER_INTEGER,
+            },
+            {
+              key: 'inventoryOnFailure',
+              value: inventoryOnFailure,
+              type: MetafieldType.SINGLE_LINE_TEXT_FIELD,
+            },
+            {
+              key: 'inventoryNotificationFrequency',
+              value: inventoryNotificationFrequency,
+              type: MetafieldType.SINGLE_LINE_TEXT_FIELD,
+            },
+          ],
         },
         userErrors,
       },
@@ -342,7 +376,7 @@ describe('SettingsIndex', () => {
           userErrors: [
             {
               field: ['daysBetweenRetryAttempts'],
-              message: 'Something went wrong',
+              message: 'Failed to update settings',
             },
           ],
         }),
@@ -354,7 +388,7 @@ describe('SettingsIndex', () => {
 
       await waitFor(() => {
         expect(window.shopify.toast.show).toHaveBeenCalledWith(
-          'Something went wrong',
+          'Failed to update settings',
           {isError: true},
         );
       });
@@ -398,19 +432,40 @@ describe('SettingsIndex', () => {
       await waitForGraphQL();
 
       expect(graphQL).toHavePerformedGraphQLOperation(
-        MetaobjectFieldsUpdateMutation,
+        MetaobjectUpdateMutation,
         {
           variables: {
             id: 'gid://shopify/Metaobject/1',
             metaobject: {
               fields: [
-                {key: 'retryAttempts', value: '1'},
-                {key: 'daysBetweenRetryAttempts', value: '14'},
-                {key: 'onFailure', value: 'skip'},
-                {key: 'inventoryRetryAttempts', value: '7'},
-                {key: 'inventoryDaysBetweenRetryAttempts', value: '6'},
-                {key: 'inventoryOnFailure', value: 'pause'},
-                {key: 'inventoryNotificationFrequency', value: 'immediately'},
+                {
+                  key: 'retryAttempts',
+                  value: '1',
+                },
+                {
+                  key: 'daysBetweenRetryAttempts',
+                  value: '14',
+                },
+                {
+                  key: 'onFailure',
+                  value: 'skip',
+                },
+                {
+                  key: 'inventoryRetryAttempts',
+                  value: '7',
+                },
+                {
+                  key: 'inventoryDaysBetweenRetryAttempts',
+                  value: '6',
+                },
+                {
+                  key: 'inventoryOnFailure',
+                  value: 'pause',
+                },
+                {
+                  key: 'inventoryNotificationFrequency',
+                  value: 'immediately',
+                },
               ],
             },
           },

@@ -1,6 +1,7 @@
 import {useCallback} from 'react';
 import type {Country, Address as AddressType} from '@shopify/address';
 import {FieldName} from '@shopify/address';
+import type {I18n} from '@shopify/ui-extensions-react/customer-account';
 import {
   TextField,
   Select,
@@ -15,8 +16,9 @@ interface SelectOption {
 }
 
 interface AddressLineProps {
+  i18n: I18n;
   countries: Country[];
-  country: Country;
+  country: Country | null;
   line: FieldName[];
   address: AddressType;
   countrySelectOptions: SelectOption[];
@@ -27,6 +29,7 @@ interface AddressLineProps {
 }
 
 export function AddressLine({
+  i18n,
   line,
   countries,
   country,
@@ -74,7 +77,11 @@ export function AddressLine({
           return (
             <TextField
               key={field}
-              label={country.labels.firstName}
+              label={
+                country
+                  ? country.labels.firstName
+                  : i18n.translate('addressModal.firstName')
+              }
               onChange={handleChange(field)}
               value={address[field]}
               error={formErrors[field]}
@@ -85,7 +92,11 @@ export function AddressLine({
           return (
             <TextField
               key={field}
-              label={country.labels.lastName}
+              label={
+                country
+                  ? country.labels.lastName
+                  : i18n.translate('addressModal.lastName')
+              }
               onChange={handleChange(field)}
               value={address[field]}
               error={formErrors[field]}
@@ -96,15 +107,23 @@ export function AddressLine({
           return (
             <Select
               key={field}
-              label={country.labels.country}
+              label={
+                country
+                  ? country.labels.country
+                  : i18n.translate('addressModal.country')
+              }
               value={address[field]}
               options={countrySelectOptions}
               onChange={handleCountryChange}
               error={formErrors[field]}
               disabled={disabled}
+              placeholder={i18n.translate('addressModal.country')}
             />
           );
         case FieldName.Address1:
+          if (!country) {
+            return null;
+          }
           return (
             <TextField
               key={field}
@@ -116,6 +135,9 @@ export function AddressLine({
             />
           );
         case FieldName.Address2:
+          if (!country) {
+            return null;
+          }
           return (
             <TextField
               key={field}
@@ -127,6 +149,9 @@ export function AddressLine({
             />
           );
         case FieldName.Zone:
+          if (!country) {
+            return null;
+          }
           return (
             <Select
               key={field}
@@ -139,6 +164,9 @@ export function AddressLine({
             />
           );
         case FieldName.PostalCode:
+          if (!country) {
+            return null;
+          }
           return (
             <TextField
               key={field}
@@ -150,6 +178,9 @@ export function AddressLine({
             />
           );
         case FieldName.City:
+          if (!country) {
+            return null;
+          }
           return (
             <TextField
               key={field}
@@ -161,6 +192,9 @@ export function AddressLine({
             />
           );
         case FieldName.Phone:
+          if (!country) {
+            return null;
+          }
           return (
             <PhoneField
               key={field}

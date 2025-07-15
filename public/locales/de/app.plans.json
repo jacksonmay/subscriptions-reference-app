@@ -11,7 +11,7 @@
   },
   "table": {
     "headings": {
-      "planTitle": "Plantitel",
+      "planTitle": "Beschreibung des Abos",
       "products": "Produkte",
       "deliveryFrequency": "Lieferintervall",
       "discount": "Preisgestaltung",

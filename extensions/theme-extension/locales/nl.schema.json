@@ -11,13 +11,9 @@
     "border_title": "Rand",
     "border_thickness": "Dikte",
     "border_radius": "Hoekradius",
-    "colors_text_title": "Titel",
     "colors_text_body": "Hoofdtekst",
     "colors_background_border_title": "Achtergronden en randen",
     "colors_background": "Achtergrond",
-    "colors_dividers": "Scheidingslijnen",
-    "supporting_text_title": "Ondersteunende tekst",
-    "supporting_text_subtitle": "Titel",
-    "supporting_text_input_default": "Aankoopopties"
+    "colors_dividers": "Scheidingslijnen"
   }
 }

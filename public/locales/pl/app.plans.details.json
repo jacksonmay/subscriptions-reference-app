@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Powrót do planów subskrypcji",
-  "planTitle": "Tytuł planu",
-  "planTitleHelpText": "Ta informacja nie będzie widoczna dla klientów.",
-  "purchaseOptionTitle": "Tytuł opcji zakupu",
+  "planTitle": "Opis wewnętrzny",
+  "planTitleHelpText": "Ma wyłącznie charakter informacyjny",
+  "purchaseOptionTitle": "Tytuł",
   "purchaseOptionTitleHelpText": "Będzie to widoczne dla klientów na stronach {{howToDisplayProductsLink}} z subskrypcją.",
   "defaultPurchaseOptionTitle": "Subskrybuj i zapisz",
   "saveButtonText": "Zapisz",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Wybrano nieprawidłowy produkt",
     "invalidVariant": "Wybrano nieprawidłowy wariant produktu",
-    "merchantCodeEmptyError": "Tytuł planu jest wymagany",
-    "nameEmptyError": "Tytuł opcji zakupu jest wymagany",
+    "merchantCodeEmptyError": "Opis wewnętrzny jest wymagany",
+    "nameEmptyError": "Tytuł jest wymagany",
     "createError": "Błąd tworzenia planu subskrypcji",
     "updateError": "Błąd aktualizacji planu subskrypcji",
     "deliveryFrequencyError": "Częstotliwość musi wynosić powyżej 0",

@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Substituir método de pagamento",
-    "save": "Guardar",
     "paymentMethod": "Método de pagamento",
     "edit": "Editar",
-    "close": "Fechar",
     "errorBannerTitle": "Não foi possível atualizar o método de pagamento"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Ignorar a próxima encomenda",
     "generic": "Pretende ignorar a próxima encomenda?",
     "date": "Pretende ignorar a próxima encomenda? A subscrição será retomada a {{date}}.",
-    "errorBannerTitle": "Não foi possível ignorar a próxima encomenda",
-    "close": "Fechar"
+    "errorBannerTitle": "Não foi possível ignorar a próxima encomenda"
   },
   "pauseSubscriptionModal": {
     "title": "Colocar subscrição em pausa",
     "action": "Colocar subscrição em pausa",
-    "close": "Fechar",
     "description": "A sua subscrição será imediatamente colocada em pausa e não receberá mais cobranças ou encomendas futuras. Pode retomar a subscrição a qualquer momento.",
     "errorBannerTitle": "Não foi possível colocar a subscrição em pausa"
   },
@@ -76,14 +72,12 @@
     "pause": "Colocar em pausa",
     "skip": "Ignorar a próxima encomenda",
     "resume": "Retomar",
-    "cancel": "Cancelar",
     "manage": "Gerir",
     "viewSubscriptionDetails": "Ver detalhes"
   },
   "resumeSubscriptionModal": {
     "description": "Se retomar esta subscrição, a faturação será imediatamente retomada.",
     "descriptionWithDate": "Se retomar esta subscrição, a faturação será imediatamente retomada a {{date}}.",
-    "close": "Fechar",
     "descriptionPriceChanged": "O preço desta subscrição foi alterado pelo que será cobrado {{price}} por cada encomenda futura.",
     "continue": "Continuar",
     "title": "Retomar subscrição",
@@ -100,19 +94,19 @@
     "title": "Cancelar subscrição",
     "description": "Se cancelar a sua subscrição, a faturação e a entrega serão imediatamente interrompidas. O cancelamento de uma subscrição não pode ser anulado. Para parar temporariamente de receber encomendas, coloque a sua subscrição em pausa.",
     "action": "Cancelar subscrição",
-    "close": "Fechar",
     "errorBannerTitle": "Não foi possível cancelar a subscrição"
   },
   "errorBoundary": {
     "content": "Ocorreu um erro. Recarregue a página"
   },
   "addressModal": {
-    "save": "Guardar",
     "continue": "Continuar",
-    "cancel": "Cancelar",
     "title": "Editar endereço de envio",
     "errorBannerTitle": "Não foi possível atualizar o método de entrega",
-    "noDeliveryOptions": "Esta subscrição não pode ser enviada para o endereço inserido. Reveja o seu endereço para garantir que todos os campos foram introduzidos corretamente e tente de novo."
+    "noDeliveryOptions": "Esta subscrição não pode ser enviada para o endereço inserido. Reveja o seu endereço para garantir que todos os campos foram introduzidos corretamente e tente de novo.",
+    "firstName": "Nome próprio",
+    "lastName": "Apelido",
+    "country": "País/região"
   },
   "successBanner": {
     "paused": "Subscrição colocada em pausa",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Encomendas futuras",
-    "close": "Fechar",
     "skipOrder": "Ignorar",
     "skipOrderAccessibilityLabel": "Ignorar encomenda de {{orderDate}}",
     "unSkipOrder": "Deixar de ignorar",
@@ -153,5 +146,8 @@
     "title": "Nenhuma subscrição comprada",
     "description": "Ir para a loja para comprar subscrições"
   },
-  "delayed": "A próxima encomenda pode sofrer atrasos"
+  "delayed": "A próxima encomenda pode sofrer atrasos",
+  "close": "Fechar",
+  "cancel": "Cancelar",
+  "save": "Guardar"
 }

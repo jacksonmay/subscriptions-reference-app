@@ -63,12 +63,13 @@ export class RebillSubscriptionJob extends Job<
         (error) =>
           error.code === 'CONTRACT_PAUSED' ||
           error.code === 'BILLING_CYCLE_SKIPPED' ||
-          error.code === 'CONTRACT_TERMINATED',
+          error.code === 'CONTRACT_TERMINATED' ||
+          error.code === 'BILLING_CYCLE_CHARGE_BEFORE_EXPECTED_DATE',
       )
     ) {
       this.logger.warn(
         {subscriptionContractId, userErrors},
-        'SubscriptionContract status not active, failed, or billing cycle is skipped, terminating RebillSubscriptionJob',
+        'Persistent userError returned, terminating RebillSubscriptionJob',
       );
     } else {
       this.logger.error(

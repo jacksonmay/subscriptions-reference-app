@@ -11,13 +11,9 @@
     "border_title": "Rand",
     "border_thickness": "Dicke",
     "border_radius": "Eckradius",
-    "colors_text_title": "Titel",
     "colors_text_body": "Nachricht",
     "colors_background_border_title": "Hintergründe und Rahmen",
     "colors_background": "Hintergrund",
-    "colors_dividers": "Stangenzirkel",
-    "supporting_text_title": "Unterstützender Text",
-    "supporting_text_subtitle": "Titel",
-    "supporting_text_input_default": "Kaufoptionen"
+    "colors_dividers": "Stangenzirkel"
   }
 }

@@ -1,8 +1,11 @@
 import {ApiType, pluckConfig} from '@shopify/api-codegen-preset';
-import {existsSync, readdirSync} from 'node:fs';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 function getConfig() {
   const host = 'app.myshopify.com';
+
   const apiKey = process.env.SHOPIFY_API_KEY;
   if (!apiKey) {
     console.log(

@@ -12,7 +12,8 @@ import type {
   SubscriptionContractSubscriptionStatus,
   SubscriptionDeliveryMethodLocalDelivery,
   SubscriptionDeliveryMethodPickup,
-  SubscriptionMailingAddress,
+  MailingAddress,
+  Location,
 } from 'types/admin.types';
 import type {ShopContextValue} from '~/context/ShopContext';
 import type {UpcomingBillingCycle} from '~/types';
@@ -84,17 +85,32 @@ export function createMockGraphqlCustomer(
 }
 
 export function createMockAddress(
-  address?: Partial<SubscriptionMailingAddress>,
-): SubscriptionMailingAddress {
+  address?: Partial<MailingAddress>,
+): MailingAddress {
+  const address1 = faker.location.streetAddress(false);
+  const address2 = faker.location.secondaryAddress();
+  const city = faker.location.city();
+  const zip = faker.location.zipCode();
+  const countryCode = 'CA';
+  const provinceCode = 'QC';
+
   return {
+    id: composeGid('MailingAddress', generateGidNumber()),
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
-    address1: faker.location.streetAddress(false),
-    address2: faker.location.secondaryAddress(),
-    city: faker.location.city(),
-    zip: faker.location.zipCode(),
-    countryCode: 'CA' as CountryCode,
-    provinceCode: 'QC',
+    address1,
+    address2,
+    city,
+    zip,
+    countryCodeV2: countryCode as CountryCode,
+    provinceCode,
+    coordinatesValidated: true,
+    formatted: [address1, address2, city, provinceCode, zip, countryCode],
+    isShopifyOffice: false,
+    latitude: faker.location.latitude(),
+    longitude: faker.location.longitude(),
+    suggestedAddresses: [],
+    verified: true,
     ...address,
   };
 }
@@ -200,6 +216,7 @@ export function createMockSubscriptionContract({
   >;
 } = {}): SubscriptionContractDetailsGraphQLType {
   const orderNumber = faker.number.int({min: 1});
+  const mockAddress = createMockAddress();
 
   return {
     id: composeGid('SubscriptionContract', generateGidNumber()),
@@ -215,7 +232,10 @@ export function createMockSubscriptionContract({
     },
     deliveryMethod: {
       __typename: 'SubscriptionDeliveryMethodShipping' as const,
-      address: createMockAddress(),
+      address: {
+        ...mockAddress,
+        countryCode: mockAddress.countryCodeV2 as CountryCode,
+      },
       shippingOption: {
         title: 'Standard',
       },
@@ -420,10 +440,15 @@ export function createPickupDeliveryMethod(
 export function createLocalDeliveryDeliveryMethod(
   deliveryMethod?: Partial<LocalDelivery>,
 ): LocalDelivery {
+  const mockAddress = createMockAddress();
+
   return {
     name: 'SubscriptionDeliveryMethodLocalDelivery',
     isLocalPickup: false,
-    address: createMockAddress(),
+    address: {
+      ...mockAddress,
+      countryCode: mockAddress.countryCodeV2 as CountryCode,
+    },
     localDeliveryOption: {
       title: 'Local Delivery',
       phone: '+112345671234',
@@ -435,10 +460,15 @@ export function createLocalDeliveryDeliveryMethod(
 export function createShippingDeliveryMethod(
   deliveryMethod?: Partial<ShippingDelivery>,
 ): ShippingDelivery {
+  const mockAddress = createMockAddress();
+
   return {
     name: 'SubscriptionDeliveryMethodShipping',
     isLocalPickup: false,
-    address: createMockAddress(),
+    address: {
+      ...mockAddress,
+      countryCode: mockAddress.countryCodeV2 as CountryCode,
+    },
     shippingOption: {
       title: 'Standard',
     },
@@ -448,7 +478,7 @@ export function createShippingDeliveryMethod(
 
 export function createGraphQLPickupDeliveryMethod(
   deliveryMethod?: Partial<SubscriptionDeliveryMethodPickup>,
-) {
+): SubscriptionDeliveryMethodPickup {
   return {
     __typename: 'SubscriptionDeliveryMethodPickup' as const,
     pickupOption: {
@@ -461,10 +491,15 @@ export function createGraphQLPickupDeliveryMethod(
 
 export function createGraphQLLocalDeliveryDeliveryMethod(
   deliveryMethod?: Partial<SubscriptionDeliveryMethodLocalDelivery>,
-) {
+): SubscriptionDeliveryMethodLocalDelivery {
+  const mockAddress = createMockAddress();
+
   return {
     __typename: 'SubscriptionDeliveryMethodLocalDelivery' as const,
-    address: createMockAddress(),
+    address: {
+      ...mockAddress,
+      countryCode: mockAddress.countryCodeV2 as CountryCode,
+    },
     localDeliveryOption: {
       title: 'Local Delivery',
       phone: '+112345671234',

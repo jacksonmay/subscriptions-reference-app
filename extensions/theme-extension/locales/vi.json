@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "Tự động gia hạn, bỏ qua hoặc hủy bất cứ lúc nào.",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='Xem chính sách gói đăng ký'>Xem chính sách gói đăng ký</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>Xem chính sách gói đăng ký</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "Để thêm vào giỏ hàng, truy cập trang sản phẩm và chọn tùy chọn mua"

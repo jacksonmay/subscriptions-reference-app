@@ -1,8 +1,10 @@
 import type {Logger} from 'pino';
 import {HttpResponseError} from '@shopify/shopify-api';
 import {SessionNotFoundError} from '@shopify/shopify-app-remix/server';
+import {MaxMetaobjectDefinitionsExceededError} from '~/utils/metaobjects/MetaobjectRepository';
 import {logger} from '~/utils/logger.server';
 
+const SHOP_UNAUTHORIZED_401_ERROR_RESPONSE = 401;
 const SHOP_FROZEN_402_ERROR_RESPONSE = 402;
 const SHOP_NO_ACCESS_403_ERROR_RESPONSE = 403;
 const SHOP_NOT_FOUND_404_ERROR_RESPONSE = 404;
@@ -14,6 +16,7 @@ const SHOP_LOCKED_423_ERROR_RESPONSE = 423;
  */
 function isNonRetryable(error: HttpResponseError): boolean {
   return [
+    SHOP_UNAUTHORIZED_401_ERROR_RESPONSE,
     SHOP_FROZEN_402_ERROR_RESPONSE,
     SHOP_NO_ACCESS_403_ERROR_RESPONSE,
     SHOP_NOT_FOUND_404_ERROR_RESPONSE,
@@ -29,7 +32,8 @@ function isNonRetryable(error: HttpResponseError): boolean {
 export function isTerminal(error: Error): boolean {
   return (
     error instanceof SessionNotFoundError ||
-    (error instanceof HttpResponseError && isNonRetryable(error))
+    (error instanceof HttpResponseError && isNonRetryable(error)) ||
+    error instanceof MaxMetaobjectDefinitionsExceededError
   );
 }
 

@@ -117,19 +117,20 @@ export function ErrorBoundary() {
       console.error(error);
     }
 
+    function getApiKey() {
+      if (typeof window === 'undefined') {
+        return process.env.SHOPIFY_API_KEY!;
+      } else if (document.querySelector('script[data-api-key]')) {
+        return (
+          (document.querySelector('script[data-api-key]') as HTMLScriptElement)
+            ?.dataset?.apiKey ?? ''
+        );
+      }
+      return '';
+    }
+
     return (
-      <AppProvider
-        isEmbeddedApp
-        apiKey={
-          typeof window === 'undefined'
-            ? process.env.SHOPIFY_API_KEY!
-            : (
-                document.querySelector(
-                  'script[data-api-key]',
-                ) as HTMLScriptElement
-              ).dataset.apiKey!
-        }
-      >
+      <AppProvider isEmbeddedApp apiKey={getApiKey()}>
         <ErrorBoundaryCard />
       </AppProvider>
     );

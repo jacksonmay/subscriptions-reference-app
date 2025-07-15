@@ -6,7 +6,6 @@ import {jobs} from '~/jobs';
 import {RebillSubscriptionJob} from '~/jobs/billing/RebillSubscriptionJob';
 import {CustomerSendEmailService} from '../CustomerSendEmailService';
 import {PenultimateAttemptDunningService} from '../PenultimateAttemptDunningService';
-import {SubscriptionContractFailService} from '../SubscriptionContractFailService';
 
 vi.mock('~/jobs', () => {
   const originalModule = vi.importActual('~/jobs');
@@ -16,15 +15,6 @@ vi.mock('~/jobs', () => {
       enqueue: vi.fn(),
     },
   };
-});
-
-vi.mock('~/services/SubscriptionContractFailService', async () => {
-  const SubscriptionContractFailService = vi.fn();
-  SubscriptionContractFailService.prototype.run = vi
-    .fn()
-    .mockResolvedValue(undefined);
-
-  return {SubscriptionContractFailService};
 });
 
 vi.mock('~/services/CustomerSendEmailService', async (importOriginal) => {
@@ -130,28 +120,5 @@ describe('PenultimateAttemptDunningService#run', () => {
         finalChargeDate: finalChargeDate,
       },
     );
-  });
-
-  it('fails subscription contract', async () => {
-    const penultimateAttemptDunningService =
-      new PenultimateAttemptDunningService({
-        shopDomain,
-        subscriptionContract,
-        billingAttempt,
-        daysBetweenRetryAttempts,
-        dunningStatus,
-        billingCycleIndex,
-      });
-
-    mockGraphQL(defaultGraphQLResponses());
-
-    const service = new SubscriptionContractFailService(
-      shopDomain,
-      subscriptionContract.id,
-    );
-
-    await penultimateAttemptDunningService.run();
-
-    expect(service.run).toHaveBeenCalledOnce();
   });
 });

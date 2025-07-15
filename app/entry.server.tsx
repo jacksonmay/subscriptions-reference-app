@@ -20,7 +20,8 @@ import i18nextServer from './i18n/i18next.server';
 import i18nextOptions from './i18n/i18nextOptions';
 import {addDocumentResponseHeaders} from './shopify.server';
 
-const ABORT_DELAY = 5_000;
+// Reject/cancel all pending promises after 5 seconds
+export const streamTimeout = 5000;
 
 export function handleError(
   error: Error,
@@ -76,11 +77,7 @@ export default async function handleRequest(
   return new Promise((resolve, reject) => {
     const {pipe, abort} = renderToPipeableStream(
       <I18nextProvider i18n={i18next}>
-        <RemixServer
-          context={remixContext}
-          url={request.url}
-          abortDelay={ABORT_DELAY}
-        />
+        <RemixServer context={remixContext} url={request.url} />
       </I18nextProvider>,
       {
         [callbackName]: () => {
@@ -126,6 +123,8 @@ export default async function handleRequest(
       },
     );
 
-    setTimeout(abort, ABORT_DELAY);
+    // Automatically timeout the React renderer after 6 seconds, which ensures
+    // React has enough time to flush down the rejected boundary contents
+    setTimeout(abort, streamTimeout + 1000);
   });
 }

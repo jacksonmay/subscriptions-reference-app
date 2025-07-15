@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Salvar",
   "actions": {
-    "updateSuccess": "Configurações atualizadas"
+    "updateSuccess": "Configurações atualizadas",
+    "updateFailed": "Falha ao atualizar as configurações"
   },
   "title": "Configurações",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Acionar quando houver falhas em todas as tentativas",
       "options": {
-        "skip": "Ignorar a assinatura e enviar notificação",
+        "skip": "Ignorar pedido e enviar notificação",
         "cancel": "Cancelar a assinatura e enviar notificação",
         "pause": "Pausar a assinatura e enviar notificação"
       }

@@ -108,7 +108,7 @@ export function UpcomingOrdersModal({
         <InlineLayout columns={['fill', 'auto']}>
           <InlineSpacer />
           <Button onPress={() => overlay.close(UPCOMING_ORDERS_MODAL_ID)}>
-            {i18n.translate('upcomingOrdersModal.close')}
+            {i18n.translate('close')}
           </Button>
         </InlineLayout>
       </BlockStack>

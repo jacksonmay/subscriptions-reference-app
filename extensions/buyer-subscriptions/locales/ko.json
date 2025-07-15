@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "결제 방법 교체",
-    "save": "저장",
     "paymentMethod": "결제 방법",
     "edit": "편집",
-    "close": "닫기",
     "errorBannerTitle": "결제 방법을 업데이트할 수 없음"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "다음 주문 건너뛰기",
     "generic": "다음 주문을 건너뛰시겠습니까?",
     "date": "다음 주문을 건너뛰시겠습니까? 구독이 {{date}}에 다시 시작됩니다.",
-    "errorBannerTitle": "다음 주문을 건너뛸 수 없음",
-    "close": "닫기"
+    "errorBannerTitle": "다음 주문을 건너뛸 수 없음"
   },
   "pauseSubscriptionModal": {
     "title": "구독 일시 중지",
     "action": "구독 일시 중지",
-    "close": "닫기",
     "description": "구독이 즉시 일시 중지되며 더 이상 요금이 청구되거나 예정된 주문을 받지 않습니다. 언제든지 이 구독을 다시 시작할 수 있습니다.",
     "errorBannerTitle": "구독을 일시 중지할 수 없음"
   },
@@ -76,14 +72,12 @@
     "pause": "일시 중지",
     "skip": "다음 주문 건너뛰기",
     "resume": "다시 시작",
-    "cancel": "취소",
     "manage": "관리",
     "viewSubscriptionDetails": "세부 정보 보기"
   },
   "resumeSubscriptionModal": {
     "description": "이 구독을 다시 시작하면 청구가 즉시 다시 시작됩니다.",
     "descriptionWithDate": "이 구독을 다시 시작하면 청구가 {{date}}에 다시 시작됩니다.",
-    "close": "닫기",
     "descriptionPriceChanged": "이 구독의 가격이 변경되었으며 예정된 주문당 {{price}}이(가) 청구됩니다.",
     "continue": "계속",
     "title": "구독 다시 시작",
@@ -100,19 +94,19 @@
     "title": "구독 취소",
     "description": "구독을 취소하면 청구 및 배송이 즉시 종료됩니다. 구독 취소는 되돌릴 수 없습니다. 일시적으로 주문을 받지 않으려면 구독을 일시 중지하십시오.",
     "action": "구독 취소",
-    "close": "닫기",
     "errorBannerTitle": "구독을 취소할 수 없음"
   },
   "errorBoundary": {
     "content": "문제가 발생했습니다. 페이지를 새로 고치십시오"
   },
   "addressModal": {
-    "save": "저장",
     "continue": "계속",
-    "cancel": "취소",
     "title": "배송 주소 편집",
     "errorBannerTitle": "배송 방법을 업데이트할 수 없음",
-    "noDeliveryOptions": "입력하신 주소로 구독 제품을 배송할 수 없습니다. 모든 필드가 정확하게 입력되었는지 확인한 후 다시 시도해 주십시오."
+    "noDeliveryOptions": "입력하신 주소로 구독 제품을 배송할 수 없습니다. 모든 필드가 정확하게 입력되었는지 확인한 후 다시 시도해 주십시오.",
+    "firstName": "이름",
+    "lastName": "성",
+    "country": "국가/지역"
   },
   "successBanner": {
     "paused": "구독이 일시 중지됨",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "예정된 주문",
-    "close": "닫기",
     "skipOrder": "건너뛰기",
     "skipOrderAccessibilityLabel": "{{orderDate}}의 주문 건너뛰기",
     "unSkipOrder": "건너뛰기 취소",
@@ -153,5 +146,8 @@
     "title": "구입한 구독 없음",
     "description": "구독을 구입하려면 스토어로 이동하세요"
   },
-  "delayed": "다음 주문이 지연될 수 있습니다."
+  "delayed": "다음 주문이 지연될 수 있습니다.",
+  "close": "닫기",
+  "cancel": "취소",
+  "save": "저장"
 }

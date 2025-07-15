@@ -30,7 +30,6 @@ async function initI18n() {
     .use(Backend)
     .init({
       ...i18nextOptions,
-      // @ts-ignore We set ENV in root.tsx
       debug: window.ENV.NODE_ENV === 'development',
       ns: getInitialNamespaces(),
       backend: {loadPath: '/locales/{{lng}}/{{ns}}.json'},

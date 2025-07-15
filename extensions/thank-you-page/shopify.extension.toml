@@ -1,0 +1,13 @@
+api_version = "2025-04"
+
+[[extensions]]
+name = "Thank you page"
+handle = "thank-you-page"
+type = "ui_extension"
+
+[[extensions.targeting]]
+module = "./src/ThankYouPageManageSubscriptions.tsx"
+target = "purchase.thank-you.block.render"
+
+[extensions.capabilities]
+api_access = true

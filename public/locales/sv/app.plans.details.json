@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Tillbaka till prenumerationsplaner",
-  "planTitle": "Plannamn",
-  "planTitleHelpText": "Kunderna ser inte detta.",
-  "purchaseOptionTitle": "Namn på inköpsalternativ",
+  "planTitle": "Intern beskrivning",
+  "planTitleHelpText": "Endast som referens för dig",
+  "purchaseOptionTitle": "Titel",
   "purchaseOptionTitleHelpText": "Kunder ser detta på {{howToDisplayProductsLink}} som har prenumerationer.",
   "defaultPurchaseOptionTitle": "Prenumerera och spara",
   "saveButtonText": "Spara",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Ogiltig produkt har valts",
     "invalidVariant": "Ogiltig produktvariant har valts",
-    "merchantCodeEmptyError": "Plannamn krävs",
-    "nameEmptyError": "Namn på inköpsalternativ krävs",
+    "merchantCodeEmptyError": "Det krävs en intern beskrivning",
+    "nameEmptyError": "Titel krävs",
     "createError": "Det gick inte att skapa prenumerationsplan",
     "updateError": "Det uppstod ett fel vid uppdateringen av prenumerationsplanen",
     "deliveryFrequencyError": "Frekvensen måste vara större än 0",

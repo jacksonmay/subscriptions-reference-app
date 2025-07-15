@@ -100,7 +100,9 @@ export function OverviewCard({
                         onClose={() => setAddressModalOpen(false)}
                       />
                     }
-                    onPress={() => setAddressModalOpen(true)}
+                    onPress={() => {
+                      setAddressModalOpen(true);
+                    }}
                   >
                     <Icon source="pen" appearance="interactive" />
                   </Button>

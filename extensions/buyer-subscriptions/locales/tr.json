@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Ödeme yöntemini bir başkasıyla değiştir",
-    "save": "Kaydet",
     "paymentMethod": "Ödeme yöntemi",
     "edit": "Düzenle",
-    "close": "Kapat",
     "errorBannerTitle": "Ödeme yöntemi güncellenemedi"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Sonraki siparişi atla",
     "generic": "Sonraki siparişi atlamak istediğinize emin misiniz?",
     "date": "Sonraki siparişi atlamak istediğinize emin misiniz? Aboneliğiniz {{date}} tarihinden itibaren devam edecek.",
-    "errorBannerTitle": "Sonraki sipariş atlanamadı",
-    "close": "Kapat"
+    "errorBannerTitle": "Sonraki sipariş atlanamadı"
   },
   "pauseSubscriptionModal": {
     "title": "Aboneliği duraklat",
     "action": "Aboneliği duraklat",
-    "close": "Kapat",
     "description": "Aboneliğiniz hemen duraklatılır; bundan sonra sizden ücret alınmaz ve yaklaşan siparişleri almazsınız. Bu aboneliği dilediğiniz zaman sürdürebilirsiniz.",
     "errorBannerTitle": "Abonelik duraklatılamadı"
   },
@@ -76,14 +72,12 @@
     "pause": "Duraklat",
     "skip": "Sonraki siparişi atla",
     "resume": "Sürdür",
-    "cancel": "İptal",
     "manage": "Yönet",
     "viewSubscriptionDetails": "Ayrıntıları görüntüleyin"
   },
   "resumeSubscriptionModal": {
     "description": "Bu aboneliği devam ettirirseniz faturalandırma hemen sürdürülür.",
     "descriptionWithDate": "Bu aboneliği sürdürürseniz faturalandırma işlemi {{date}} tarihinden itibaren sürdürülür.",
-    "close": "Kapat",
     "descriptionPriceChanged": "Bu aboneliğin fiyatı değişti ve gelecek siparişler için sizden sipariş başına {{price}} ücret alınacak.",
     "continue": "Devam",
     "title": "Aboneliğini sürdür",
@@ -100,19 +94,19 @@
     "title": "Aboneliği iptal et",
     "description": "Aboneliğinizi iptal ederseniz faturalandırma ve teslimat hemen sonlandırılır. Aboneliği iptal etme işlemi geri alınamaz. Sipariş almayı geçici olarak durdurmak istiyorsanız aboneliğinizi duraklatın.",
     "action": "Aboneliği iptal et",
-    "close": "Kapat",
     "errorBannerTitle": "Abonelik iptal edilemedi"
   },
   "errorBoundary": {
     "content": "Bir sorun oluştu, lütfen sayfayı yenileyin"
   },
   "addressModal": {
-    "save": "Kaydet",
     "continue": "Devam",
-    "cancel": "İptal",
     "title": "Kargo adresini düzenle",
     "errorBannerTitle": "Teslimat yöntemi güncellenemedi",
-    "noDeliveryOptions": "Bu abonelik içeriği, girdiğiniz adrese gönderilemiyor. Adresinizi gözden geçirip tüm alanların doğru şekilde doldurulduğundan emin olun ve tekrar deneyin."
+    "noDeliveryOptions": "Bu abonelik içeriği, girdiğiniz adrese gönderilemiyor. Adresinizi gözden geçirip tüm alanların doğru şekilde doldurulduğundan emin olun ve tekrar deneyin.",
+    "firstName": "Ad",
+    "lastName": "Soyadı",
+    "country": "Ülke/bölge"
   },
   "successBanner": {
     "paused": "Abonelik duraklatıldı",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Yaklaşan siparişler",
-    "close": "Kapat",
     "skipOrder": "Atla",
     "skipOrderAccessibilityLabel": "{{orderDate}} tarihli siparişi atla",
     "unSkipOrder": "Atlama işlemini geri al",
@@ -153,5 +146,8 @@
     "title": "Abonelik satın alımı yok",
     "description": "Abonelik satın almak için mağazaya gidin"
   },
-  "delayed": "Sonraki sipariş gecikebilir"
+  "delayed": "Sonraki sipariş gecikebilir",
+  "close": "Kapat",
+  "cancel": "İptal et",
+  "save": "Kaydet"
 }

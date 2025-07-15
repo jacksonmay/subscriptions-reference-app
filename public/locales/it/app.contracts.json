@@ -257,6 +257,10 @@
       "actions": {
         "cancel": "Annulla",
         "update": "Aggiorna"
+      },
+      "localDeliveryBanner": {
+        "content": "Per la consegna locale è necessario un indirizzo con un numero di telefono. {link}",
+        "link": "Gestisci indirizzi nella pagina del cliente"
       }
     }
   },
@@ -283,7 +287,7 @@
       "paymentSummary": "Riepilogo pagamento",
       "subtotal": "Subtotale",
       "shipping": "Spedizioni",
-      "tax": "Imposte",
+      "tax": "Imposta",
       "total": "Totale",
       "oneTimePurchasePriceChanged": "Il prezzo di acquisto una tantum è cambiato",
       "outOfStock": "Scorte insufficienti durante l'ultimo tentativo di fatturazione"
@@ -346,6 +350,11 @@
         "cancel": "Annulla"
       },
       "outOfStock": "Il prodotto sarà venduto in overselling per questo ordine"
+    },
+    "allocationError": {
+      "title": "Impossibile creare l'ordine del giorno {date}",
+      "description": "L'indirizzo del cliente si trova in una zona di spedizione senza scorte disponibili o non è supportato dalle impostazioni di spedizione correnti. Aggiorna le scorte o {settingsLink} per riprendere gli ordini.",
+      "settingsLinkText": "modifica le impostazioni di spedizione"
     }
   }
 }

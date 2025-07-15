@@ -271,6 +271,10 @@
       "actions": {
         "cancel": "Zrušit",
         "update": "Aktualizovat"
+      },
+      "localDeliveryBanner": {
+        "content": "Pro místní doručení je potřeba zadat adresu a telefonní číslo. {link}",
+        "link": "Adresy spravujte na stránce zákazníka."
       }
     }
   },
@@ -362,6 +366,11 @@
         "cancel": "Zrušit"
       },
       "outOfStock": "Tento produkt bude pro tuto objednávku v nadprodeji"
+    },
+    "allocationError": {
+      "title": "Objednávku ze dne {date} se nepovedlo vytvořit",
+      "description": "Adresa zákazníka se nachází v přepravní zóně bez dostupných zásob nebo není podporována aktuálním nastavením expedice. Aktualizujte skladové zásoby nebo {settingsLink} pro obnovení objednávek.",
+      "settingsLinkText": "upravte nastavení expedice"
     }
   }
 }

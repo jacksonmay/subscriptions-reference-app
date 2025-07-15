@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Uložit",
   "actions": {
-    "updateSuccess": "Nastavení bylo aktualizováno"
+    "updateSuccess": "Nastavení bylo aktualizováno",
+    "updateFailed": "Nastavení se nepovedlo aktualizovat"
   },
   "title": "Nastavení",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Akce v případě neúspěchu všech pokusů o opakování",
       "options": {
-        "skip": "Vynechat předplatné a odeslat notifikaci",
+        "skip": "Přeskočit objednávku a odeslat oznámení",
         "cancel": "Zrušit předplatné a odeslat notifikaci",
         "pause": "Pozastavit předplatné a odeslat notifikaci"
       }

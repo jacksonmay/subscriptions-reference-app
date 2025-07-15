@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "취소",
         "update": "업데이트"
+      },
+      "localDeliveryBanner": {
+        "content": "지역 배송에는 전화번호가 포함된 주소가 필요합니다. {link}",
+        "link": "고객 페이지에서 주소 관리"
       }
     }
   },
@@ -330,6 +334,11 @@
         "cancel": "취소"
       },
       "outOfStock": "이 제품은 이 주문에 대해 과잉 판매됩니다."
+    },
+    "allocationError": {
+      "title": "{date} 주문을 생성하지 못함",
+      "description": "고객 주소가 가용 재고가 없는 배송 지역에 있거나 현재 배송 설정에서 지원되지 않습니다. 재고를 업데이트하거나 {settingsLink}을 눌러 주문을 재개하세요.",
+      "settingsLinkText": "배송 설정 편집"
     }
   }
 }

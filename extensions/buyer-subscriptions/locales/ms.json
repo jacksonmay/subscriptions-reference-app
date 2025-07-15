@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Gantikan kaedah pembayaran",
-    "save": "Simpan",
     "paymentMethod": "Kaedah pembayaran",
     "edit": "Edit",
-    "close": "Tutup",
     "errorBannerTitle": "Tidak dapat mengemas kini kaedah pembayaran"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Langkau pesanan seterusnya",
     "generic": "Adakah anda mahu melangkau pesanan seterusnya?",
     "date": "Adakah anda mahu melangkau pesanan seterusnya? Langganan anda akan diteruskan pada {{date}}.",
-    "errorBannerTitle": "Tidak dapat melangkau pesanan seterusnya",
-    "close": "Tutup"
+    "errorBannerTitle": "Tidak dapat melangkau pesanan seterusnya"
   },
   "pauseSubscriptionModal": {
     "title": "Jeda langganan",
     "action": "Jeda langganan",
-    "close": "Tutup",
     "description": "Langganan anda akan dijeda berkuat kuasa serta-merta dan anda tidak akan menerima sebarang caj lanjut atau pesanan akan datang. Anda boleh meneruskan langganan ini pada bila-bila masa.",
     "errorBannerTitle": "Tidak dapat menjeda langganan"
   },
@@ -76,14 +72,12 @@
     "pause": "Jeda",
     "skip": "Langkau pesanan seterusnya",
     "resume": "Sambung semula",
-    "cancel": "Batalkan",
     "manage": "Urus",
     "viewSubscriptionDetails": "Lihat butiran"
   },
   "resumeSubscriptionModal": {
     "description": "Jika anda meneruskan langganan ini, pengebilan akan diteruskan serta-merta.",
     "descriptionWithDate": "Jika anda meneruskan langganan ini, pengebilan akan diteruskan pada {{date}}.",
-    "close": "Tutup",
     "descriptionPriceChanged": "Harga untuk langganan ini telah berubah anda akan akan dicaj {{price}} bagi setiap pesanan yang akan datang.",
     "continue": "Teruskan",
     "title": "Teruskan langganan",
@@ -100,19 +94,19 @@
     "title": "Batalkan langganan",
     "description": "Jika anda membatalkan langganan anda, pengebilan dan penghantaran akan ditamatkan serta-merta. Pembatalan langganan tidak dapat dibuat asal. Untuk berhenti menerima pesanan buat sementara waktu, jeda langganan anda.",
     "action": "Batalkan langganan",
-    "close": "Tutup",
     "errorBannerTitle": "Tidak dapat membatalkan langganan"
   },
   "errorBoundary": {
     "content": "Sesuatu tidak kena, sila segar semula halaman"
   },
   "addressModal": {
-    "save": "Simpan",
     "continue": "Teruskan",
-    "cancel": "Batal",
     "title": "Edit alamat penghantaran",
     "errorBannerTitle": "Tidak dapat mengemas kini kaedah penghantaran",
-    "noDeliveryOptions": "Langganan ini tidak dapat dihantar ke alamat yang anda masukkan. Semak alamat anda untuk memastikan bahawa semua medan telah diisi dengan betul dan cuba lagi."
+    "noDeliveryOptions": "Langganan ini tidak dapat dihantar ke alamat yang anda masukkan. Semak alamat anda untuk memastikan bahawa semua medan telah diisi dengan betul dan cuba lagi.",
+    "firstName": "Nama pertama",
+    "lastName": "Nama keluarga",
+    "country": "Negara/rantau"
   },
   "successBanner": {
     "paused": "Langganan dijeda",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Pesanan akan datang",
-    "close": "Tutup",
     "skipOrder": "Langkau",
     "skipOrderAccessibilityLabel": "Langkau pesanan pada {{orderDate}}",
     "unSkipOrder": "Nyahlangkau",
@@ -153,5 +146,8 @@
     "title": "Tiada langganan dibeli",
     "description": "Pergi ke kedai untuk membeli langganan"
   },
-  "delayed": "Pesanan seterusnya mungkin tertangguh"
+  "delayed": "Pesanan seterusnya mungkin tertangguh",
+  "close": "Tutup",
+  "cancel": "Batal",
+  "save": "Simpan"
 }

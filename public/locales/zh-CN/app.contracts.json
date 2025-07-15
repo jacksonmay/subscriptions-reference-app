@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "取消",
         "update": "更新"
+      },
+      "localDeliveryBanner": {
+        "content": "本地配送需要地址和电话号码。{link}",
+        "link": "管理客户页面上的地址"
       }
     }
   },
@@ -330,6 +334,11 @@
         "ignoreAndCreate": "创建订单",
         "cancel": "取消"
       }
+    },
+    "allocationError": {
+      "title": "无法创建 {date}订单",
+      "description": "客户地址位于没有可用库存的配送区域，或者当前发货设置不支持该地址。更新库存或{settingsLink}以恢复订单。",
+      "settingsLinkText": "编辑发货设置"
     }
   }
 }

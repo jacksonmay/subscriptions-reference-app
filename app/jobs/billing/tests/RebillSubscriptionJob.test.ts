@@ -104,6 +104,28 @@ function skippedBillingCycleGraphQLResponses() {
   };
 }
 
+function billingCycleChargeBeforeExpectedDateGraphQLResponses() {
+  return {
+    SubscriptionContractRebillingQuery: {
+      data: {subscriptionContract: {id: '1'}},
+    },
+    SubscriptionBillingCycleChargeMutation: {
+      data: {
+        subscriptionBillingCycleCharge: {
+          subscriptionBillingAttempt: null,
+          userErrors: [
+            {
+              message: 'Billing cycle charge before expected date',
+              field: ['billingCycleSelector'],
+              code: 'BILLING_CYCLE_CHARGE_BEFORE_EXPECTED_DATE',
+            },
+          ],
+        },
+      },
+    },
+  };
+}
+
 const {graphQL, mockGraphQL} = mockShopifyServer();
 
 describe('RebillSubscriptionJob', () => {
@@ -163,7 +185,7 @@ describe('RebillSubscriptionJob', () => {
 
         const job = new RebillSubscriptionJob(task);
 
-        expect(job.perform()).rejects.toThrowError(
+        await expect(job.perform()).rejects.toThrowError(
           'Failed to process RebillSubscriptionJob',
         );
       });
@@ -179,7 +201,7 @@ describe('RebillSubscriptionJob', () => {
 
           const job = new RebillSubscriptionJob(task);
 
-          expect(job.perform()).resolves.not.toThrowError();
+          await expect(job.perform()).resolves.not.toThrowError();
         });
 
         it('logs error message and terminates without throwing when the billing cycle is skipped', async () => {
@@ -192,7 +214,20 @@ describe('RebillSubscriptionJob', () => {
 
           const job = new RebillSubscriptionJob(task);
 
-          expect(job.perform()).resolves.not.toThrowError();
+          await expect(job.perform()).resolves.not.toThrowError();
+        });
+
+        it('logs warning message and terminates without throwing when the billing cycle charge is before the expected date', async () => {
+          mockGraphQL(billingCycleChargeBeforeExpectedDateGraphQLResponses());
+
+          const task: Jobs.Parameters<Jobs.RebillSubscriptionJobPayload> = {
+            shop: TEST_SHOP,
+            payload: fixture as unknown as Jobs.RebillSubscriptionJobPayload,
+          };
+
+          const job = new RebillSubscriptionJob(task);
+
+          await expect(job.perform()).resolves.not.toThrowError();
         });
       });
     });

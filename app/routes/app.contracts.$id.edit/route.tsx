@@ -14,8 +14,8 @@ import {isNonEmptyString} from '~/utils/helpers/form';
 import {PaymentSummaryCard} from '../../components/PaymentSummaryCard/PaymentSummaryCard';
 import {EditSubscriptionDetailsCard} from './components/EditSubscriptionDetailsCard/EditSubscriptionDetailsCard';
 import {
-  getContractEditFormValidator,
-  useContractEditFormValidator,
+  getContractEditFormSchema,
+  useContractEditFormSchema,
 } from './validator';
 
 import type {
@@ -32,6 +32,7 @@ import {formatStatus} from '~/utils/helpers/contracts';
 import {useToasts} from '~/hooks';
 import type {WithToast} from '~/types';
 import {toast} from '~/utils/toast';
+import {validateFormData} from '~/utils/validateFormData';
 
 export const handle = {
   i18n: 'app.contracts',
@@ -69,8 +70,10 @@ export async function action({
     return contractUpdateError;
   }
 
-  const validator = getContractEditFormValidator(t);
-  const validationResult = await validator.validate(await request.formData());
+  const validationResult = await validateFormData(
+    getContractEditFormSchema(t),
+    await request.formData(),
+  );
 
   if (validationResult.error) {
     return contractUpdateError;
@@ -180,7 +183,7 @@ export async function action({
 
 export default function ContractEditPage() {
   const {t} = useTranslation('app.contracts');
-  const validator = useContractEditFormValidator();
+  const schema = useContractEditFormSchema();
 
   const subscriptionContract = useLoaderData<typeof loader>();
 
@@ -206,7 +209,7 @@ export default function ContractEditPage() {
     >
       <Form
         id="edit-subscription-form"
-        validator={validator}
+        schema={schema}
         defaultValues={defaultValues}
       >
         <BlockStack gap="400">

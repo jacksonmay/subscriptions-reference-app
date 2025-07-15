@@ -62,6 +62,7 @@ export function SubscriptionLineItem({
           <div style={{flexGrow: 1}}>
             <BlockStack gap="050" inlineAlign="stretch">
               <Link
+                target="_top"
                 removeUnderline
                 url={
                   productId

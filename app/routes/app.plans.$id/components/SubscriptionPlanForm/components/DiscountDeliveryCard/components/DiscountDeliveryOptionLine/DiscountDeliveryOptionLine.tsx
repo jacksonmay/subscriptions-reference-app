@@ -9,6 +9,7 @@ import type {DiscountTypeType} from '~/routes/app.plans.$id/validator';
 import {DiscountType} from '~/routes/app.plans.$id/validator';
 import {getSymbolFromCurrency} from '~/utils/helpers/money';
 import {DeliveryFrequencyInterval} from '~/utils/helpers/zod';
+import styles from './DiscountDeliveryOptionLine.module.css';
 
 export interface DiscountDeliveryOptionLineProps {
   id?: string;
@@ -80,7 +81,7 @@ export function DiscountDeliveryOptionLine({
             <InlineStack
               gap={{xs: '100', sm: '100', md: '100', lg: '100', xl: '100'}}
             >
-              <div style={{flexGrow: 1}}>
+              <div style={{flexGrow: 1}} className={styles.clippedLabel}>
                 <Select
                   label={t('discountDeliveryCard.deliveryInterval.label')}
                   name={`discountDeliveryOptions[${index}].deliveryInterval`}

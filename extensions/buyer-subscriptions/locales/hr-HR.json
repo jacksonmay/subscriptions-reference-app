@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Uredi način plaćanja",
-    "save": "Spremi",
     "paymentMethod": "Način plaćanja",
     "edit": "Uredi",
-    "close": "Zatvori",
     "errorBannerTitle": "Nije moguće promijeniti način plaćanja"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Preskoči sljedeću narudžbu",
     "generic": "Želite li prijeći na sljedeću narudžbu?",
     "date": "Želite li prijeći na sljedeću narudžbu? Vaša pretplata ponovno će se aktivirati {{date}}.",
-    "errorBannerTitle": "Nije moguće preskočiti na sljedeću narudžbu",
-    "close": "Zatvori"
+    "errorBannerTitle": "Nije moguće preskočiti na sljedeću narudžbu"
   },
   "pauseSubscriptionModal": {
     "title": "Privremeno obustavi pretplatu",
     "action": "Privremeno obustavi pretplatu",
-    "close": "Zatvori",
     "description": "Pretplata će se odmah obustaviti i više nećete dobivati račune za plaćanje ni narudžbe. Pretplatu možete nastaviti u bilo kojem trenutku.",
     "errorBannerTitle": "Nije moguće privremeno obustaviti pretplatu"
   },
@@ -76,14 +72,12 @@
     "pause": "Pauziraj",
     "skip": "Preskoči sljedeću narudžbu",
     "resume": "Nastavi",
-    "cancel": "Odustani",
     "manage": "Upravljanje",
     "viewSubscriptionDetails": "Prikaži pojedinosti"
   },
   "resumeSubscriptionModal": {
     "description": "Ako nastavite s ovom pretplatom, naplata će se odmah nastaviti.",
     "descriptionWithDate": "Ako nastavite s ovom pretplatom, naplata će se nastaviti {{date}}.",
-    "close": "Zatvori",
     "descriptionPriceChanged": "Cijena za ovu pretplatu se promijenila i naplatit ćemo vam {{price}} za sljedeću narudžbu.",
     "continue": "Nastavi",
     "title": "Nastavi s pretplatom",
@@ -100,19 +94,19 @@
     "title": "Otkaži pretplatu",
     "description": "Ako otkažete pretplatu, naplata i dostava odmah će se obustaviti. Otkazivanje pretplate ne možete poništiti. Ako želite privremeno prestati primati narudžbe, privremeno obustavite pretplatu.",
     "action": "Otkaži pretplatu",
-    "close": "Zatvori",
     "errorBannerTitle": "Nije moguće otkazati pretplatu"
   },
   "errorBoundary": {
     "content": "Došlo je do problema, osvježite stranicu"
   },
   "addressModal": {
-    "save": "Spremi",
     "continue": "Nastavi",
-    "cancel": "Odustani",
     "title": "Uredi adresu za dostavu",
     "errorBannerTitle": "Nije moguće promijeniti način dostave",
-    "noDeliveryOptions": "Ova se pretplata ne može poslati na unesenu adresu. Pregledajte adresu, provjerite jesu li sva polja pravilno ispunjena pa pokušajte ponovno."
+    "noDeliveryOptions": "Ova se pretplata ne može poslati na unesenu adresu. Pregledajte adresu, provjerite jesu li sva polja pravilno ispunjena pa pokušajte ponovno.",
+    "firstName": "Ime",
+    "lastName": "Prezime",
+    "country": "Država/regija"
   },
   "successBanner": {
     "paused": "Pretplata je privremeno obustavljena",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Predstojeće narudžbe",
-    "close": "Zatvori",
     "skipOrder": "Preskoči",
     "skipOrderAccessibilityLabel": "Preskoči narudžbu na dan {{orderDate}}",
     "unSkipOrder": "Poništi preskakanje",
@@ -153,5 +146,8 @@
     "title": "Nema kupljenih pretplata",
     "description": "Idite u trgovinu i kupite pretplate"
   },
-  "delayed": "Sljedeća će narudžba možda kasniti"
+  "delayed": "Sljedeća će narudžba možda kasniti",
+  "close": "Zatvori",
+  "cancel": "Odustani",
+  "save": "Spremi"
 }

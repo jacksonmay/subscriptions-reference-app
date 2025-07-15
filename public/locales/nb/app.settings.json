@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Lagre",
   "actions": {
-    "updateSuccess": "Innstillingene er oppdatert"
+    "updateSuccess": "Innstillingene er oppdatert",
+    "updateFailed": "Kunne ikke oppdatere innstillingene"
   },
   "title": "Innstillinger",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Handling når alle forsøk på å prøve igjen har mislyktes",
       "options": {
-        "skip": "Hopp over abonnement og send varsel",
+        "skip": "Hopp over bestillingen og send varsel",
         "cancel": "Avbryt abonnement og send varsel",
         "pause": "Pause abonnement midlertidig og send varsel"
       }

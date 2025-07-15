@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "언제든지 자동 갱신하거나 건너뛰거나 취소할 수 있습니다.",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='구독 정책 보기'>구독 정책 보기</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>구독 정책 보기</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "카트에 추가하려면 제품 페이지로 이동하여 구매 옵션을 선택하세요"

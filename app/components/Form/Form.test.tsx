@@ -1,7 +1,6 @@
 import {describe, expect, it, vi, afterEach} from 'vitest';
 import {screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import {withZod} from '@rvf/zod';
 import {z} from 'zod';
 import {Form} from './Form';
 import {mockShopify} from '#/setup-app-bridge';
@@ -29,10 +28,10 @@ const action = async () => {
 function TestFormRoute() {
   const {defaultValues} = useLoaderData<typeof DEFAULT_VALUES>();
   const actionData = useActionData<{message: string}>();
-  const validator = withZod(z.object({}));
+  const schema = z.object({});
 
   return (
-    <Form validator={validator} defaultValues={defaultValues} action="/">
+    <Form schema={schema} defaultValues={defaultValues} action="/">
       <h1>Test form</h1>
 
       <div>{actionData ? actionData.message : null}</div>
@@ -153,7 +152,7 @@ describe('Form', () => {
       mockActionData.mockResolvedValue({message: 'Submit successful'});
 
       const submit = screen.getByRole('button', {name: 'Submit'});
-      userEvent.click(submit);
+      await userEvent.click(submit);
 
       await vi.waitFor(() => expect(mockActionData).toHaveBeenCalledOnce());
       await screen.findByText('Submit successful');

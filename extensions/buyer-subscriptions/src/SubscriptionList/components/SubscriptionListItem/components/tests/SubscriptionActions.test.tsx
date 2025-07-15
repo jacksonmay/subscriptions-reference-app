@@ -24,7 +24,6 @@ const {mockShowSuccessToast} = mockUseToast();
 
 const defaultProps: SubscriptionActionsProps = {
   id: '1',
-  hasInventoryError: false,
   status: 'ACTIVE',
   resumeDateIfNextCycleSkipped: '2024-01-01',
   cycleIndexToSkip: 1,

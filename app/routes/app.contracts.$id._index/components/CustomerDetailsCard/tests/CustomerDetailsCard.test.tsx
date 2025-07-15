@@ -53,7 +53,7 @@ describe('CustomerDetailsCard', () => {
     mountComponentWithRemixStub(<CustomerDetailsCard {...mockProps} />);
 
     const expectedAddressLine1 = `${mockAddress.firstName} ${mockAddress.lastName}`;
-    const expectedAddressLine4 = `${mockAddress.city} Quebec ${mockAddress.zip}`;
+    const expectedAddressLine4 = `${mockAddress.city} QC ${mockAddress.zip}`;
 
     // wait for the address formatter to finish running
     await waitFor(async () => {
@@ -67,7 +67,7 @@ describe('CustomerDetailsCard', () => {
     expect(await screen.findByText(mockAddress.address1!)).toBeInTheDocument();
     expect(await screen.findByText(mockAddress.address2!)).toBeInTheDocument();
     expect(await screen.findByText(expectedAddressLine4)).toBeInTheDocument();
-    expect(await screen.findByText('Canada')).toBeInTheDocument();
+    expect(await screen.findByText('CA')).toBeInTheDocument();
   });
 
   it('displays phone number from local delivery', async () => {

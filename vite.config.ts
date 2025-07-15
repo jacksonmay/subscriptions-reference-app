@@ -1,10 +1,7 @@
 import {vitePlugin as remix} from '@remix-run/dev';
-import {installGlobals} from '@remix-run/node';
 import {defineConfig} from 'vite';
 import type {HmrOptions, UserConfig} from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-
-installGlobals();
 
 if (
   process.env.HOST &&
@@ -36,6 +33,9 @@ if (host === 'localhost') {
 }
 
 export default defineConfig({
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+  },
   server: {
     port: Number(process.env.PORT || 3000),
     hmr: hmrConfig,
@@ -49,6 +49,12 @@ export default defineConfig({
     remix({
       future: {
         unstable_optimizeDeps: true,
+        v3_relativeSplatPath: true,
+        v3_lazyRouteDiscovery: true,
+        v3_routeConfig: true,
+        v3_fetcherPersist: true,
+        v3_throwAbortReason: true,
+        v3_singleFetch: true,
       },
       ignoredRouteFiles: ['**/.*'],
     }),
@@ -64,7 +70,17 @@ export default defineConfig({
     assetsInlineLimit: 0,
     sourcemap: true,
   },
+  esbuild: {
+    supported: {
+      'top-level-await': true,
+    },
+  },
   optimizeDeps: {
+    esbuildOptions: {
+      supported: {
+        'top-level-await': true,
+      },
+    },
     include: [
       '@shopify/admin-graphql-api-utilities',
       '@shopify/app-bridge-react',
@@ -72,7 +88,6 @@ export default defineConfig({
       '@shopify/polaris-icons',
       '@shopify/address',
       '@rvf/remix',
-      '@rvf/zod',
       'zod',
       'uuid',
     ],

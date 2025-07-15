@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "Peruuta",
         "update": "Päivitä"
+      },
+      "localDeliveryBanner": {
+        "content": "Paikalliseen toimitukseen tarvitaan osoite ja puhelinnumero. {link}",
+        "link": "Hallinnoi osoitteita asiakassivulla"
       }
     }
   },
@@ -330,6 +334,11 @@
         "cancel": "Peruuta"
       },
       "outOfStock": "Tätä tuotetta ylimyydään tässä tilauksessa"
+    },
+    "allocationError": {
+      "title": "Päivämäärälle {date} päivätyn tilauksen luominen ei onnistunut",
+      "description": "Asiakkaan osoite sijaitsee toimitusalueella, jolla ei ole saatavilla olevaa varastoa tai jota nykyiset toimitusasetukset eivät tue. Jos haluat jatkaa tilauksia, päivitä varasto tai {settingsLink}.",
+      "settingsLinkText": "muokkaa toimitusasetuksia"
     }
   }
 }

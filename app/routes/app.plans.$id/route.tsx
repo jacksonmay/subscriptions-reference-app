@@ -20,8 +20,8 @@ import {SubscriptionPlanForm} from './components/SubscriptionPlanForm';
 import {getEmptySellingPlan} from './utils';
 import {
   DiscountType,
-  getSellingPlanFormValidator,
-  useSellingPlanFormValidator,
+  getSellingPlanFormSchema,
+  useSellingPlanFormSchema,
 } from './validator';
 
 import {Form} from '~/components/Form/Form';
@@ -31,6 +31,7 @@ import {MAX_SELLING_PLAN_PRODUCTS} from '~/utils/constants';
 import {formStringToArray} from '~/utils/helpers/form';
 import {toast} from '~/utils/toast';
 import {useToasts} from '~/hooks';
+import {validateFormData} from '~/utils/validateFormData';
 
 export const handle = {
   i18n: 'app.plans.details',
@@ -84,10 +85,12 @@ export async function action({
 > {
   const {admin} = await authenticate.admin(request);
   const t = await i18n.getFixedT(request, 'app.plans.details');
-  const validator = getSellingPlanFormValidator(t);
   const planID = params.id;
 
-  const validationResult = await validator.validate(await request.formData());
+  const validationResult = await validateFormData(
+    getSellingPlanFormSchema(t),
+    await request.formData(),
+  );
 
   if (validationResult.error) {
     return validationError(validationResult.error);
@@ -173,7 +176,7 @@ export async function action({
 export default function SellingPlanDetails() {
   const {t} = useTranslation('app.plans.details');
   const {sellingPlanGroup} = useLoaderData<typeof loader>();
-  const validator = useSellingPlanFormValidator();
+  const schema = useSellingPlanFormSchema();
   const [searchParams, setSearchParams] = useSearchParams();
   useToasts();
 
@@ -182,8 +185,10 @@ export default function SellingPlanDetails() {
     sellingPlanGroup.discountDeliveryOptions || [];
 
   useEffect(() => {
-    searchParams.delete('planCreated');
-    setSearchParams(searchParams);
+    if (searchParams.has('planCreated')) {
+      searchParams.delete('planCreated');
+      setSearchParams(searchParams);
+    }
   }, [searchParams, setSearchParams]);
 
   return (
@@ -191,7 +196,7 @@ export default function SellingPlanDetails() {
       backAction={{content: t('backButtonLabel'), url: '/app/plans'}}
       title={sellingPlanGroup?.merchantCode || t('create.pageTitle')}
     >
-      <Form validator={validator} defaultValues={sellingPlanGroup}>
+      <Form schema={schema} defaultValues={sellingPlanGroup}>
         <SubscriptionPlanForm
           selectedProductIds={selectedProductIds}
           selectedVariantIds={selectedProductVariantIds}

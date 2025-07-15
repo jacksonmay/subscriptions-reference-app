@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "返回订阅套餐",
-  "planTitle": "套餐标题",
-  "planTitleHelpText": "客户不会看到此内容。",
-  "purchaseOptionTitle": "购买选项标题",
+  "planTitle": "内部描述",
+  "planTitleHelpText": "仅供参考",
+  "purchaseOptionTitle": "标题",
   "purchaseOptionTitleHelpText": "客户将在具有订阅的{{howToDisplayProductsLink}}上看到此内容。",
   "defaultPurchaseOptionTitle": "订阅并保存",
   "saveButtonText": "保存",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "已选择无效产品",
     "invalidVariant": "已选择无效产品多属性",
-    "merchantCodeEmptyError": "套餐标题必填",
-    "nameEmptyError": "购买选项标题必填",
+    "merchantCodeEmptyError": "内部描述必填",
+    "nameEmptyError": "标题必填",
     "createError": "创建订阅套餐时出错",
     "updateError": "更新订阅套餐时出错",
     "deliveryFrequencyError": "频率必须大于 0",
@@ -92,7 +92,7 @@
     "productAndVariantTextSeparatedList": "{productText}，{variantText}",
     "fixedPrice": "{amount}"
   },
-  "purchaseOptionTitleHelpLinkText": "店面产品页面",
+  "purchaseOptionTitleHelpLinkText": "在线店面产品页面",
   "creationMutation": {
     "options": {
       "deliveryFrequency": "配送频率"

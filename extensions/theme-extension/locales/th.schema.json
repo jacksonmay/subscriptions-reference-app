@@ -11,13 +11,9 @@
     "border_title": "ขอบ",
     "border_thickness": "ความหนา",
     "border_radius": "รัศมีมุม",
-    "colors_text_title": "ชื่อ",
     "colors_text_body": "เนื้อหา",
     "colors_background_border_title": "พื้นหลังและขอบ",
     "colors_background": "พื้นหลัง",
-    "colors_dividers": "ดิไวเดอร์",
-    "supporting_text_title": "ข้อความสนับสนุน",
-    "supporting_text_subtitle": "ชื่อ",
-    "supporting_text_input_default": "ตัวเลือกการซื้อ"
+    "colors_dividers": "ดิไวเดอร์"
   }
 }

@@ -71,6 +71,7 @@ export function EditSubscriptionLine({
           <BlockStack gap="050">
             <Link
               removeUnderline
+              target="_parent"
               url={
                 productId
                   ? `shopify://admin/products/${parseGid(productId)}`

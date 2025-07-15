@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Zpět na plány předplatného",
-  "planTitle": "Název plánu",
-  "planTitleHelpText": "Zákazníci uvedené informace neuvidí.",
-  "purchaseOptionTitle": "Název možnosti nákupu",
+  "planTitle": "Interní popis",
+  "planTitleHelpText": "Jen pro vaši referenci",
+  "purchaseOptionTitle": "Název",
   "purchaseOptionTitleHelpText": "Zákazníkům se uvedené informace zobrazí na {{howToDisplayProductsLink}} s předplatným.",
   "defaultPurchaseOptionTitle": "Předplatit a uložit",
   "saveButtonText": "Uložit",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Byl vybrán neplatný produkt.",
     "invalidVariant": "Byla vybrána neplatná varianta produktu.",
-    "merchantCodeEmptyError": "Název plánu je nutné zadat.",
-    "nameEmptyError": "Název možnosti nákupu je nutné zadat.",
+    "merchantCodeEmptyError": "Zadání interního popisu je povinné",
+    "nameEmptyError": "Zadání názvu je povinné",
     "createError": "Chyba při vytváření plánu předplatného",
     "updateError": "Chyba při aktualizaci plánu předplatného",
     "deliveryFrequencyError": "Četnost musí být větší než 0.",

@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Betaalmethode vervangen",
-    "save": "Opslaan",
     "paymentMethod": "Betaalmethode",
     "edit": "Bewerken",
-    "close": "Sluiten",
     "errorBannerTitle": "Kan betaalmethode niet bijwerken"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Volgende bestelling overslaan",
     "generic": "Wil je de volgende bestelling overslaan?",
     "date": "Wil je de volgende bestelling overslaan? Je abonnement wordt op {{date}} hervat.",
-    "errorBannerTitle": "Kan volgende bestelling niet overslaan",
-    "close": "Annuleren"
+    "errorBannerTitle": "Kan volgende bestelling niet overslaan"
   },
   "pauseSubscriptionModal": {
     "title": "Abonnement pauzeren",
     "action": "Abonnement pauzeren",
-    "close": "Sluiten",
     "description": "Je abonnement wordt onmiddellijk gepauzeerd. Er worden geen afschrijvingen meer gedaan en je krijgt geen komende bestellingen meer. Je kunt het abonnement op elk gewenst moment hervatten.",
     "errorBannerTitle": "Kan abonnement niet pauzeren"
   },
@@ -76,14 +72,12 @@
     "pause": "Pauzeren",
     "skip": "Volgende bestelling overslaan",
     "resume": "Hervatten",
-    "cancel": "Annuleren",
     "manage": "Beheren",
     "viewSubscriptionDetails": "Gegevens bekijken"
   },
   "resumeSubscriptionModal": {
     "description": "Als je dit abonnement hervat, gaat de facturering onmiddellijk weer in.",
     "descriptionWithDate": "Als je dit abonnement hervat, gaat de facturering weer in op {{date}}.",
-    "close": "Sluiten",
     "descriptionPriceChanged": "De prijs voor dit abonnement is gewijzigd. Bij de volgende bestelling wordt {{price}} bij je in rekening gebracht.",
     "continue": "Doorgaan",
     "title": "Abonnement hervatten",
@@ -100,19 +94,19 @@
     "title": "Abonnement opzeggen",
     "description": "Als je je abonnement opzegt, wordt de facturering en bezorging onmiddellijk beëindigd. Als je een abonnement opzegt, kun je dit niet meer ongedaan maken. Als je tijdelijk geen bestellingen wilt ontvangen, kun je je abonnement pauzeren.",
     "action": "Abonnement opzeggen",
-    "close": "Sluiten",
     "errorBannerTitle": "Kan abonnement niet annuleren"
   },
   "errorBoundary": {
     "content": "Er is iets misgegaan. Vernieuw de pagina"
   },
   "addressModal": {
-    "save": "Opslaan",
     "continue": "Doorgaan",
-    "cancel": "Annuleren",
     "title": "Bezorgadres bewerken",
     "errorBannerTitle": "Kan bezorgmethode niet bijwerken",
-    "noDeliveryOptions": "Dit abonnement kan niet worden verzonden naar het ingevoerde adres. Controleer het adres en zorg ervoor dat alle velden correct zijn ingevuld. Probeer het daarna opnieuw."
+    "noDeliveryOptions": "Dit abonnement kan niet worden verzonden naar het ingevoerde adres. Controleer het adres en zorg ervoor dat alle velden correct zijn ingevuld. Probeer het daarna opnieuw.",
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "country": "Land/regio"
   },
   "successBanner": {
     "paused": "Abonnement gepauzeerd",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Aankomende bestellingen",
-    "close": "Sluiten",
     "skipOrder": "Overslaan",
     "skipOrderAccessibilityLabel": "Bestelling overslaan op {{orderDate}}",
     "unSkipOrder": "Niet meer overslaan",
@@ -153,5 +146,8 @@
     "title": "Geen abonnementen gekocht",
     "description": "Ga naar winkel om abonnementen te kopen"
   },
-  "delayed": "De volgende bestelling kan vertraagd zijn"
+  "delayed": "De volgende bestelling kan vertraagd zijn",
+  "close": "Sluiten",
+  "cancel": "Annuleren",
+  "save": "Opslaan"
 }

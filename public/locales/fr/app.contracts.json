@@ -257,6 +257,10 @@
       "actions": {
         "cancel": "Annuler",
         "update": "Mettre à jour"
+      },
+      "localDeliveryBanner": {
+        "content": "L’adresse doit inclure un numéro de téléphone pour la livraison locale. {link}",
+        "link": "Gérer les adresses sur la page du/de la client(e)"
       }
     }
   },
@@ -346,6 +350,11 @@
         "cancel": "Annuler"
       },
       "outOfStock": "Ce produit sera survendu pour cette commande"
+    },
+    "allocationError": {
+      "title": "La commande du {date} n’a pas pu être créée",
+      "description": "L’adresse du client se trouve dans une zone d’expédition sans stock disponible ou n’est pas prise en charge par les paramètres d’expédition actuels. Mettez à jour le stock ou {settingsLink} pour reprendre les commandes.",
+      "settingsLinkText": "modifiez les paramètres d’expédition"
     }
   }
 }

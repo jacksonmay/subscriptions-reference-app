@@ -1,7 +1,6 @@
 import type {Address} from '@shopify/address';
 import {nodesFromEdges} from '@shopify/admin-graphql-api-utilities';
 import type {TFunction} from 'i18next';
-import type {SubscriptionMailingAddress} from 'types/admin.types';
 import type {PricingPolicy} from '~/routes/app.contracts.$id.edit/validator';
 import type {SubscriptionContractStatusType} from '~/types';
 import type {SubscriptionContractsQuery} from 'types/admin.generated';
@@ -9,6 +8,7 @@ import {SubscriptionBillingAttemptErrorCode} from '~/types/webhooks';
 import type {
   BillingAttemptProcessingError,
   ContractDetailsCycleDiscount,
+  CustomerAddress,
   CycleDiscount,
   SubscriptionContractListItem,
 } from '~/types/contracts';
@@ -22,7 +22,7 @@ import {SubscriptionContractStatus} from '~/types';
  * mutations expect as input (MailingAddressInput)
  */
 export function formatCustomerAddress(
-  customerAddress: SubscriptionMailingAddress,
+  customerAddress: CustomerAddress,
 ): Address | null {
   if (!customerAddress) {
     return null;

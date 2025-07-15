@@ -9,7 +9,9 @@ import {
   type MockInstance,
 } from 'vitest';
 import {logger} from '~/utils/logger.server';
-import MetaobjectRepository from '../MetaobjectRepository';
+import MetaobjectRepository, {
+  MaxMetaobjectDefinitionsExceededError,
+} from '../MetaobjectRepository';
 
 import type {
   MetaobjectByHandleQuery as MetaobjectByHandleQueryType,
@@ -48,7 +50,7 @@ describe('MetaobjectRepository', () => {
   const {graphQL, mockGraphQL} = mockShopifyServer();
   let loggerSpy: MockInstance;
 
-  const metaobjectId = 'gid://shopify/MetaObject/9';
+  const metaobjectId = 'gid://shopify/Metaobject/9';
   const metaobjectType = 'onboarding';
   const metaobjectHandle = 'test-shop';
   const metaobjectResponseFields = [
@@ -299,7 +301,7 @@ describe('MetaobjectRepository', () => {
 
   describe('fetchMetaobjects', () => {
     it('returns the metaobjects for a given type, first, and sortKey', async () => {
-      const metaobjectId1 = 'gid://shopify/MetaObject/1';
+      const metaobjectId1 = 'gid://shopify/Metaobject/1';
       const metaobjectResponseFields1 = [
         {
           key: 'foo',
@@ -325,7 +327,7 @@ describe('MetaobjectRepository', () => {
         },
       ];
 
-      const metaobjectId2 = 'gid://shopify/MetaObject/2';
+      const metaobjectId2 = 'gid://shopify/Metaobject/2';
       const metaobjectResponseFields2 = [
         {
           key: 'foo',
@@ -398,7 +400,7 @@ describe('MetaobjectRepository', () => {
     });
 
     it('returns the metaobjects for a given type, with first 10 results, and undefined sortKey by default', async () => {
-      const metaobjectId1 = 'gid://shopify/MetaObject/1';
+      const metaobjectId1 = 'gid://shopify/Metaobject/1';
       const metaobjectResponseFields1 = [
         {
           key: 'foo',
@@ -424,7 +426,7 @@ describe('MetaobjectRepository', () => {
         },
       ];
 
-      const metaobjectId2 = 'gid://shopify/MetaObject/2';
+      const metaobjectId2 = 'gid://shopify/Metaobject/2';
       const metaobjectResponseFields2 = [
         {
           key: 'foo',
@@ -648,6 +650,58 @@ describe('MetaobjectRepository', () => {
           userErrors,
         )}`,
       );
+      expect(graphQL).toHavePerformedGraphQLOperation(
+        MetaobjectDefinitionCreateMutation,
+        {
+          variables: {
+            definition: metaobjectDefinitionInput,
+          } as MetaobjectDefinitionCreateMutationVariables,
+        },
+      );
+    });
+
+    it('throws MaxMetaobjectDefinitionsExceededError when MAX_DEFINITIONS_EXCEEDED error occurs', async () => {
+      const userErrors = [
+        {
+          message: 'Total definition count exceeds the limit of 64',
+          field: ['definition'],
+          code: 'MAX_DEFINITIONS_EXCEEDED' as any,
+        },
+      ];
+
+      const mockResponse: {
+        data?: MetaobjectDefinitionCreateMutationType;
+      } = {
+        data: {
+          metaobjectDefinitionCreate: {
+            userErrors,
+          },
+        },
+      };
+
+      mockGraphQL({MetaobjectDefinitionCreate: mockResponse});
+
+      const repository = new MetaobjectRepository(graphQL);
+      const loggerSpy = vi.spyOn(logger, 'error');
+
+      await expect(
+        repository.createMetaobjectDefinition(metaobjectDefinitionInput),
+      ).rejects.toThrow(MaxMetaobjectDefinitionsExceededError);
+
+      await expect(
+        repository.createMetaobjectDefinition(metaobjectDefinitionInput),
+      ).rejects.toThrow(
+        'Maximum metaobject definitions limit exceeded when creating definition',
+      );
+
+      expect(loggerSpy).toHaveBeenCalledWith(
+        {
+          userErrors,
+          definitionType: metaobjectDefinitionInput.type,
+        },
+        'Maximum metaobject definitions limit exceeded when creating definition',
+      );
+
       expect(graphQL).toHavePerformedGraphQLOperation(
         MetaobjectDefinitionCreateMutation,
         {
@@ -1216,25 +1270,31 @@ describe('MetaobjectRepository', () => {
         value: 'cancel',
         valueType: MetafieldType.SINGLE_LINE_TEXT_FIELD,
       },
-    ];
-    const testMetaobjectFieldsResponse = [
       {
-        key: 'retryAttempts',
-        type: 'number_integer',
-        value: '5',
-      },
-      {
-        key: 'daysBetweenRetryAttempts',
-        type: 'number_integer',
-        value: '1',
-      },
-      {
-        key: 'onFailure',
-        type: 'single_line_text_field',
-        value: 'cancel',
+        key: 'newField',
+        value: 'new value',
+        valueType: MetafieldType.SINGLE_LINE_TEXT_FIELD,
       },
     ];
     it('ensures that all fields are present in the metaobject', async () => {
+      const testMetaobjectFieldsResponse = [
+        {
+          key: 'retryAttempts',
+          type: 'number_integer',
+          value: '5',
+        },
+        {
+          key: 'daysBetweenRetryAttempts',
+          type: 'number_integer',
+          value: '1',
+        },
+        {
+          key: 'onFailure',
+          type: 'single_line_text_field',
+          value: 'cancel',
+        },
+      ];
+
       const mockResponse: {
         data?: MetaobjectByHandleQueryType;
       } = {
@@ -1294,6 +1354,10 @@ describe('MetaobjectRepository', () => {
                   key: 'onFailure',
                   value: 'cancel',
                 },
+                {
+                  key: 'newField',
+                  value: 'new value',
+                },
               ],
             },
           } as MetaobjectUpdateMutationVariables,
@@ -1302,6 +1366,29 @@ describe('MetaobjectRepository', () => {
     });
 
     it('creates a metaobject if it is not found', async () => {
+      const testMetaobjectFieldsResponse = [
+        {
+          key: 'retryAttempts',
+          type: 'number_integer',
+          value: '5',
+        },
+        {
+          key: 'daysBetweenRetryAttempts',
+          type: 'number_integer',
+          value: '1',
+        },
+        {
+          key: 'onFailure',
+          type: 'single_line_text_field',
+          value: 'cancel',
+        },
+        {
+          key: 'newField',
+          type: 'single_line_text_field',
+          value: 'new value',
+        },
+      ];
+
       const mockResponse: {
         data?: MetaobjectByHandleQueryType;
       } = {
@@ -1359,6 +1446,10 @@ describe('MetaobjectRepository', () => {
                 {
                   key: 'onFailure',
                   value: 'cancel',
+                },
+                {
+                  key: 'newField',
+                  value: 'new value',
                 },
               ],
             },

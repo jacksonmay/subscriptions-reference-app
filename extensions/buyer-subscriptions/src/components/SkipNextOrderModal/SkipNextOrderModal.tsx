@@ -109,7 +109,7 @@ export function SkipNextOrderModal({
             onPress={() => overlay.close(SKIP_NEXT_ORDER_MODAL_ID)}
             kind="plain"
           >
-            {i18n.translate('skipNextOrder.close')}
+            {i18n.translate('close')}
           </Button>
           <Button onPress={handleSkipNextOrder} loading={loading}>
             {i18n.translate('skip')}

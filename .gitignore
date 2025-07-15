@@ -2,6 +2,7 @@ node_modules
 
 /.cache
 /build
+/sourcemaps
 /app/build
 /public/build/
 /app/public/build
@@ -34,3 +35,4 @@ yarn-error.log
 
 # OS files
 **/.DS_Store
+.shopify

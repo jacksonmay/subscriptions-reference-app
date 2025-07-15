@@ -7,7 +7,9 @@ import type {
   ButtonProps,
   ModalProps,
 } from '@shopify/ui-extensions-react/customer-account';
+import {Text} from '@shopify/ui-extensions-react/customer-account';
 import {useState} from 'react';
+import type {AddressProps} from 'components/Address';
 
 export function MockButton({
   children,
@@ -226,6 +228,19 @@ export function MockModal({children, title}: ModalProps) {
   );
 }
 
+// In production, the full province / state is displayed
+// since we are mocking the address formatter in tests,
+// only the code is displayed
+function MockAddress({address}: AddressProps) {
+  return (
+    <div>
+      <Text>{address.address1}</Text>
+      <Text>{address.address2}</Text>
+      <Text>{`${address.city} ${address.province} ${address.zip}`}</Text>
+    </div>
+  );
+}
+
 export function mockUiExtensionComponents() {
   vi.mock('@shopify/ui-extensions-react/customer-account', async () => ({
     ...(await vi.importActual('@shopify/ui-extensions-react/customer-account')),
@@ -239,5 +254,9 @@ export function mockUiExtensionComponents() {
     Choice: (props: any) => <MockChoice {...props} />,
     Select: (props: SelectProps) => <MockSelect {...props} />,
     Modal: (props: any) => <MockModal {...props} />,
+  }));
+  vi.mock('components/Address', async () => ({
+    ...(await vi.importActual('components/Address')),
+    Address: (props: any) => <MockAddress {...props} />,
   }));
 }

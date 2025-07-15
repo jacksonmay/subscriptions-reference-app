@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 import {defaultDiscountDeliveryOption} from '~/routes/app.plans.$id/utils';
 import {
   DiscountType,
-  useSellingPlanFormValidator,
+  useSellingPlanFormSchema,
 } from '~/routes/app.plans.$id/validator';
 import {Form} from '~/components/Form';
 import {DeliveryFrequencyInterval} from '~/utils/helpers/zod';
@@ -19,10 +19,10 @@ function WithForm({
   defaultValues: any;
   children: React.ReactNode;
 }) {
-  const validator = useSellingPlanFormValidator();
+  const schema = useSellingPlanFormSchema();
 
   return (
-    <Form validator={validator} defaultValues={defaultValues}>
+    <Form schema={schema} defaultValues={defaultValues}>
       {children}
     </Form>
   );
@@ -67,7 +67,7 @@ describe('DiscountDeliveryCard', () => {
 
       expect(screen.getByLabelText('Delivery frequency')).toBeInTheDocument();
 
-      userEvent.click(screen.getByRole('button', {name: 'Add option'}));
+      await userEvent.click(screen.getByRole('button', {name: 'Add option'}));
 
       await waitFor(() => {
         const deliveryFrequencyInputs =
@@ -79,7 +79,7 @@ describe('DiscountDeliveryCard', () => {
         }
       });
 
-      userEvent.click(screen.getByRole('button', {name: 'Add option'}));
+      await userEvent.click(screen.getByRole('button', {name: 'Add option'}));
 
       await waitFor(() => {
         const deliveryFrequencyInputs =
@@ -119,7 +119,7 @@ describe('DiscountDeliveryCard', () => {
 
       expect(screen.getAllByLabelText('Delivery frequency').length).toBe(2);
 
-      userEvent.click(
+      await userEvent.click(
         screen.getAllByRole('button', {name: 'Remove option'})[0],
       );
 

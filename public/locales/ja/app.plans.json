@@ -11,7 +11,7 @@
   },
   "table": {
     "headings": {
-      "planTitle": "プラン名",
+      "planTitle": "プランの説明",
       "products": "商品",
       "deliveryFrequency": "配達頻度",
       "discount": "価格",

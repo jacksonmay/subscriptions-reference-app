@@ -1,7 +1,8 @@
 {
   "saveButtonText": "저장",
   "actions": {
-    "updateSuccess": "설정 업데이트됨"
+    "updateSuccess": "설정 업데이트됨",
+    "updateFailed": "설정을 업데이트하지 못했습니다"
   },
   "title": "설정",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "모든 재시도가 실패했을 때 조치",
       "options": {
-        "skip": "가입을 건너뛰고 알림 보내기",
+        "skip": "주문을 건너뛰고 알림 보내기",
         "cancel": "가입을 취소하고 알림 보내기",
         "pause": "가입을 일시 중지하고 알림 보내기"
       }

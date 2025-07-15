@@ -3,7 +3,7 @@ import type {TextProps} from '@shopify/ui-extensions-react/customer-account';
 import {Text} from '@shopify/ui-extensions-react/customer-account';
 import {useFormattedAddress} from 'components/Address';
 
-interface InlineAddressProps {
+export interface InlineAddressProps {
   address: Address;
   appearance: TextProps['appearance'];
 }

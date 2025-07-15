@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Takaisin tilaussopimuksiin",
-  "planTitle": "Sopimuksen nimi",
-  "planTitleHelpText": "Asiakkaat eivät näe tätä.",
-  "purchaseOptionTitle": "Ostovaihtoehdon nimi",
+  "planTitle": "Sisäinen kuvaus",
+  "planTitleHelpText": "Vain tiedoksi",
+  "purchaseOptionTitle": "Otsikko",
   "purchaseOptionTitleHelpText": "Asiakkaat näkevät tämän sellaisilla {{howToDisplayProductsLink}}, joilla on toistuva tilauksia.",
   "defaultPurchaseOptionTitle": "Tilaa ja säästä",
   "saveButtonText": "Tallenna",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Virheellinen tuote valittu",
     "invalidVariant": "Virheellinen tuoteversio valittu",
-    "merchantCodeEmptyError": "Sopimuksen nimi on pakollinen",
-    "nameEmptyError": "Ostovaihtoehdon nimi on pakollinen",
+    "merchantCodeEmptyError": "Sisäinen kuvaus on pakollinen",
+    "nameEmptyError": "Otsikko on pakollinen",
     "createError": "Virhe tilaussopimuksen luonnissa",
     "updateError": "Virhe tilaussopimuksen päivittämisessä",
     "deliveryFrequencyError": "Välin on oltava suurempi kuin 0",

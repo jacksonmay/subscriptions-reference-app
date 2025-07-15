@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "返回訂閱方案",
-  "planTitle": "方案名稱",
-  "planTitleHelpText": "系統不會向顧客顯示此資訊。",
-  "purchaseOptionTitle": "購買選項名稱",
+  "planTitle": "內部說明",
+  "planTitleHelpText": "僅供參考",
+  "purchaseOptionTitle": "標題",
   "purchaseOptionTitleHelpText": "顧客會在提供訂閱方案的{{howToDisplayProductsLink}}上看到此資訊。",
   "defaultPurchaseOptionTitle": "訂閱省多多",
   "saveButtonText": "儲存",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "選擇的商品無效",
     "invalidVariant": "選擇的商品子類選項無效",
-    "merchantCodeEmptyError": "方案名稱為必填項目",
-    "nameEmptyError": "購買選項名稱為必填項目",
+    "merchantCodeEmptyError": "內部說明為必填項目",
+    "nameEmptyError": "標題為必填項目",
     "createError": "建立訂閱方案時發生錯誤",
     "updateError": "更新訂閱方案時發生錯誤",
     "deliveryFrequencyError": "頻率必須大於 0",
@@ -92,7 +92,7 @@
     "productAndVariantTextSeparatedList": "{productText}，{variantText}",
     "fixedPrice": "{amount}"
   },
-  "purchaseOptionTitleHelpLinkText": "店面商品頁面",
+  "purchaseOptionTitleHelpLinkText": "線上店面商品頁面",
   "creationMutation": {
     "options": {
       "deliveryFrequency": "配送頻率"

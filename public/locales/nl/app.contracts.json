@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "Annuleren",
         "update": "Bijwerken"
+      },
+      "localDeliveryBanner": {
+        "content": "Een adres met telefoonnummer is vereist voor lokale bezorging. {link}",
+        "link": "Beheer adressen op de klantenpagina"
       }
     }
   },
@@ -330,6 +334,11 @@
         "ignoreAndCreate": "Bestelling aanmaken",
         "cancel": "Annuleren"
       }
+    },
+    "allocationError": {
+      "title": "{date}, bestelling kan niet worden aangemaakt",
+      "description": "Het adres van de klant bevindt zich in een verzendzone zonder beschikbare voorraad of wordt niet ondersteund door de huidige verzendinstellingen. Werk de voorraad bij of {settingsLink} om bestellingen te hervatten.",
+      "settingsLinkText": "bewerk de verzendinstellingen"
     }
   }
 }

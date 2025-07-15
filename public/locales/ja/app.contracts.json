@@ -136,10 +136,10 @@
       "error": "契約を再開できませんでした"
     },
     "billContract": {
-      "title": "契約内容を請求",
-      "accessibilityLabel": "契約内容を請求",
+      "title": "契約に対して請求",
+      "accessibilityLabel": "契約に対して請求",
       "success": "請求処理が開始しました",
-      "error": "契約内容を請求できません"
+      "error": "契約に対して請求できません"
     }
   },
   "details": {
@@ -243,6 +243,10 @@
       "actions": {
         "cancel": "キャンセル",
         "update": "更新"
+      },
+      "localDeliveryBanner": {
+        "content": "ローカルデリバリーの場合は電話番号付きの住所が必要です。{link}",
+        "link": "お客様ページでの住所を管理する"
       }
     }
   },
@@ -330,6 +334,11 @@
         "ignoreAndCreate": "注文を作成する",
         "cancel": "キャンセル"
       }
+    },
+    "allocationError": {
+      "title": "{date}の注文を作成できませんでした",
+      "description": "お客様の住所が在庫のない配送エリアにあるか、現在の配送設定ではサポートされていません。在庫を更新するか、{settingsLink}で注文を再開してください。",
+      "settingsLinkText": "配送設定を編集"
     }
   }
 }

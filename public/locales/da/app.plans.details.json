@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "Tilbage til abonnementsordninger",
-  "planTitle": "Abonnementstitel",
-  "planTitleHelpText": "Kunder vil ikke se dette.",
-  "purchaseOptionTitle": "Titel på købsmulighed",
+  "planTitle": "Intern beskrivelse",
+  "planTitleHelpText": "Kun til egen reference",
+  "purchaseOptionTitle": "Titel",
   "purchaseOptionTitleHelpText": "Kunderne vil se dette på {{howToDisplayProductsLink}}, der har abonnementer.",
   "defaultPurchaseOptionTitle": "Abonner, og spar penge",
   "saveButtonText": "Gem",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "Der er valgt et ugyldigt produkt",
     "invalidVariant": "Der er valgt en ugyldig produktvariant",
-    "merchantCodeEmptyError": "Plantitel er påkrævet",
-    "nameEmptyError": "Titel på købsmulighed er påkrævet",
+    "merchantCodeEmptyError": "Intern beskrivelse skal angives",
+    "nameEmptyError": "Titel skal angives",
     "createError": "Der opstod en fejl under oprettelse af abonnementsordningen",
     "updateError": "Der opstod en fejl under opdateringen af abonnementsordningen",
     "deliveryFrequencyError": "Hyppigheden skal være større end 0",

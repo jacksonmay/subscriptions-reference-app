@@ -48,10 +48,8 @@
   },
   "paymentModal": {
     "title": "Pakeisti mokėjimo būdą",
-    "save": "Išsaugoti",
     "paymentMethod": "Mokėjimo būdas",
     "edit": "Redaguoti",
-    "close": "Uždaryti",
     "errorBannerTitle": "Nepavyksta atnaujinti mokėjimo būdo"
   },
   "pastOrdersCard": {
@@ -62,13 +60,11 @@
     "text": "Praleisti kitą užsakymą",
     "generic": "Ar norite praleisti kitą užsakymą?",
     "date": "Ar norite praleisti kitą užsakymą? Prenumerata bus atnaujinta {{date}}.",
-    "errorBannerTitle": "Nepavyksta praleisti kito užsakymo",
-    "close": "Uždaryti"
+    "errorBannerTitle": "Nepavyksta praleisti kito užsakymo"
   },
   "pauseSubscriptionModal": {
     "title": "Pristabdyti prenumeratą",
     "action": "Pristabdyti prenumeratą",
-    "close": "Uždaryti",
     "description": "Jūsų prenumerata bus nedelsiant pristabdyta ir daugiau negausite jokių mokesčių ar būsimų užsakymų. Atnaujinti prenumeratą galite bet kuriuo metu.",
     "errorBannerTitle": "Nepavyksta pristabdyti prenumeratos"
   },
@@ -76,14 +72,12 @@
     "pause": "Pristabdyti",
     "skip": "Praleisti kitą užsakymą",
     "resume": "Atnaujinti",
-    "cancel": "Atšaukti",
     "manage": "Tvarkyti",
     "viewSubscriptionDetails": "Žiūrėti informaciją"
   },
   "resumeSubscriptionModal": {
     "description": "Jei atnaujinsite šią prenumeratą, nedelsiant bus atnaujintas ir mokėjimas už ją.",
     "descriptionWithDate": "Jei atnaujinsite šią prenumeratą, mokėjimas už ją bus atnaujintas {{date}}.",
-    "close": "Uždaryti",
     "descriptionPriceChanged": "Šios prenumeratos kaina pasikeitė ir iš jūsų bus nuskaičiuota {{price}} suma už būsimą užsakymą.",
     "continue": "Tęsti",
     "title": "Atnaujinti prenumeratą",
@@ -100,19 +94,19 @@
     "title": "Atšaukti prenumeratą",
     "description": "Jei atšauksite prenumeratą, mokėjimas už ją ir pristatymas bus nutraukti nedelsiant. Prenumeratos atšaukimas yra negrįžtamas veiksmas. Norėdami laikinai negauti užsakymų, pristabdykite savo prenumeratą.",
     "action": "Atšaukti prenumeratą",
-    "close": "Uždaryti",
     "errorBannerTitle": "Nepavyksta atšaukti prenumeratos"
   },
   "errorBoundary": {
     "content": "Įvyko klaida, iš naujo įkelkite puslapį"
   },
   "addressModal": {
-    "save": "Išsaugoti",
     "continue": "Tęsti",
-    "cancel": "Atšaukti",
     "title": "Redaguoti pristatymo adresą",
     "errorBannerTitle": "Nepavyksta atnaujinti pristatymo būdo",
-    "noDeliveryOptions": "Šios prenumeratos negalima išsiųsti įvestu adresu. Peržiūrėkite adresą ir įsitikinkite, kad visi laukai tinkamai užpildyti, tada bandykite dar kartą."
+    "noDeliveryOptions": "Šios prenumeratos negalima išsiųsti įvestu adresu. Peržiūrėkite adresą ir įsitikinkite, kad visi laukai tinkamai užpildyti, tada bandykite dar kartą.",
+    "firstName": "Vardas",
+    "lastName": "Pavardė",
+    "country": "Šalis / regionas"
   },
   "successBanner": {
     "paused": "Prenumerata pristabdyta",
@@ -125,7 +119,6 @@
   },
   "upcomingOrdersModal": {
     "title": "Būsimi užsakymai",
-    "close": "Uždaryti",
     "skipOrder": "Praleisti",
     "skipOrderAccessibilityLabel": "Praleisti {{orderDate}} užsakymą",
     "unSkipOrder": "Nepraleisti",
@@ -153,5 +146,8 @@
     "title": "Nėra įsigytų prenumeratų",
     "description": "Eikite į parduotuvę, kad įsigytumėte prenumeratą"
   },
-  "delayed": "Kitas užsakymas gali vėluoti"
+  "delayed": "Kitas užsakymas gali vėluoti",
+  "close": "Uždaryti",
+  "cancel": "Atšaukti",
+  "save": "Išsaugoti"
 }

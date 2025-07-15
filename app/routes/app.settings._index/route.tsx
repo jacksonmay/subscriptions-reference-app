@@ -20,9 +20,10 @@ import {
 } from '../../models/Settings/Settings.server';
 import {authenticate} from '../../shopify.server';
 import {BillingFailureSettings} from './components/BillingFailureSettings';
-import {getSettingsValidator, useSettingsValidator} from './validator';
+import {getSettingsSchema, useSettingsSchema} from './validator';
 import {useToasts} from '~/hooks';
 import {toast} from '~/utils/toast';
+import {validateFormData} from '~/utils/validateFormData';
 
 export const handle = {
   i18n: 'app.settings',
@@ -41,23 +42,24 @@ export async function action({
   TypedResponse<WithToast<Partial<ValidationErrorResponseData>>>
 > {
   const {admin} = await authenticate.admin(request);
-
   const formData = await request.formData();
   const t = await i18n.getFixedT(request, 'app.settings');
-  const validator = getSettingsValidator(t);
-  const validationResult = await validator.validate(formData);
+  const validationResult = await validateFormData(
+    getSettingsSchema(t),
+    formData,
+  );
 
   if (validationResult.error) {
     return validationError(validationResult.error);
   }
 
-  const {userErrors} = await updateSettingsMetaobject(
+  const {success} = await updateSettingsMetaobject(
     admin.graphql,
     validationResult.data,
   );
 
-  if (userErrors && userErrors.length > 0) {
-    return json(toast(userErrors[0].message, {isError: true}));
+  if (!success) {
+    return json(toast(t('actions.updateFailed'), {isError: true}));
   }
 
   return json(toast(t('actions.updateSuccess')));
@@ -65,23 +67,19 @@ export async function action({
 
 export default function SettingsIndex() {
   const {settings} = useLoaderData<typeof loader>();
-  const inventoryEnabled = true;
   useToasts();
 
   const {t} = useTranslation('app.settings');
-  const validator = useSettingsValidator(t);
+  const schema = useSettingsSchema();
 
   return (
     <Page title={t('title')}>
       <Box paddingBlockEnd="400">
-        <Form validator={validator} defaultValues={settings}>
+        <Form schema={schema} defaultValues={settings}>
           <input type="hidden" value={settings.id} name="id" />
           <Layout>
             <Layout.Section>
-              <BillingFailureSettings
-                inventoryEnabled={inventoryEnabled}
-                settings={settings}
-              />
+              <BillingFailureSettings />
             </Layout.Section>
 
             <Layout.Section>

@@ -10,12 +10,22 @@ import {DeliveryMethodSelectModal} from '../DeliveryMethodSelectModal';
 import * as useSelectDeliveryOptionHook from '../../../hooks/useSelectDeliveryOption';
 import {createMockAddress} from 'tests/mocks/address';
 import userEvent from '@testing-library/user-event';
+import type {InlineAddressProps} from '../components/InlineAddress';
 
 vi.mock('../../../hooks/useSelectDeliveryOption', () => ({
   useSelectDeliveryOption: vi.fn().mockReturnValue(() => ({
     deliveryMethod: {},
     errors: [],
   })),
+}));
+
+function MockInlineAddress(props: InlineAddressProps) {
+  return <div>{JSON.stringify(props.address)}</div>;
+}
+
+vi.mock('../components/InlineAddress', async () => ({
+  ...(await vi.importActual('../components/InlineAddress')),
+  InlineAddress: (props: any) => <MockInlineAddress {...props} />,
 }));
 
 const {mockExtensionApi} = mockApis();
@@ -116,30 +126,4 @@ describe('<DeliveryMethodSelectModal />', () => {
       });
     });
   });
-
-  // describe('local delivery inputs', () => {
-  //   it('shows the phone and instruction fields for local delivery', async () => {
-  //     const deliveryMethodSelectModal = await mountWithAppContext(
-  //       <DeliveryMethodSelectModal
-  //         {...defaultProps}
-  //         selectedDeliveryHandle="Local delivery"
-  //       />,
-  //     );
-
-  //     expect(deliveryMethodSelectModal).toContainReactComponent(PhoneField);
-  //     expect(deliveryMethodSelectModal).toContainReactComponent(TextField);
-  //   });
-
-  //   it('does not show the phone and instruction fields when local delivery is not selected', async () => {
-  //     const deliveryMethodSelectModal = await mountWithAppContext(
-  //       <DeliveryMethodSelectModal
-  //         {...defaultProps}
-  //         selectedDeliveryHandle="Shipping"
-  //       />,
-  //     );
-
-  //     expect(deliveryMethodSelectModal).not.toContainReactComponent(PhoneField);
-  //     expect(deliveryMethodSelectModal).not.toContainReactComponent(TextField);
-  //   });
-  // });
 });

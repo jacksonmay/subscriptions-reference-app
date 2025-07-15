@@ -142,10 +142,11 @@ describe('SubscriptionListItem', () => {
   });
 
   it('displays the last updated date for non-active subscriptions', async () => {
+    const currentYear = new Date().getFullYear();
     const mockProps: SubscriptionListItemProps = {
       ...defaultProps,
       status: 'PAUSED',
-      updatedAt: '2024-07-13T15:50:00Z',
+      updatedAt: `${currentYear}-07-13T15:50:00Z`,
     };
     await mountWithAppContext(<SubscriptionListItem {...mockProps} />);
 

@@ -211,7 +211,9 @@ describe('InventoryService', () => {
       expect(enqueueSpy).toHaveBeenCalledWith(
         new SendInventoryFailureEmailJob({
           shop: 'example.myshopify.com',
-          payload: {},
+          payload: {
+            frequency: 'immediately',
+          },
         }),
       );
       expect(result).toEqual('INVENTORY_ALLOCATIONS_NOT_FOUND');

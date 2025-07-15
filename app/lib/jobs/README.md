@@ -22,7 +22,7 @@ Initialize a job runner with a [scheduler](#schedulers)
 import {JobRunner} from '~/lib/jobs';
 import {CloudTaskScheduler, InlineScheduler, TestScheduler} from '~/lib/jobs';
 
-const scheduler = InlineScheduler(logger);
+const scheduler = new InlineScheduler(logger);
 const runner = new JobRunner<InlineScheduler>(scheduler, logger);
 ```
 
@@ -46,7 +46,7 @@ await runner.enqueue(job);
 Runs jobs immediately inline when enqueued – designed for local development
 
 ```typescript
-const scheduler = InlineScheduler(logger);
+const scheduler = new InlineScheduler(logger);
 const runner = new JobRunner<InlineScheduler>(scheduler, logger);
 runner.register(ExampleJob);
 

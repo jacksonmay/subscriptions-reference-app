@@ -2,15 +2,14 @@ import {DateTime} from 'luxon';
 import type {
   SubscriptionBillingCycleByIndexQuery as SubscriptionBillingCycleByIndexQueryType,
   SubscriptionBillingCyclesQuery as SubscriptionBillingCyclesQueryType,
-  SubscriptionPastBillingCyclesQuery as SubscriptionPastBillingCyclesQueryType,
 } from 'types/admin.generated';
 import type {
   FailedBillingCycle,
-  GraphQLBillingCycle,
   GraphQLClient,
   PastBillingCycle,
   UpcomingBillingCycle,
   InsufficientStockProductVariants,
+  GraphQLBillingCycle,
 } from '~/types';
 import {logger} from '~/utils/logger.server';
 
@@ -82,11 +81,9 @@ export async function getPastBillingCycles(
         },
       });
 
-      const {data} = (await response.json()) as {
-        data: SubscriptionPastBillingCyclesQueryType;
-      };
+      const {data} = await response.json();
 
-      return nodesFromEdges(data.subscriptionBillingCycles.edges);
+      return nodesFromEdges(data?.subscriptionBillingCycles.edges || []);
     } catch (err) {
       const error = err instanceof Error ? err : new Error(String(err));
       logger.error(
@@ -104,57 +101,50 @@ export async function getPastBillingCycles(
   }
 
   const pastBillingCycles = billingCycles.flatMap((billingCycle) => {
-    const {
-      billingAttempts,
-      skipped,
-      billingAttemptExpectedDate,
-      cycleIndex,
-      status,
-    } = billingCycle;
+    const {billingAttempts, billingAttemptExpectedDate} = billingCycle;
     const attempts = nodesFromEdges(billingAttempts.edges);
-    const order = attempts.find((attempt) => Boolean(attempt.order))?.order;
 
     // if a billing cycle has an order created, count it as in the past.
     // even if the expected billing date is in the future
     // this can happen if an order is created and then the contract is edited
     // to change the billing date (ex: changing delivery frequency)
-    const isUpcomingBillingCycle =
-      !order &&
-      ((status === 'UNBILLED' && !skipped) ||
-        new Date(billingAttemptExpectedDate) > new Date(endDate));
+    // If the expected billing date is today, do not count it as past
+    const order = attempts.find((attempt) => Boolean(attempt.order))?.order;
+    const pastBillingCycle =
+      order ||
+      DateTime.now().startOf('day') >
+        DateTime.fromISO(billingAttemptExpectedDate).startOf('day');
 
-    if (isUpcomingBillingCycle) {
+    if (pastBillingCycle) {
+      return [{...billingCycle, order: order ?? undefined}];
+    } else {
       return [];
     }
-
-    return [
-      {
-        cycleIndex,
-        skipped,
-        billingAttemptExpectedDate,
-        order: order ?? undefined,
-      },
-    ];
   });
 
-  const latestBillingCycle = billingCycles[0];
-  const attempts = nodesFromEdges(
-    latestBillingCycle?.billingAttempts?.edges || [],
-  );
+  const latestBillingCycle = pastBillingCycles[0];
+  const billingAttemptErrorCode =
+    latestBillingCycle?.billingAttempts?.edges[0]?.node?.processingError?.code;
 
-  const failedBillingCycle =
-    attempts[0]?.processingError?.code === 'INSUFFICIENT_INVENTORY' &&
-    !latestBillingCycle?.skipped
-      ? latestBillingCycle
-      : undefined;
+  const inventoryFailedBillingCycle =
+    billingAttemptErrorCode &&
+    ['INVENTORY_ALLOCATIONS_NOT_FOUND', 'INSUFFICIENT_INVENTORY'].includes(
+      billingAttemptErrorCode,
+    ) &&
+    !latestBillingCycle?.skipped;
+
+  const failedBillingCycle = inventoryFailedBillingCycle
+    ? latestBillingCycle
+    : undefined;
 
   return {
-    pastBillingCycles,
+    pastBillingCycles: pastBillingCycles,
     failedBillingCycle: failedBillingCycle
       ? {
           ...failedBillingCycle,
           insufficientStockProductVariants:
             getInsufficientStockProductVariants(failedBillingCycle),
+          billingAttemptErrorCode,
         }
       : undefined,
   };
@@ -164,7 +154,7 @@ function getInsufficientStockProductVariants(
   failedBillingCycle: GraphQLBillingCycle,
 ): InsufficientStockProductVariants[] {
   const processingError =
-    failedBillingCycle?.billingAttempts?.edges[0]?.node?.processingError;
+    failedBillingCycle.billingAttempts?.edges[0]?.node?.processingError;
 
   if (!processingError) {
     return [];
@@ -183,7 +173,7 @@ function getInsufficientStockProductVariants(
       ...variant,
       image: image
         ? {
-            originalSrc: image.url,
+            originalSrc: image.url as string,
             altText: image.altText ?? undefined,
           }
         : null,

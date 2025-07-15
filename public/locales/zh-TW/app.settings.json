@@ -1,7 +1,8 @@
 {
   "saveButtonText": "儲存",
   "actions": {
-    "updateSuccess": "已更新設定"
+    "updateSuccess": "已更新設定",
+    "updateFailed": "無法更新設定"
   },
   "title": "設定",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "所有重試均失敗時的動作",
       "options": {
-        "skip": "跳過訂閱並傳送通知",
+        "skip": "跳過訂單並傳送通知",
         "cancel": "取消訂閱並傳送通知",
         "pause": "暫停訂閱並傳送通知"
       }

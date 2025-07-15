@@ -18,7 +18,6 @@ export function useCountries({skip = false} = {}) {
 
   useEffect(() => {
     let mounted = true;
-
     const addressFormatter = new AddressFormatter(locale);
 
     const getCountries = async () => {

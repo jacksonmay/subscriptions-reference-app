@@ -7,7 +7,7 @@
   },
   "policy": {
     "description": "Das automatische Verlängern, Überspringen oder Kündigen von Abonnements ist jederzeit möglich.",
-    "policy_page_html": "<a href={{subscription_policy_url}} title='Abonnement-Richtlinie anzeigen'>Abonnement-Richtlinie anzeigen</a>"
+    "policy_page_html": "<a href={{subscription_policy_url}} title='View subscription policy'>Abonnement-Richtlinie anzeigen</a>"
   },
   "error": {
     "quick_add_selling_plan_only_message": "Um etwas zum Warenkorb hinzuzufügen, gehe zur Produktseite und wähle eine Kaufoption aus"

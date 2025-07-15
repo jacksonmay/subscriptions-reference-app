@@ -11,7 +11,7 @@
   },
   "table": {
     "headings": {
-      "planTitle": "Título do plano",
+      "planTitle": "Descrição do plano",
       "products": "Produtos",
       "deliveryFrequency": "Frequência de entrega",
       "discount": "Preços",

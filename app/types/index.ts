@@ -112,6 +112,11 @@ export interface DeliveryMethod {
 
 export interface LocalDelivery {
   address: Address;
+  localDeliveryOption: LocalDeliveryOption;
+}
+
+export interface LocalDeliveryOption {
+  phone: string;
 }
 
 export interface Shipping {
@@ -164,7 +169,7 @@ export interface ProductVariant {
 
 export interface Image {
   originalSrc: string;
-  altText?: string;
+  altText?: string | null;
 }
 
 export interface ResourcePickerItem {
@@ -189,6 +194,14 @@ export interface InsufficientStockProductVariants {
   product: {
     id: string;
     title: string;
+    featuredMedia?: {
+      preview?: {
+        image?: {
+          url: string;
+          altText?: string | null;
+        } | null;
+      } | null;
+    } | null;
   };
 }
 
@@ -206,6 +219,7 @@ export type FailedBillingCycle = Omit<
 > & {
   insufficientStockProductVariants: InsufficientStockProductVariants[];
   billingAttemptExpectedDate: string;
+  billingAttemptErrorCode?: string;
 };
 
 export type PricingPolicy = {
@@ -250,6 +264,15 @@ export interface SettingsMetaobject {
     value: InventoryNotificationFrequencyTypeType;
   };
 }
+
+export const BillingAttemptErrorType = {
+  InventoryError: 'INVENTORY_ERROR',
+  CustomerError: 'CUSTOMER_ERROR',
+  Other: 'OTHER',
+  PaymentError: 'PAYMENT_ERROR',
+} as const;
+export type BillingAttemptErrorType =
+  (typeof BillingAttemptErrorType)[keyof typeof BillingAttemptErrorType];
 
 export enum SellingPlanPricingPolicy {
   FixedAmount = 'FIXED_AMOUNT',

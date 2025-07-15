@@ -1,8 +1,8 @@
 {
   "backButtonLabel": "가입 플랜으로 돌아가기",
-  "planTitle": "플랜 제목",
-  "planTitleHelpText": "고객에게는 표시되지 않습니다.",
-  "purchaseOptionTitle": "구매 옵션 제목",
+  "planTitle": "내부 설명",
+  "planTitleHelpText": "참조용",
+  "purchaseOptionTitle": "제목",
   "purchaseOptionTitleHelpText": "이 부분은 가입한 {{howToDisplayProductsLink}}에서 고객에게 표시됩니다.",
   "defaultPurchaseOptionTitle": "가입 및 저장",
   "saveButtonText": "저장",
@@ -12,8 +12,8 @@
   "SubscriptionPlanForm": {
     "invalidProduct": "잘못된 제품이 선택됨",
     "invalidVariant": "잘못된 제품 이형이 선택됨",
-    "merchantCodeEmptyError": "플랜 제목은 필수입니다.",
-    "nameEmptyError": "구매 옵션 제목은 필수입니다",
+    "merchantCodeEmptyError": "내부 설명은 필수입니다.",
+    "nameEmptyError": "제목은 필수입니다.",
     "createError": "가입 플랜 생성 중 오류 발생",
     "updateError": "구독 플랜 업데이트 중 오류 발생",
     "deliveryFrequencyError": "빈도는 0보다 커야 합니다.",

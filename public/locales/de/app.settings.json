@@ -1,7 +1,8 @@
 {
   "saveButtonText": "Speichern",
   "actions": {
-    "updateSuccess": "Einstellungen aktualisiert"
+    "updateSuccess": "Einstellungen aktualisiert",
+    "updateFailed": "Fehler beim Aktualisieren der Einstellungen"
   },
   "title": "Einstellungen",
   "billingFailureSettings": {
@@ -40,7 +41,7 @@
     "onFailure": {
       "label": "Aktion, wenn alle Wiederholungsversuche fehlgeschlagen sind",
       "options": {
-        "skip": "Abonnement überspringen und Benachrichtigung senden",
+        "skip": "Bestellung überspringen und Benachrichtigung senden",
         "cancel": "Abonnement kündigen und Benachrichtigung senden",
         "pause": "Abonnement pausieren und Benachrichtigung senden"
       }
